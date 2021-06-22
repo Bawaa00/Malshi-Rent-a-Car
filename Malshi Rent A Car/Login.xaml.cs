@@ -24,5 +24,6 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+
     }
 }
