@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="SearchViewVehicle" Height="450" Width="800">
+        Title="SearchViewVehicle" Height="500" Width="800">
     <Grid>
-        <StackPanel>
+        <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
@@ -32,14 +32,16 @@
             </Grid>
             <Grid Height="360">
                 <DataGrid Margin="5,5,4.6,56">
-                    
+
                 </DataGrid>
                 <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Vehicles]" VerticalAlignment="Top"/>
                 <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
             </Grid>
-            
         </StackPanel>
+        <Grid VerticalAlignment="Top">
+            <TextBlock Text="VEHICLES" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+        </Grid>
     </Grid>
 </Window>

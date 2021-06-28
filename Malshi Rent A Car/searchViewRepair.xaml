@@ -1,24 +1,25 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.SearchViewCustomer"
+﻿<Window x:Class="Malshi_Rent_A_Car.searchViewRepair"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="SearchViewCustomer" Height="500" Width="800">
+        Title="searchViewRepair" Height="500" Width="800">
     <Grid>
         <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_CusNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Customer NIC" Margin="5 0 0 0" Foreground="Black"/>
-                            <Button x:Name="btn_searchCusNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
+                            <DatePicker x:Name="dte_repairDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black"/>
+                            <Button x:Name="btn_searchRepairDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="txt_CusName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black"/>
-                        <Button x:Name="btn_searchCusName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_RepCatagory" Width="150" VerticalAlignment="Center">
+                        </ComboBox>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -28,13 +29,12 @@
                 </DataGrid>
                 <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Customers]" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Repairs]" VerticalAlignment="Top"/>
                 <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
             </Grid>
-
         </StackPanel>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="CUSTOMERS" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <TextBlock Text="Repairs" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
     </Grid>
 </Window>
