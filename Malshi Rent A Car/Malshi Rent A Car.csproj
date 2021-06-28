@@ -55,8 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add Service.xaml.cs">
+      <DependentUpon>Add Service.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddCustomer.xaml.cs">
       <DependentUpon>AddCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewBooking.xaml.cs">
+      <DependentUpon>AddNewBooking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="addNewOwner.xaml.cs">
+      <DependentUpon>addNewOwner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddRepairs.xaml.cs">
+      <DependentUpon>AddRepairs.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddVehicle.xaml.cs">
       <DependentUpon>AddVehicle.xaml</DependentUpon>
@@ -64,23 +76,63 @@
     <Compile Include="Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="searchViewBooking.xaml.cs">
+      <DependentUpon>searchViewBooking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchViewCustomer.xaml.cs">
       <DependentUpon>SearchViewCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="searchViewOwners.xaml.cs">
+      <DependentUpon>searchViewOwners.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="searchViewRepair.xaml.cs">
+      <DependentUpon>searchViewRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="searchViewServices.xaml.cs">
+      <DependentUpon>searchViewServices.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchViewVehicle.xaml.cs">
       <DependentUpon>SearchViewVehicle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateBooking.xaml.cs">
+      <DependentUpon>UpdateBooking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateCustomer.xaml.cs">
       <DependentUpon>UpdateCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateOwner.xaml.cs">
+      <DependentUpon>UpdateOwner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRepair.xaml.cs">
+      <DependentUpon>UpdateRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateService.xaml.cs">
+      <DependentUpon>UpdateService.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
+    <Page Include="Add Service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="addNewOwner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddRepairs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,7 +166,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="searchViewBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchViewCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="searchViewOwners.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="searchViewRepair.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="searchViewServices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,7 +190,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UpdateBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UpdateCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateOwner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateRepair.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
