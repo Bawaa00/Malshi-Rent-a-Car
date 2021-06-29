@@ -19,9 +19,21 @@ namespace Malshi_Rent_A_Car
     /// </summary>
     public partial class AddAccount : Window
     {
+        
         public AddAccount()
         {
             InitializeComponent();
+        }
+
+        private void btn_create_Click(object sender, RoutedEventArgs e)
+        {
+            HashCode hc = new HashCode();
+            User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), cmb_que.Text, txt_answer.Text);
+            int i = user.addAccount();
+            if (i == 1)
+                MessageBox.Show("Account Created");
+            else
+                MessageBox.Show("Account Could Not Be Created");
         }
     }
 }

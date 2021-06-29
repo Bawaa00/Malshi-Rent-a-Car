@@ -55,162 +55,165 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Add Service.xaml.cs">
+    <Compile Include="User.cs" />
+    <Compile Include="View\Add Service.xaml.cs">
       <DependentUpon>Add Service.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddCustomer.xaml.cs">
+    <Compile Include="View\AddCustomer.xaml.cs">
       <DependentUpon>AddCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddNewBooking.xaml.cs">
+    <Compile Include="View\AddNewBooking.xaml.cs">
       <DependentUpon>AddNewBooking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="addNewOwner.xaml.cs">
+    <Compile Include="View\addNewOwner.xaml.cs">
       <DependentUpon>addNewOwner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddRepairs.xaml.cs">
+    <Compile Include="View\AddRepairs.xaml.cs">
       <DependentUpon>AddRepairs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddVehicle.xaml.cs">
+    <Compile Include="View\AddVehicle.xaml.cs">
       <DependentUpon>AddVehicle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pricing.xaml.cs">
+    <Compile Include="Database.cs" />
+    <Compile Include="HashCode.cs" />
+    <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="searchViewBooking.xaml.cs">
+    <Compile Include="View\searchViewBooking.xaml.cs">
       <DependentUpon>searchViewBooking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchViewCustomer.xaml.cs">
+    <Compile Include="View\SearchViewCustomer.xaml.cs">
       <DependentUpon>SearchViewCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="searchViewOwners.xaml.cs">
+    <Compile Include="View\searchViewOwners.xaml.cs">
       <DependentUpon>searchViewOwners.xaml</DependentUpon>
     </Compile>
-    <Compile Include="searchViewRepair.xaml.cs">
+    <Compile Include="View\searchViewRepair.xaml.cs">
       <DependentUpon>searchViewRepair.xaml</DependentUpon>
     </Compile>
-    <Compile Include="searchViewServices.xaml.cs">
+    <Compile Include="View\searchViewServices.xaml.cs">
       <DependentUpon>searchViewServices.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchViewVehicle.xaml.cs">
+    <Compile Include="View\SearchViewVehicle.xaml.cs">
       <DependentUpon>SearchViewVehicle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateBooking.xaml.cs">
+    <Compile Include="View\UpdateBooking.xaml.cs">
       <DependentUpon>UpdateBooking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCustomer.xaml.cs">
+    <Compile Include="View\UpdateCustomer.xaml.cs">
       <DependentUpon>UpdateCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateOwner.xaml.cs">
+    <Compile Include="View\UpdateOwner.xaml.cs">
       <DependentUpon>UpdateOwner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateRepair.xaml.cs">
+    <Compile Include="View\UpdateRepair.xaml.cs">
       <DependentUpon>UpdateRepair.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateService.xaml.cs">
+    <Compile Include="View\UpdateService.xaml.cs">
       <DependentUpon>UpdateService.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateVehicle.xaml.cs">
+    <Compile Include="View\UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
-    <Page Include="Add Service.xaml">
+    <Page Include="View\Add Service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddAccount.xaml">
+    <Page Include="View\AddAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddCustomer.xaml">
+    <Page Include="View\AddCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddNewBooking.xaml">
+    <Page Include="View\AddNewBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="addNewOwner.xaml">
+    <Page Include="View\addNewOwner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddRepairs.xaml">
+    <Page Include="View\AddRepairs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddVehicle.xaml">
+    <Page Include="View\AddVehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dashboard.xaml">
+    <Page Include="View\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="View\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddAccount.xaml.cs">
+    <Compile Include="View\AddAccount.xaml.cs">
       <DependentUpon>AddAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dashboard.xaml.cs">
+    <Compile Include="View\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pricing.xaml">
+    <Page Include="View\Pricing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="searchViewBooking.xaml">
+    <Page Include="View\searchViewBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SearchViewCustomer.xaml">
+    <Page Include="View\SearchViewCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="searchViewOwners.xaml">
+    <Page Include="View\searchViewOwners.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="searchViewRepair.xaml">
+    <Page Include="View\searchViewRepair.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="searchViewServices.xaml">
+    <Page Include="View\searchViewServices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SearchViewVehicle.xaml">
+    <Page Include="View\SearchViewVehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateBooking.xaml">
+    <Page Include="View\UpdateBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateCustomer.xaml">
+    <Page Include="View\UpdateCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateOwner.xaml">
+    <Page Include="View\UpdateOwner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateRepair.xaml">
+    <Page Include="View\UpdateRepair.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateService.xaml">
+    <Page Include="View\UpdateService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateVehicle.xaml">
+    <Page Include="View\UpdateVehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,6 +263,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Pricing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
