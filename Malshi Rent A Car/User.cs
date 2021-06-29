@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -37,9 +38,12 @@ namespace Malshi_Rent_A_Car
             return i;
         }
 
-        /*public int authorizeAccount()
+        public int authorizeAccount()
         {
-            db.getData()
-        }*/
+            DataTable dt = new DataTable();
+            string query = "select * from UserAcc where Uname='"+uname+"' and Utype='"+utype+"' and Upass='"+pass+"'";
+            dt = db.getData(query);
+            return dt.Rows.Count;
+        }
     }
 }
