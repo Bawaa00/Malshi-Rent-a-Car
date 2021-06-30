@@ -58,11 +58,27 @@ namespace Malshi_Rent_A_Car
             return dt;
         }
 
-       /* public DataTable searchOwner(string NIC)
+        public DataTable searchOwner(string name)
         {
-
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_owners_name '"+name+"'");
+            return dt;
         }
-       */
+       
+
+        public int updateOwner(string NIC,string fname,string lname,string haddress,int hcontact,int mobile,string prof,string offadd,int offtel,string email)
+        {
+            string query = "exec update_owner '"+NIC+"','"+fname+"','"+lname+"','"+haddress+"','"+hcontact+"','"+mobile+"','"+prof+"','"+offadd+"','"+offtel+"','"+email+"'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
+
+        public int deleteOwner(string NIC)
+        {
+            string query = "delete from Owner where O_NIC = '"+NIC+"'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
     }
 
 }

@@ -39,5 +39,22 @@ namespace Malshi_Rent_A_Car
             dt = owner.viewOwner(txt_OwnNIC.Text);
             dg_owner.ItemsSource = dt.DefaultView;
         }
+
+        private void btn_searchOwnName_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = owner.searchOwner(txt_OwnName.Text);
+            dg_owner.ItemsSource = dt.DefaultView;
+        }
+
+        private void txt_OwnNIC_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txt_OwnNIC.Clear();
+        }
+
+        private void txt_OwnName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txt_OwnName.Clear();
+        }
     }
 }

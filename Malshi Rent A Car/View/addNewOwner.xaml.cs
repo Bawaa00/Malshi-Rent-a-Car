@@ -31,11 +31,26 @@ namespace Malshi_Rent_A_Car
             if (i==1)
             {
                 MessageBox.Show("Data Saved Successfully!");
+                btn_cls_Click(this, null);
             }
             else
             {
                 MessageBox.Show("Couldnt Save data.Please Try Again");
             }
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            txt_OwnFname.Clear();
+            txt_OwnLname.Clear();
+            txt_OwnNIC.Clear();
+            txt_OwnEmail.Clear();
+            txt_OwnResAdrs.Clear();
+            txt_OwnTelHome.Clear();
+            txt_OwnTelMobile.Clear();
+            txt_OwnProfession.Clear();
+            txt_OwnWorkAdrs.Clear();
+            txt_OwnTelWork.Clear();
         }
     }
 }
