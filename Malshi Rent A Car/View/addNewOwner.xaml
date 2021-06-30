@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="addNewOwner" Height="530" Width="850">
+        Title="addNewOwner" Height="534.151" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
@@ -41,21 +41,9 @@
                     <ListViewItem>
                         <TextBlock Text="Telephone (Work)" Margin="5 3 0 0"/>
                     </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Witness Name" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Witness Address" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Witness Contact" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Monthly Payment (Rs.)" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Lending Date" Margin="5 3 0 0"/>
-                    </ListViewItem>
+                    <ListViewItem/>
+                    <ListViewItem/>
+                    <ListViewItem/>
                 </ListView>
             </StackPanel>
         </Grid>
@@ -93,21 +81,10 @@
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWitnsName" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWitnskAdrs" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWitnsConatct" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <DatePicker x:Name="dte_OwnLend" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnMonthlyPay" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
+                    <ListViewItem Height="27.2"/>
+                    <ListViewItem Height="27.2"/>
+                    <ListViewItem Height="27.2"/>
+                    <ListViewItem Height="27.2"/>
                 </ListView>
             </StackPanel>
         </Grid>
@@ -116,8 +93,8 @@
         </Grid>
         <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
         <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="CLEAR" HorizontalAlignment="Left" Margin="758,471,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="SAVE" HorizontalAlignment="Left" Margin="678,471,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="758,471,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
+        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="678,471,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
             <TextBlock TextWrapping="Wrap" Text="[A photo of the owner]"/>
         </Border>

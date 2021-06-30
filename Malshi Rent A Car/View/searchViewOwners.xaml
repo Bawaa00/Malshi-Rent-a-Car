@@ -5,31 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="searchViewOwners" Height="500" Width="800">
+        Title="View Owners" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_OwnNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Owner NIC" Margin="5 0 0 0" Foreground="Black"/>
-                            <Button x:Name="btn_searchOwnNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
+                            <TextBox x:Name="txt_OwnNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Owner NIC" Margin="5 0 0 0" Foreground="Black" GotFocus="txt_OwnNIC_GotFocus"/>
+                            <Button x:Name="btn_searchOwnNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchOwnNIC_Click"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="txt_OwnName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black"/>
-                        <Button x:Name="btn_searchOwnName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
+                        <TextBox x:Name="txt_OwnName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black" GotFocus="txt_OwnName_GotFocus"/>
+                        <Button x:Name="btn_searchOwnName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchOwnName_Click"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Height="360">
-                <DataGrid Margin="5,5,4.6,56">
+                <DataGrid x:Name="dg_owner" Margin="5,5,4.6,56">
 
                 </DataGrid>
                 <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Owners]" VerticalAlignment="Top"/>
                 <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="426,-40,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
             </Grid>
 
         </StackPanel>
