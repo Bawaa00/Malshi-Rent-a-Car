@@ -24,12 +24,19 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
-
+        Owner owner = new Owner();
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
-            Owner owner = new Owner();
+            
             DataTable dt = new DataTable();
             dt = owner.viewOwner();
+            dg_owner.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_searchOwnNIC_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = owner.viewOwner(txt_OwnNIC.Text);
             dg_owner.ItemsSource = dt.DefaultView;
         }
     }

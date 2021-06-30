@@ -47,9 +47,22 @@ namespace Malshi_Rent_A_Car
         public DataTable viewOwner()
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from Owner");
+            dt = db.getData("exec view_owners");
             return dt;
         }
+
+        public DataTable viewOwner(string NIC)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_owners_nic '"+NIC+"'");
+            return dt;
+        }
+
+       /* public DataTable searchOwner(string NIC)
+        {
+
+        }
+       */
     }
 
 }
