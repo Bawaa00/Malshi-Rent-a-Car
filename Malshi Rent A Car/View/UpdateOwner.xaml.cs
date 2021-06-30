@@ -50,5 +50,19 @@ namespace Malshi_Rent_A_Car
             txt_OwnWorkAdrs.Text = dt.Rows[0][7].ToString();
             txt_OwnTelWork.Text = dt.Rows[0][8].ToString();
         }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            txt_OwnFname.Clear();
+            txt_OwnLame.Clear();
+            txt_OwnEmail.Clear();
+            txt_OwnResAdrs.Clear();
+            txt_OwnTelHome.Clear();
+            txt_OwnTelMobile.Clear();
+            txt_OwnProfession.Clear();
+            txt_OwnWorkAdrs.Clear();
+            txt_OwnTelWork.Clear();
+            cmb_onic.Text = "";
+        }
     }
 }
