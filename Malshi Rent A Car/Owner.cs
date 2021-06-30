@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -31,11 +32,23 @@ namespace Malshi_Rent_A_Car
             this.profession = profession;
         }
 
+        public Owner()
+        {
+
+        }
+
         public int addOwner()
         {
             string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','"+offContact+"','" + email + "')";
             int i = db.save_update_delete(query);
             return i;
+        }
+
+        public DataTable viewOwner()
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Owner");
+            return dt;
         }
     }
 

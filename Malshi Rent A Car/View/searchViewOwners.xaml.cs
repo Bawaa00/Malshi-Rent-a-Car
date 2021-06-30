@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -22,6 +23,14 @@ namespace Malshi_Rent_A_Car
         public searchViewOwners()
         {
             InitializeComponent();
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            Owner owner = new Owner();
+            DataTable dt = new DataTable();
+            dt = owner.viewOwner();
+            dg_owner.ItemsSource = dt.DefaultView;
         }
     }
 }
