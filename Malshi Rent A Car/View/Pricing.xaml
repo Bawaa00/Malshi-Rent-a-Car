@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Pricing" Height="450" Width="800">
+        Title="Pricing" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
-            <StackPanel>
+        <Grid Width="150" HorizontalAlignment="Left" Margin="4,36,0,4">
+            <StackPanel Margin="0,0,0,29">
                 <Grid Height="40"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                    <ListViewItem>
+                        <TextBlock Text="Model ID" Margin="5 3 0 3"/>
+                    </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Catagory" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -35,42 +38,108 @@
                     <ListViewItem>
                         <TextBlock Text="Extra Mileage" Margin="5 3 0 3"/>
                     </ListViewItem>
-                    
+
                 </ListView>
 
             </StackPanel>
         </Grid>
-        <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
-            <StackPanel>
-                <Grid Height="40"/>
-                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+        <Grid Width="250" HorizontalAlignment="Left" Margin="154,39,0,1">
+            <StackPanel Margin="0,31,0,0">
+                <Grid Height="40">
+                    <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                </Grid>
+                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
+
                     <ListViewItem Height="30.4">
-                        <ComboBox Width="130" Margin="5 2 0 2"/>
+                        <ComboBox x:Name="cmb_cat" Width="162" Margin="5,0,0,0">
+                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="Van" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="Minivan" HorizontalAlignment="Left" Width="160"/>
+                        </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox Width="130" Margin="5 2 0 2"/>
+                        <ComboBox x:Name="cmb_make" Width="163" Margin="5,0,0,0">
+                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
+                            <ComboBoxItem Content="BMW"/>
+                            <ComboBoxItem Content="FORD"/>
+                            <ComboBoxItem Content="HONDA"/>
+                            <ComboBoxItem Content="HYUNDAI"/>
+                            <ComboBoxItem Content="JAGUAR"/>
+                            <ComboBoxItem Content="KIA"/>
+                            <ComboBoxItem Content="LEXUS"/>
+                            <ComboBoxItem Content="MAZDA"/>
+                            <ComboBoxItem Content="MERCEDES"/>
+                            <ComboBoxItem Content="MITSUBISHI"/>
+                            <ComboBoxItem Content="NISSAN"/>
+                            <ComboBoxItem Content="PERADUA"/>
+                            <ComboBoxItem Content="PEUGEOT"/>
+                            <ComboBoxItem Content="RENAULT"/>
+                            <ComboBoxItem Content="SUZUKI"/>
+                            <ComboBoxItem Content="TOYOTA"/>
+                            <ComboBoxItem Content="VOLKSWAGAON"/>
+                        </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox Width="130" Margin="5 2 0 2"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="164"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox Width="130" Margin="5 2 0 2"/>
+                        <ComboBox x:Name="cmb_year" Width="162" Margin="5,0,0,0">
+                            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="2023"/>
+                            <ComboBoxItem Content="2022"/>
+                            <ComboBoxItem Content="2021"/>
+                            <ComboBoxItem Content="2021"/>
+                            <ComboBoxItem Content="2020"/>
+                            <ComboBoxItem Content="2019"/>
+                            <ComboBoxItem Content="2018"/>
+                            <ComboBoxItem Content="2017" />
+                            <ComboBoxItem Content="2016"/>
+                            <ComboBoxItem Content="2015"/>
+                            <ComboBoxItem Content="2014"/>
+                            <ComboBoxItem Content="2013"/>
+                            <ComboBoxItem Content="2012"/>
+                            <ComboBoxItem Content="2011" />
+                            <ComboBoxItem Content="2010"/>
+                            <ComboBoxItem Content="2009"/>
+                            <ComboBoxItem Content="2008"/>
+                            <ComboBoxItem Content="2007"/>
+                            <ComboBoxItem Content="2006"/>
+                            <ComboBoxItem Content="2005" />
+                            <ComboBoxItem Content="2004"/>
+                            <ComboBoxItem Content="2003" />
+                            <ComboBoxItem Content="2002"/>
+                            <ComboBoxItem Content="2001"/>
+                            <ComboBoxItem Content="2000"/>
+                            <ComboBoxItem Content="1999"/>
+                            <ComboBoxItem Content="1998"/>
+                            <ComboBoxItem Content="1997"/>
+                            <ComboBoxItem Content="1996"/>
+                            <ComboBoxItem Content="1995"/>
+                            <ComboBoxItem Content="1994"/>
+                            <ComboBoxItem Content="1993"/>
+                            <ComboBoxItem Content="1992"/>
+                            <ComboBoxItem Content="1991"/>
+                            <ComboBoxItem Content="1990"/>
+                        </ComboBox>
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Margin="5 2 0 2"/>
-                            <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
-                        </StackPanel>
-                    </ListViewItem >
-                    <ListViewItem Height="30.4">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2"/>
                             <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2"/>
+                            <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2"/>
                             <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
                         </StackPanel>
                     </ListViewItem>
