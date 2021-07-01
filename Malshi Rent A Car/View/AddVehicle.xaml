@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Vehicle" Height="722" Width="850" WindowStartupLocation="CenterScreen" Loaded="form_addVehicle_Loaded">
+        Title="Add Vehicle" Height="750.5" Width="850" WindowStartupLocation="CenterScreen" Loaded="form_addVehicle_Loaded">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
@@ -25,6 +25,9 @@
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Model" Margin="5 3 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Transmission" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Color" Margin="5 3 0 0"/>
@@ -70,6 +73,9 @@
                         <TextBlock Text="Owner Name" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
+                        <TextBlock Text="Monthly Pay (Rs.)" Margin="5 3 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem>
                         <TextBlock Text="Witeness Name" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
@@ -98,6 +104,12 @@
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem Height="27.2">
+                        <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0">
+                            <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="148"/>
+                        </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="txt_color" Width="150" Margin="5 0 0 0">
@@ -168,6 +180,9 @@
                         <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
+                        <TextBox x:Name="txt_oPay" Width="150" Margin="5 0 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
@@ -186,7 +201,7 @@
 
         <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="566,451,0,0" VerticalAlignment="Top" Width="74" Click="btn_upload_Click"/>
         <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="744,661,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
-        <Button Content="SAVE" HorizontalAlignment="Left" Margin="650,661,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="650,661,0,0" VerticalAlignment="Top" Width="76" Click="btn_save_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE">
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419" Stretch="Fill"/>

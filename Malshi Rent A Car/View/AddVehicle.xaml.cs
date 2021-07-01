@@ -27,11 +27,11 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
-        Vehicle vehicle = new Vehicle();
         ModelPricing model = new ModelPricing();
         Owner owner = new Owner();
-
+        Insurance insurance = new Insurance();
         Database db = new Database();
+        string insID;
         string filepath;
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -62,15 +62,17 @@ namespace Malshi_Rent_A_Car
             cmb_Ftype.SelectedIndex = -1;
             cmb_noPassengers.SelectedIndex = -1;
             cmb_ins.SelectedIndex = -1;
-            /*date_InsuranceStart.SelectedDate;
-            date_InsuranceEnd.SelectedDate;
-            date_licenceStart.SelectedDate;
-            date_LicenceEnd.SelectedDate;*/
+            date_InsuranceStart.SelectedDate = null;         
+            date_InsuranceEnd.SelectedDate = null;
+            date_licenceStart.SelectedDate = null;
+            date_LicenceEnd.SelectedDate = null;
             cmb_ownerNIC.SelectedIndex = -1;
             txt_oName.Clear();
+            txt_oPay.Clear();
             txt_wName.Clear();
             txt_wAdd.Clear();
             txt_wContact.Clear();
+            img_vehicle.Source = null;
         }
 
         private void form_addVehicle_Loaded(object sender, RoutedEventArgs e)
@@ -84,6 +86,10 @@ namespace Malshi_Rent_A_Car
             cmb_ownerNIC.ItemsSource = dt.DefaultView;
             cmb_ownerNIC.DisplayMemberPath = "NIC";
             cmb_ownerNIC.SelectedValuePath = "NIC";
+            dt = insurance.viewInsurance();
+            cmb_ins.ItemsSource = dt.DefaultView;
+            cmb_ins.DisplayMemberPath = "insName";
+            cmb_ins.SelectedValuePath = "insName";
         }
 
         private void cmb_modelID_DropDownClosed(object sender, EventArgs e)
@@ -100,7 +106,21 @@ namespace Malshi_Rent_A_Car
         {
             DataTable dt = new DataTable();
             dt = owner.viewOwner(cmb_ownerNIC.Text);
+            insID = dt.Rows[0][0].ToString();
             txt_oName.Text = dt.Rows[0][1].ToString();
+        }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle vehicle = new Vehicle(txt_Lplate.Text,txt_catagory.Text,txt_color.Text,filepath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text),Int32.Parse(cmb_noPassengers.Text), date_licenceStart.ToString(),date_LicenceEnd.ToString(),date_InsuranceEnd.ToString(),date_InsuranceStart.ToString(),cmb_Ftype.Text,date_licenceStart.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
+            int i=vehicle.addVehicle(txt_model.Text,insID,cmb_ownerNIC.Text);
+            if (i == 1)
+            {
+                MessageBox.Show("Data Saved Successfully");
+                btn_cls_Click(this, null);
+            }
+            else
+                MessageBox.Show("Could not save data,Please try agian");
         }
     }
 }
