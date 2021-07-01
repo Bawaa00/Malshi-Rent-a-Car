@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Pricing" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Pricing" Height="450" Width="924" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="4,36,0,4">
             <StackPanel Margin="0,0,0,29">
@@ -128,19 +128,16 @@
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2"/>
-                            <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2"/>
-                            <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2"/>
-                            <Button Width="60" Content="CHANGE" Margin="10 3 0 3" FontSize="10"/>
                         </StackPanel>
                     </ListViewItem>
 
@@ -148,9 +145,9 @@
 
             </StackPanel>
         </Grid>
-        <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="393.6">
-            <DataGrid Margin="5"/>
-            <TextBlock HorizontalAlignment="Left" Margin="128,188,0,0" TextWrapping="Wrap" Text="[Data Grid View Of Pricings]" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="506">
+            <DataGrid x:Name="dg_price" Margin="5,5,-115.4,5" HorizontalAlignment="Left" Width="504"/>
+            <TextBlock Margin="179,190,68,0" TextWrapping="Wrap" Text="[Data Grid View Of Pricings]" VerticalAlignment="Top"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -15,5 +16,20 @@ namespace Malshi_Rent_A_Car
         int longRent;
         int shortRent;
         float extraMilageCost;
-    }
+        Database db = new Database();
+
+        public ModelPricing()
+        {
+        }
+
+        public DataTable viewPricing()
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_pricing");
+            return dt;
+        }
+
+}
+
+   
 }
