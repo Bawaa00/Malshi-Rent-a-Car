@@ -29,7 +29,14 @@ namespace Malshi_Rent_A_Car
             return dt;
         }
 
-}
+        public DataTable viewPricing(string modelID)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_pricing_id '"+modelID+"'");
+            return dt;
+        }
+
+    }
 
    
 }

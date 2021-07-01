@@ -55,7 +55,7 @@ namespace Malshi_Rent_A_Car
             txt_catagory.Clear();
             txt_make.Clear();
             txt_model.Clear();
-            txt_color.Clear();
+            txt_color.SelectedIndex = -1;
             txt_year.Clear();
             txt_Lplate.Clear();
             cmb_Ecapacity.SelectedIndex = -1;
@@ -84,6 +84,23 @@ namespace Malshi_Rent_A_Car
             cmb_ownerNIC.ItemsSource = dt.DefaultView;
             cmb_ownerNIC.DisplayMemberPath = "NIC";
             cmb_ownerNIC.SelectedValuePath = "NIC";
+        }
+
+        private void cmb_modelID_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = model.viewPricing(cmb_modelID.Text);
+            txt_catagory.Text = dt.Rows[0][1].ToString();
+            txt_make.Text = dt.Rows[0][3].ToString();
+            txt_model.Text = dt.Rows[0][4].ToString();
+            txt_year.Text = dt.Rows[0][2].ToString();
+        }
+
+        private void cmb_ownerNIC_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = owner.viewOwner(cmb_ownerNIC.Text);
+            txt_oName.Text = dt.Rows[0][1].ToString();
         }
     }
 }

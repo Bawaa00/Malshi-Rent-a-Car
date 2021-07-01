@@ -18,6 +18,9 @@
                         <TextBlock Text="Category" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
+                        <TextBlock Text="Year" Margin="5 3 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem>
                         <TextBlock Text="Make" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
@@ -26,11 +29,9 @@
                     <ListViewItem>
                         <TextBlock Text="Color" Margin="5 3 0 0"/>
                     </ListViewItem>
+                   
                     <ListViewItem>
-                        <TextBlock Text="Year" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="license Plate No. " Margin="5 3 0 0"/>
+                        <TextBlock Text="License Plate No. " Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Engine Capacity" Margin="5 3 0 0"/>
@@ -85,9 +86,12 @@
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
-                    <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0"/>
+                    <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_modelID_DropDownClosed"/>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_catagory" Width="150" Margin="5 0 0 0"/>
+                    </ListViewItem>
+                    <ListViewItem Height="27.2">
+                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0"/>
@@ -96,11 +100,18 @@
                         <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_color" Width="150" Margin="5 0 0 0"/>
+                        <ComboBox x:Name="txt_color" Width="150" Margin="5 0 0 0">
+                            <ComboBoxItem Content="Red" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Blue" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Silver" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Black" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Maroon" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="White" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Green" HorizontalAlignment="Left" Width="148"/>
+                            <ComboBoxItem Content="Yelllow" HorizontalAlignment="Left" Width="148"/>
+                        </ComboBox>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
+                   
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
@@ -151,7 +162,7 @@
                         <DatePicker x:Name="date_LicenceEnd" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_ownerNIC" Width="150" Margin="5 0 0 0"/>
+                        <ComboBox x:Name="cmb_ownerNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ownerNIC_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0"/>
