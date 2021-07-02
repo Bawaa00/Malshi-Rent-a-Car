@@ -57,5 +57,10 @@ namespace Malshi_Rent_A_Car
             dt = vehicle.viewVehicleFuel(cmb_fuel.Text);
             dg_vehicle.ItemsSource = dt.DefaultView;
         }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            frm_viewVehicles_Loaded(this, null);
+        }
     }
 }

@@ -64,27 +64,27 @@ namespace Malshi_Rent_A_Car
         }
         public DataTable viewVehicle()
         {
-            dt = db.getData("select * from Vehicle");
+            dt = db.getData("exec view_vehicle");
             return dt;
         }
         public DataTable viewVehicleCategory(string category)
         {
-            dt = db.getData("select * from Vehicle where vType='"+category+"'");
+            dt = db.getData("exec view_vehicleCategory '"+category+"'");
             return dt;
         }
         public DataTable viewVehicleMake(string make)
         {
-            dt = db.getData("select * from Vehicle");
+            dt = db.getData("exec view_vehicleMake '"+make+"'");
             return dt;
         }
         public DataTable viewVehicleFuel(string fuel)
         {
-            dt = db.getData("select * from Vehicle where fuelType='"+fuel+"'");
+            dt = db.getData("exec view_vehicleFuel '" + fuel+"'");
             return dt;
         }
         public DataTable viewVehicleTrans(string trans)
         {
-            dt = db.getData("select * from Vehicle where transmssion='"+trans+"'");
+            dt = db.getData("exec view_vehicleTrans '" + trans+"'");
             return dt;
         }
     }
