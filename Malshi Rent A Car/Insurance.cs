@@ -23,5 +23,11 @@ namespace Malshi_Rent_A_Car
             dt = db.getData("select * from Insurance");
             return dt;
         }
+        public DataTable viewInsurance(string insName)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Insurance where insName = '"+insName+"'");
+            return dt;
+        }
     }
 }

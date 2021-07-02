@@ -32,7 +32,21 @@ namespace Malshi_Rent_A_Car
         Insurance insurance = new Insurance();
         Database db = new Database();
         string insID;
+        string modelID;
         string filepath;
+
+        private String GetDestinationPath(string filename)
+        {
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + txt_Lplate.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + txt_Lplate.Text + ".jpg");
+            return appStartPath;
+        }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
@@ -73,6 +87,8 @@ namespace Malshi_Rent_A_Car
             txt_wAdd.Clear();
             txt_wContact.Clear();
             img_vehicle.Source = null;
+            cmb_trans.SelectedIndex = -1;
+            date_lend.SelectedDate = null;
         }
 
         private void form_addVehicle_Loaded(object sender, RoutedEventArgs e)
@@ -96,6 +112,7 @@ namespace Malshi_Rent_A_Car
         {
             DataTable dt = new DataTable();
             dt = model.viewPricing(cmb_modelID.Text);
+            modelID = dt.Rows[0][0].ToString();
             txt_catagory.Text = dt.Rows[0][1].ToString();
             txt_make.Text = dt.Rows[0][3].ToString();
             txt_model.Text = dt.Rows[0][4].ToString();
@@ -106,14 +123,16 @@ namespace Malshi_Rent_A_Car
         {
             DataTable dt = new DataTable();
             dt = owner.viewOwner(cmb_ownerNIC.Text);
-            insID = dt.Rows[0][0].ToString();
             txt_oName.Text = dt.Rows[0][1].ToString();
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Vehicle vehicle = new Vehicle(txt_Lplate.Text,txt_catagory.Text,txt_color.Text,filepath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text),Int32.Parse(cmb_noPassengers.Text), date_licenceStart.ToString(),date_LicenceEnd.ToString(),date_InsuranceEnd.ToString(),date_InsuranceStart.ToString(),cmb_Ftype.Text,date_licenceStart.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
-            int i=vehicle.addVehicle(txt_model.Text,insID,cmb_ownerNIC.Text);
+            string name = System.IO.Path.GetFileName(filepath);
+            string destinationPath = GetDestinationPath(name);
+            File.Copy(filepath, destinationPath, true);
+            Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text,txt_color.Text,filepath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text) ,Int32.Parse(cmb_noPassengers.Text),date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text,date_InsuranceStart.Text,cmb_Ftype.Text,date_lend.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text ,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
+            int i=vehicle.addVehicle(modelID,insID,cmb_ownerNIC.Text);
             if (i == 1)
             {
                 MessageBox.Show("Data Saved Successfully");
@@ -121,6 +140,13 @@ namespace Malshi_Rent_A_Car
             }
             else
                 MessageBox.Show("Could not save data,Please try agian");
+        }
+
+        private void cmb_ins_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = insurance.viewInsurance(cmb_ins.Text);
+            insID = dt.Rows[0][0].ToString();
         }
     }
 }

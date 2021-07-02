@@ -1,43 +1,78 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.SearchViewVehicle"
+﻿<Window x:Name="frm_viewVehicles" x:Class="Malshi_Rent_A_Car.SearchViewVehicle"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="SearchViewVehicle" Height="500" Width="800">
+        Title="SearchViewVehicle" Height="500" Width="1018.016" Loaded="frm_viewVehicles_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_LicensePlate" VerticalAlignment="Center" Width="150" FontSize="15" Text="License Plate No." Margin="5 0 0 0" Foreground="Black"/>
-                            <Button x:Name="btn_searchLicensePlate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
-                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"/>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_catagory" Width="100" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="cmb_catagory" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_catagory_DropDownClosed">
+                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Van" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left" Width="98"/>
+                        </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Make" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_make" Width="100" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="cmb_make" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_make_DropDownClosed">
+                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="BMW"/>
+                            <ComboBoxItem Content="FORD"/>
+                            <ComboBoxItem Content="HONDA"/>
+                            <ComboBoxItem Content="HYUNDAI"/>
+                            <ComboBoxItem Content="JAGUAR"/>
+                            <ComboBoxItem Content="KIA"/>
+                            <ComboBoxItem Content="LEXUS"/>
+                            <ComboBoxItem Content="MAZDA"/>
+                            <ComboBoxItem Content="MERCEDES"/>
+                            <ComboBoxItem Content="MITSUBISHI"/>
+                            <ComboBoxItem Content="NISSAN"/>
+                            <ComboBoxItem Content="PERADUA"/>
+                            <ComboBoxItem Content="PEUGEOT"/>
+                            <ComboBoxItem Content="RENAULT"/>
+                            <ComboBoxItem Content="SUZUKI"/>
+                            <ComboBoxItem Content="TOYOTA"/>
+                            <ComboBoxItem Content="VOLKSWAGAON"/>
+                        </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Model" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_model" Width="100" VerticalAlignment="Center"/>
+                        <TextBlock Text="Transmission" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_trans" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_trans_DropDownClosed">
+                            <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="98"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Fuel Type" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_fuel" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_fuel_DropDownClosed">
+                            <ComboBoxItem Content="Petrol" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Diesel" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Hybrid" HorizontalAlignment="Left" Width="98"/>
+                            <ComboBoxItem Content="Electric" HorizontalAlignment="Left" Width="98"/>
+                        </ComboBox>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Height="360">
-                <DataGrid Margin="5,5,4.6,56">
+                <DataGrid x:Name="dg_vehicle" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Vehicles]" VerticalAlignment="Top"/>
-                <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="838,330,0,0" VerticalAlignment="Top" Width="123"/>
+                <TextBlock HorizontalAlignment="Left" Margin="435,149,0,0" TextWrapping="Wrap" Text="[Data Grid View of Vehicles]" VerticalAlignment="Top"/>
+                <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="758,330,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="886,-37,0,0" VerticalAlignment="Top" Width="75"/>
             </Grid>
         </StackPanel>
         <Grid VerticalAlignment="Top">
