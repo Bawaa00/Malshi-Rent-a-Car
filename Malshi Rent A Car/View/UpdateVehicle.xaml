@@ -113,7 +113,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" IsEnabled="False">
-                        <TextBox x:Name="cmb_make" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
+                        <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
@@ -131,7 +131,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" IsEnabled="False">
-                        <TextBox x:Name="cmb_year" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 0 0 0">

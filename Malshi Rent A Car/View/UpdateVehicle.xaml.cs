@@ -61,8 +61,8 @@ namespace Malshi_Rent_A_Car
             dt = vehicle.viewVehicle(cmb_plateNo.Text);
             cmb_modelID.Text = dt.Rows[0][1].ToString();
             cmb_category.Text = dt.Rows[0][2].ToString();
-            cmb_year.Text = dt.Rows[0][3].ToString();
-            cmb_make.Text = dt.Rows[0][4].ToString();
+            txt_year.Text = dt.Rows[0][3].ToString();
+            txt_make.Text = dt.Rows[0][4].ToString();
             txt_model.Text = dt.Rows[0][5].ToString();
             cmb_color.Text = dt.Rows[0][6].ToString();
             cmb_trans.Text = dt.Rows[0][7].ToString();
@@ -138,9 +138,9 @@ namespace Malshi_Rent_A_Car
             dt = model.viewPricing(cmb_modelID.Text);
             //modelID = dt.Rows[0][0].ToString();
             cmb_category.Text = dt.Rows[0][1].ToString();
-            cmb_make.Text = dt.Rows[0][3].ToString();
+            txt_make.Text = dt.Rows[0][3].ToString();
             txt_model.Text = dt.Rows[0][4].ToString();
-            cmb_year.Text = dt.Rows[0][2].ToString();
+            txt_year.Text = dt.Rows[0][2].ToString();
         }
 
         private void cmb_oNIC_DropDownClosed(object sender, EventArgs e)
