@@ -72,8 +72,8 @@ namespace Malshi_Rent_A_Car
             }
             else if(cmb_Rtype.SelectedIndex ==1)
             {
-                MaintenanceRepair mr = new MaintenanceRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
-                int i = mr.addRepair(cmb_vehicle.Text);
+                AccidentRepair ar = new AccidentRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text),Int32.Parse(txt_option2.Text));
+                int i = ar.addRepair(cmb_vehicle.Text);
                 if (i == 1)
                 {
                     MessageBox.Show("Data saved successfully");
