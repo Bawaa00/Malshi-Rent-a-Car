@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.IO;
+using System.Data;
+using Microsoft.Win32;
 
 namespace Malshi_Rent_A_Car
 {
@@ -22,6 +26,155 @@ namespace Malshi_Rent_A_Car
         public UpdateVehicle()
         {
             InitializeComponent();
+        }
+        Database db;
+        Vehicle vehicle = new Vehicle();
+        ModelPricing model = new ModelPricing();
+        DataTable dt = new DataTable();
+        Insurance insurance = new Insurance();
+        Owner owner = new Owner();
+        string insID;
+        string path;
+
+        private void frm_updateVehicle_Loaded(object sender, RoutedEventArgs e)
+        {
+            dt = vehicle.viewVehicle();
+            cmb_plateNo.ItemsSource = dt.DefaultView;
+            cmb_plateNo.DisplayMemberPath = "Plate No";
+            cmb_plateNo.SelectedValuePath = "Plate No";
+            dt = model.viewPricing();
+            cmb_modelID.ItemsSource = dt.DefaultView;
+            cmb_modelID.DisplayMemberPath = "Model ID";
+            cmb_modelID.SelectedValuePath = "Model ID";
+            dt = insurance.viewInsurance();
+            cmb_ins.ItemsSource = dt.DefaultView;
+            cmb_ins.DisplayMemberPath = "insName";
+            cmb_ins.SelectedValuePath = "insName";
+            dt = owner.viewOwner();
+            cmb_oNIC.ItemsSource = dt.DefaultView;
+            cmb_oNIC.DisplayMemberPath = "NIC";
+            cmb_oNIC.SelectedValuePath = "NIC";
+        }
+
+        private void cmb_plateNo_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicle(cmb_plateNo.Text);
+            cmb_modelID.Text = dt.Rows[0][1].ToString();
+            cmb_category.Text = dt.Rows[0][2].ToString();
+            txt_year.Text = dt.Rows[0][3].ToString();
+            txt_make.Text = dt.Rows[0][4].ToString();
+            txt_model.Text = dt.Rows[0][5].ToString();
+            cmb_color.Text = dt.Rows[0][6].ToString();
+            cmb_trans.Text = dt.Rows[0][7].ToString();
+            cmb_Ecapacity.Text = dt.Rows[0][8].ToString();
+            cmb_Ftype.Text = dt.Rows[0][9].ToString();
+            cmb_passengers.Text = dt.Rows[0][10].ToString();
+            //insID = dt.Rows[0][].ToString();
+            
+            path = dt.Rows[0][12].ToString();
+            date_LicStart.Text = dt.Rows[0][13].ToString();
+            date_LicEnd.Text = dt.Rows[0][14].ToString();
+            cmb_ins.Text = dt.Rows[0][16].ToString();
+            date_InsStart.Text = dt.Rows[0][17].ToString();
+            date_InsEnd.Text = dt.Rows[0][18].ToString();   
+            cmb_oNIC.Text = dt.Rows[0][19].ToString();
+            txt_oName.Text = dt.Rows[0][20].ToString();
+            date_lend.Text = dt.Rows[0][21].ToString();
+            txt_pay.Text = dt.Rows[0][22].ToString();
+            txt_wName.Text = dt.Rows[0][23].ToString();
+            txt_wAddress.Text = dt.Rows[0][24].ToString();
+            txt_wContact.Text = dt.Rows[0][25].ToString();
+            cmb_ins_DropDownClosed(this, null);
+
+            if (path != "")
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_vehicle.Source = image;
+            }
+            else
+            {
+                img_vehicle.Source = null;
+            }
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            int i = vehicle.deleteVehicle(cmb_plateNo.Text);
+            if (i == 1)
+            {
+                MessageBox.Show("Data Deleted Successfully");
+                frm_updateVehicle_Loaded(this, null);
+            }
+            else
+                MessageBox.Show("Error.Could not delete data");
+        }
+
+        private void cmb_ins_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = insurance.viewInsurance(cmb_ins.Text);
+            insID = dt.Rows[0][0].ToString();
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            string name = System.IO.Path.GetFileName(path);
+            string destinationPath = GetDestinationPath(name);
+            File.Copy(path, destinationPath, true);
+            int i = vehicle.updateVehicle(cmb_plateNo.Text, cmb_category.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_passengers.Text), date_LicStart.Text, date_LicEnd.Text, date_InsEnd.Text, date_InsStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_pay.Text), txt_wName.Text, txt_wAddress.Text, Int32.Parse(txt_wContact.Text), cmb_modelID.Text, insID, cmb_oNIC.Text);
+            if (i == 1)
+            {
+                MessageBox.Show("Data Update Successfully");
+            }
+            else
+                MessageBox.Show("Error.Could not update data");
+        }
+
+        private void cmb_modelID_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = model.viewPricing(cmb_modelID.Text);
+            //modelID = dt.Rows[0][0].ToString();
+            cmb_category.Text = dt.Rows[0][1].ToString();
+            txt_make.Text = dt.Rows[0][3].ToString();
+            txt_model.Text = dt.Rows[0][4].ToString();
+            txt_year.Text = dt.Rows[0][2].ToString();
+        }
+
+        private void cmb_oNIC_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = owner.viewOwner(cmb_oNIC.Text);
+            txt_oName.Text = dt.Rows[0][1].ToString();
+        }
+
+        private String GetDestinationPath(string filename)
+        {
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + cmb_plateNo.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + cmb_plateNo.Text + ".jpg");
+            return appStartPath;
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Multiselect = false;
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            bool? result = open.ShowDialog();
+
+            if (result == true)
+            {
+                path = open.FileName; // Stores Original Path in Textbox    
+                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                img_vehicle.Source = imgsource;
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -22,6 +23,44 @@ namespace Malshi_Rent_A_Car
         public SearchViewVehicle()
         {
             InitializeComponent();
+        }
+        Vehicle vehicle = new Vehicle();
+        DataTable dt = new DataTable();
+
+        private void frm_viewVehicles_Loaded(object sender, RoutedEventArgs e)
+        {
+            dt = vehicle.viewVehicle();
+            dg_vehicle.ItemsSource = dt.DefaultView;
+        }
+
+        private void cmb_catagory_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicleCategory(cmb_catagory.Text);
+            dg_vehicle.ItemsSource = dt.DefaultView;
+        }
+
+        private void cmb_make_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicleMake(cmb_make.Text);
+            dg_vehicle.ItemsSource = dt.DefaultView;
+        }
+
+        private void cmb_trans_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicleTrans(cmb_trans.Text);
+            dg_vehicle.ItemsSource = dt.DefaultView;
+        }
+
+
+        private void cmb_fuel_DropDownClosed(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicleFuel(cmb_fuel.Text);
+            dg_vehicle.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            frm_viewVehicles_Loaded(this, null);
         }
     }
 }
