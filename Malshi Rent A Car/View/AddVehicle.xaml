@@ -100,13 +100,13 @@
                         <TextBox x:Name="txt_catagory" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0">
@@ -180,7 +180,7 @@
                         <ComboBox x:Name="cmb_ownerNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ownerNIC_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <DatePicker x:Name="date_lend" Width="150" Margin="5 0 0 0"/>

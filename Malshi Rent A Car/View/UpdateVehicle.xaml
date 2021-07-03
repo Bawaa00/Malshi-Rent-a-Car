@@ -100,7 +100,7 @@
                         <ComboBox x:Name="cmb_plateNo" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_plateNo_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_plateNo_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_modelID_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_category" Width="150" Margin="5 0 0 0">
@@ -112,30 +112,11 @@
                             <ComboBoxItem Content="Minivan" HorizontalAlignment="Left" Width="148"/>
                         </ComboBox>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_make" Width="150" Margin="5 0 0 0">
-                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="148"/>
-                            <ComboBoxItem Content="BMW"/>
-                            <ComboBoxItem Content="FORD"/>
-                            <ComboBoxItem Content="HONDA"/>
-                            <ComboBoxItem Content="HYUNDAI"/>
-                            <ComboBoxItem Content="JAGUAR"/>
-                            <ComboBoxItem Content="KIA"/>
-                            <ComboBoxItem Content="LEXUS"/>
-                            <ComboBoxItem Content="MAZDA"/>
-                            <ComboBoxItem Content="MERCEDES"/>
-                            <ComboBoxItem Content="MITSUBISHI"/>
-                            <ComboBoxItem Content="NISSAN"/>
-                            <ComboBoxItem Content="PERADUA"/>
-                            <ComboBoxItem Content="PEUGEOT"/>
-                            <ComboBoxItem Content="RENAULT"/>
-                            <ComboBoxItem Content="SUZUKI"/>
-                            <ComboBoxItem Content="TOYOTA"/>
-                            <ComboBoxItem Content="VOLKSWAGAON"/>
-                        </ComboBox>
+                    <ListViewItem Height="27.2" IsEnabled="False">
+                        <TextBox x:Name="cmb_make" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_color" Width="150" Margin="5 0 0 0">
@@ -149,45 +130,8 @@
                             <ComboBoxItem Content="Yelllow" HorizontalAlignment="Left" Width="148"/>
                         </ComboBox>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_year" Width="150" Margin="5 0 0 0">
-                            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="148"/>
-                            <ComboBoxItem Content="2023"/>
-                            <ComboBoxItem Content="2022"/>
-                            <ComboBoxItem Content="2021"/>
-                            <ComboBoxItem Content="2021"/>
-                            <ComboBoxItem Content="2020"/>
-                            <ComboBoxItem Content="2019"/>
-                            <ComboBoxItem Content="2018"/>
-                            <ComboBoxItem Content="2017" />
-                            <ComboBoxItem Content="2016"/>
-                            <ComboBoxItem Content="2015"/>
-                            <ComboBoxItem Content="2014"/>
-                            <ComboBoxItem Content="2013"/>
-                            <ComboBoxItem Content="2012"/>
-                            <ComboBoxItem Content="2011" />
-                            <ComboBoxItem Content="2010"/>
-                            <ComboBoxItem Content="2009"/>
-                            <ComboBoxItem Content="2008"/>
-                            <ComboBoxItem Content="2007"/>
-                            <ComboBoxItem Content="2006"/>
-                            <ComboBoxItem Content="2005" />
-                            <ComboBoxItem Content="2004"/>
-                            <ComboBoxItem Content="2003" />
-                            <ComboBoxItem Content="2002"/>
-                            <ComboBoxItem Content="2001"/>
-                            <ComboBoxItem Content="2000"/>
-                            <ComboBoxItem Content="1999"/>
-                            <ComboBoxItem Content="1998"/>
-                            <ComboBoxItem Content="1997"/>
-                            <ComboBoxItem Content="1996"/>
-                            <ComboBoxItem Content="1995"/>
-                            <ComboBoxItem Content="1994"/>
-                            <ComboBoxItem Content="1993"/>
-                            <ComboBoxItem Content="1992"/>
-                            <ComboBoxItem Content="1991"/>
-                            <ComboBoxItem Content="1990"/>
-                        </ComboBox>
+                    <ListViewItem Height="27.2" IsEnabled="False">
+                        <TextBox x:Name="cmb_year" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 0 0 0">
@@ -226,7 +170,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.8 0 0">
-                        <ComboBox x:Name="cmb_ins" Width="150" Margin="5 0 0 0"/>
+                        <ComboBox x:Name="cmb_ins" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ins_DropDownClosed"/>
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
@@ -242,10 +186,10 @@
                         <DatePicker x:Name="date_LicEnd" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_oNIC" Width="150" Margin="5 0 0 0"/>
+                        <ComboBox x:Name="cmb_oNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_oNIC_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <DatePicker x:Name="date_lend" Width="150" Margin="5 0 0 0"/>
@@ -269,7 +213,7 @@
         <Grid VerticalAlignment="Top">
             <TextBlock Text="UPDATE VEHICLE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="598,406,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="598,406,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
         <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="746,736,0,0" VerticalAlignment="Top" Width="74" Click="btn_delete_Click"/>
         <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="666,736,0,0" VerticalAlignment="Top" Width="74" Click="btn_update_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="320" Margin="486,81,0,0" VerticalAlignment="Top" Width="320" Background="#FFF7EEEE">
