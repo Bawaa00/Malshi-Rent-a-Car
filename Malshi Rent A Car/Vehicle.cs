@@ -92,6 +92,19 @@ namespace Malshi_Rent_A_Car
             dt = db.getData("exec view_vehicleTrans '" + trans+"'");
             return dt;
         }
+        public int updateVehicle(string plateNumber, string vType, string vColor, string vPhoto, string transmission, int engineCapacity, int noOfPassengers, string licenseStartDate, string licenseExpiryDate, string insExpiryDate, string insStartDate, string fuelType, string lendingDate, int monthlyPay, string wName, string wAddress, int wContact, string modelID, string insID, string oID)
+        {
+            string query = "update Vehicle set modelID = '" + modelID + "',vColor ='" + vColor + "',vType = '" + vType + "',transmission = '" + transmission + "',engineCapacity = '" + engineCapacity + "',fuelType = '" + fuelType + "',noOfPassengers = '" + noOfPassengers + "',licenseStartDate = '" + licenseStartDate + "',licenseExpiryDate = '" + licenseExpiryDate + "',I_ID = '" + insID + "',InsStartDate = '" + insStartDate + "',InsExpiryDate = '" + insExpiryDate + "',O_ID = '" + oID + "',lenidngDate = '" + lendingDate + "',monthlyPay = '" + monthlyPay + "',wName = '" + wName + "',wAddress = '" + wAddress + "',wContact = '" + wContact + "' where plateNumber = '" + plateNumber + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
+
+        public int deleteVehicle(string plate)
+        {
+            string query = "delete from Vehicle where plateNumber = '" + plate + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
     }
 
 }

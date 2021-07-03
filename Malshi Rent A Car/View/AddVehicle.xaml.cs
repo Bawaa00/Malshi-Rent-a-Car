@@ -61,6 +61,7 @@ namespace Malshi_Rent_A_Car
                 ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
                 img_vehicle.Source = imgsource;
             }
+
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
@@ -131,7 +132,7 @@ namespace Malshi_Rent_A_Car
             string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
             File.Copy(filepath, destinationPath, true);
-            Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text,txt_color.Text,filepath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text) ,Int32.Parse(cmb_noPassengers.Text),date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text,date_InsuranceStart.Text,cmb_Ftype.Text,date_lend.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text ,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
+            Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text,txt_color.Text,destinationPath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text) ,Int32.Parse(cmb_noPassengers.Text),date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text,date_InsuranceStart.Text,cmb_Ftype.Text,date_lend.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text ,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
             int i=vehicle.addVehicle(modelID,insID,cmb_ownerNIC.Text);
             if (i == 1)
             {
