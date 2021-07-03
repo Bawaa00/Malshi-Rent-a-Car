@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
