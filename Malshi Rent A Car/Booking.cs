@@ -43,8 +43,10 @@ namespace Malshi_Rent_A_Car
         {
             string query1 = "update Booking set bookingDate='"+bookingDate+"',lendDate='"+lendDate+"',returnDate='"+returnDate+"',advAmount='"+advAmount+"' where bookingID='"+bookingID+"'";
             string query2 = "update Customer_Booking set C_ID='"+cid+"',V_No='"+vid+"' where B_ID='"+bookingID+"'";
+            string query3 = "update vehicle set bookingStatus='1' where plateNUmber='"+vid+"'";
             int i = db.save_update_delete(query1);
             int j = db.save_update_delete(query2);
+            db.save_update_delete(query3);
             if (i == 1 && j == 1)
                 return i;
             else
@@ -54,8 +56,10 @@ namespace Malshi_Rent_A_Car
         {
             string query1 = "delete from Booking where bookingID = '"+bid+"'";
             string query2 = "delete from Customer_Booking where B_ID = '" + bid + "'";
+            string query3 = "update vehicle set bookingStatus='0' where plateNUmber='" + vid + "'";
             int i = db.save_update_delete(query1);
             int j = db.save_update_delete(query2);
+            db.save_update_delete(query3);
             if (i == 1 && j == 1)
                 return i;
             else
