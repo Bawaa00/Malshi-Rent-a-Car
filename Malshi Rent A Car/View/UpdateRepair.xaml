@@ -85,7 +85,7 @@
                     <TextBox x:Name="txt_details" Width="350" Height="184"/>
                 </ListViewItem>
             </ListView>
-            <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_delete_Click"/>
             <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="201,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">

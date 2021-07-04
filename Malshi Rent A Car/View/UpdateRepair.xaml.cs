@@ -136,5 +136,31 @@ namespace Malshi_Rent_A_Car
                 txt_option2.Text = dt.Rows[0][7].ToString();
             }
         }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmb_Rtype.SelectedIndex == 0)
+            {
+                int i = mr.deleteRepair(cmb_id.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Deleted Successfully!");
+                    frm_updateRepair_Loaded(this, null);
+                }
+                else
+                    MessageBox.Show("Sorry.Could not delete data.Please try again");
+            }
+            else if (cmb_Rtype.SelectedIndex == 1)
+            {
+                int i = mr.deleteRepair(cmb_id.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Deleted Successfully!");
+                    frm_updateRepair_Loaded(this, null);
+                }
+                else
+                    MessageBox.Show("Sorry.Could not delete data.Please try again");
+            }
+        }
     }
 }

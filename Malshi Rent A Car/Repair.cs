@@ -19,6 +19,7 @@ namespace Malshi_Rent_A_Car
         abstract public DataTable viewRepair();
         abstract public DataTable viewRepair(string id);
         abstract public int updateRepair(string vid);
+        abstract public int deleteRepair(string id);
 
     }
 }

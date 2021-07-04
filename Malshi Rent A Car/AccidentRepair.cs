@@ -66,5 +66,11 @@ namespace Malshi_Rent_A_Car
             int i = db.save_update_delete(query);
             return i;
         }
+        public override int deleteRepair(string id)
+        {
+            string query = "delete from Accident_Repair where acc_RID = '" + id + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
     }
 }
