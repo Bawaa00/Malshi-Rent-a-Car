@@ -67,7 +67,7 @@
                     <TextBlock Text="Details"/>
                 </ListViewItem>
                 <ListViewItem Width="362" Height="169">
-                    <TextBox x:Name="txt_sDetails" Width="350" Height="162"/>
+                    <TextBox x:Name="txt_sDetails" Width="350" Height="162" TextChanged="txt_sDetails_TextChanged"/>
                 </ListViewItem>
             </ListView>
             <Button x:Name="Clear" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click"/>

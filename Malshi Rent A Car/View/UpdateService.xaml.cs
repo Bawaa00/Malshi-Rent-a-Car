@@ -56,5 +56,11 @@ namespace Malshi_Rent_A_Car
             txt_sCost.Clear();
 
         }
+
+        private void txt_sDetails_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Service Service = new Service();
+            Service.upDateService();
+        }
     }
 }
