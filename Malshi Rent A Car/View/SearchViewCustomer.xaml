@@ -13,12 +13,12 @@
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <ComboBox x:Name="cmb_CusNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Customer NIC" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_CusNIC_DropDownClosed"/>
-                            <Button x:Name="btn_searchCusNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchCusNIC_Click"/>
+                            <Button x:Name="btn_searchCusNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox x:Name="cmb_CusName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black" DropDownClosed="cmb_CusName_DropDownClosed"/>
-                        <Button x:Name="btn_searchCusName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchCusName_Click"/>
+                        <Button x:Name="btn_searchCusName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>

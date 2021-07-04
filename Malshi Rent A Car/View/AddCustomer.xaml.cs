@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.IO;
+using System.Data;
+using Microsoft.Win32;
 
 namespace Malshi_Rent_A_Car
 {
@@ -23,12 +27,11 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+        string filepath;
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Customer customer = new Customer(txt_CusFname.Text,txt_CusLname.Text,txt_CusNIC.Text,txt_CusEmail.Text,txt_CusResAdrs.Text,Int32.Parse(txt_CusTelHome.Text),Int32.Parse(txt_CusTelMobile.Text),txt_CusProfession.Text,txt_CusWorkAdrs.Text,Int32.Parse(txt_CusTelWork.Text),txt_CusKinName.Text,txt_CusKinkAdrs.Text,Int32.Parse(txt_CusKinConatct.Text));
-
-
+            Customer customer = new Customer(txt_CusFname.Text,txt_CusLname.Text,txt_CusNIC.Text,txt_CusEmail.Text,txt_CusResAdrs.Text,Int32.Parse(txt_CusTelHome.Text),Int32.Parse(txt_CusTelMobile.Text),txt_CusProfession.Text,txt_CusWorkAdrs.Text,Int32.Parse(txt_CusTelWork.Text),"path",txt_CusKinName.Text,txt_CusKinkAdrs.Text,Int32.Parse(txt_CusKinConatct.Text));
             int i = customer.addCustomer();
                 if (i == 1)
                 {
@@ -57,6 +60,21 @@ namespace Malshi_Rent_A_Car
             txt_CusKinName.Clear();
             txt_CusKinkAdrs.Clear();
             txt_CusKinConatct.Clear();
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Multiselect = false;
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            bool? result = open.ShowDialog();
+
+            if (result == true)
+            {
+                filepath = open.FileName; // Stores Original Path in Textbox    
+                ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
+                img_customer.Source = imgsource;
+            }
         }
     }
 }
