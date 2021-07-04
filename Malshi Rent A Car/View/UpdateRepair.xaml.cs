@@ -68,11 +68,45 @@ namespace Malshi_Rent_A_Car
             cmb_vehicle.DisplayMemberPath = "Plate No";
             cmb_vehicle.SelectedValuePath = "Plate No";
 
+            cmb_id.SelectedIndex = -1;
+            date_repair.SelectedDate = null;
+            cmb_vehicle.SelectedIndex = -1;
+            txt_location.Clear();
+            txt_cost.Clear();
+            txt_details.Clear();
+            txt_option1.Clear();
+            txt_option2.Clear();
+
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-
+            if (cmb_Rtype.SelectedIndex == 0)
+            {
+                MaintenanceRepair mr = new MaintenanceRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
+                int i = mr.updateRepair(cmb_vehicle.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Updated Successfully!");
+                    frm_updateRepair_Loaded(this, null);
+                }
+                    
+                else
+                    MessageBox.Show("Sorry.Could not update data.Please try again");
+            }
+            else if (cmb_Rtype.SelectedIndex == 1)
+            {
+                AccidentRepair ar = new AccidentRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text), Int32.Parse(txt_option2.Text));
+                int i = ar.updateRepair(cmb_vehicle.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Updated Successfully!");
+                    frm_updateRepair_Loaded(this, null);
+                }
+                else
+                    MessageBox.Show("Sorry.Could not update data.Please try again");
+            }
+               
         }
 
         private void cmb_id_DropDownClosed(object sender, EventArgs e)

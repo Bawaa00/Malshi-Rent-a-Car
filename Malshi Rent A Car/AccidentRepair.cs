@@ -39,7 +39,7 @@ namespace Malshi_Rent_A_Car
             dt = db.getData(query);
             return dt;
         }
-        public DataTable viewRepair(string id)
+        public override DataTable viewRepair(string id)
         {
             string query = "select * from Accident_Repair where acc_RID = '" + id + "'";
             DataTable dt = new DataTable();
@@ -59,6 +59,12 @@ namespace Malshi_Rent_A_Car
             DataTable dt = new DataTable();
             dt = db.getData(query);
             return dt;
+        }
+        public override int updateRepair(string vid)
+        {
+            string query = "update Accident_Repair set Vno = '" + vid + "',repairDate = '" + repairDate + "',repairLocation='" + repairLocation + "',repiarDetails='" + repairDetails + "',repairCost='" + repairCost + "',repairClaim ='" + repairClaim + "',repairDuration = '" + reapirDuration+"' where acc_RID='" + RepairID + "'";
+            int i = db.save_update_delete(query);
+            return i;
         }
     }
 }
