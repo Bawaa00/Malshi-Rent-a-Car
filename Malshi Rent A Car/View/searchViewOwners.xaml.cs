@@ -36,7 +36,7 @@ namespace Malshi_Rent_A_Car
         private void btn_searchOwnNIC_Click(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = owner.viewOwner(txt_OwnNIC.Text);
+            dt = owner.viewOwner(txt_oNIC.Text);
             dg_owner.ItemsSource = dt.DefaultView;
         }
 
@@ -49,7 +49,7 @@ namespace Malshi_Rent_A_Car
 
         private void txt_OwnNIC_GotFocus(object sender, RoutedEventArgs e)
         {
-            txt_OwnNIC.Clear();
+            txt_oNIC.Clear();
         }
 
         private void txt_OwnName_GotFocus(object sender, RoutedEventArgs e)
@@ -57,6 +57,16 @@ namespace Malshi_Rent_A_Car
             txt_OwnName.Clear();
         }
 
-      
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            addNewOwner obj = new addNewOwner();
+            obj.Show();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateBooking obj = new UpdateBooking();
+            obj.Show();
+        }
     }
 }
