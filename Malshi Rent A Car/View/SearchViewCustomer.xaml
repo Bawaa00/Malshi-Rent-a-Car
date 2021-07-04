@@ -1,35 +1,36 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.SearchViewCustomer"
+﻿<Window x:Name="view_customer" x:Class="Malshi_Rent_A_Car.SearchViewCustomer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="SearchViewCustomer" Height="500" Width="800">
+        Title="SearchViewCustomer" Height="500" Width="800" Loaded="view_customer_Loaded">
     <Grid>
         <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_CusNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Customer NIC" Margin="5 0 0 0" Foreground="Black"/>
+                            <ComboBox x:Name="cmb_CusNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Customer NIC" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_CusNIC_DropDownClosed"/>
                             <Button x:Name="btn_searchCusNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="txt_CusName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black"/>
+                        <ComboBox x:Name="cmb_CusName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black" DropDownClosed="cmb_CusName_DropDownClosed"/>
                         <Button x:Name="btn_searchCusName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Height="360">
-                <DataGrid Margin="5,5,4.6,56">
+                <DataGrid x:Name="dg_customer" Margin="5,5,4.6,56">
 
                 </DataGrid>
                 <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Customers]" VerticalAlignment="Top"/>
-                <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_Click"/>
+                <Button x:Name="btn_view" Content="View All" HorizontalAlignment="Left" Margin="44,336,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
             </Grid>
 
         </StackPanel>

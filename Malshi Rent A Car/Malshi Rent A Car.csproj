@@ -55,10 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AccidentRepair.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Booking.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
+    <Compile Include="MaintenanceRepair.cs" />
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
+    <Compile Include="Repair.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="View\Add Service.xaml.cs">
