@@ -69,7 +69,9 @@ namespace Malshi_Rent_A_Car
         {
            int i = owner.updateOwner(cmb_onic.Text,txt_OwnFname.Text, txt_OwnLame.Text, txt_OwnResAdrs.Text, Int32.Parse(txt_OwnTelHome.Text), Int32.Parse(txt_OwnTelMobile.Text), txt_OwnProfession.Text, txt_OwnWorkAdrs.Text, Int32.Parse(txt_OwnTelWork.Text), txt_OwnEmail.Text);
             if (i == 1)
+            {
                 MessageBox.Show("Data Updated Successfully!");
+            }              
             else
                 MessageBox.Show("Sorry.Could not update data.Please try again");
         }
