@@ -72,6 +72,11 @@ namespace Malshi_Rent_A_Car
             dt = db.getData("exec view_vehicleNo '"+plate+"'");
             return dt;
         }
+        public DataTable viewAvaiableVehicle()
+        {
+            dt = db.getData("exec view_availableVehicle");
+            return dt;
+        }
         public DataTable viewVehicleCategory(string category)
         {
             dt = db.getData("exec view_vehicleCategory '"+category+"'");

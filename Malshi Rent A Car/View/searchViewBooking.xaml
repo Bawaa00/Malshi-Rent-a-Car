@@ -1,31 +1,40 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.searchViewBooking"
+﻿<Window x:Name="form_viewBooking" x:Class="Malshi_Rent_A_Car.searchViewBooking"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="searchViewBooking" Height="500" Width="800">
+        Title="View Booking" Height="500" Width="800" WindowStartupLocation="CenterScreen" Loaded="form_viewBooking_Loaded">
     <Grid>
         <StackPanel Margin="0 40 0 0">
             <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black"/>
+                            <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" CalendarClosed="dte_bDate_CalendarClosed"/>
                             <Button x:Name="btn_searchbDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                         </StackPanel>
+
                     </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Vehicle" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_vno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_vno_DropDownClosed"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Customer" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_cno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_cno_DropDownClosed"/>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Height="360">
-                <DataGrid Margin="5,5,4.6,56">
+                <DataGrid x:Name="dg_booking" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="642,330,0,0" VerticalAlignment="Top" Width="124" Click="btn_update_Click"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Bookings]" VerticalAlignment="Top"/>
-                <Button Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="562,330,0,0" VerticalAlignment="Top" Width="74" Click="btn_add_Click"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" Width="74" Click="btn_view_Click"/>
             </Grid>
 
         </StackPanel>

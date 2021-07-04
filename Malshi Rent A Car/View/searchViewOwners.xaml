@@ -12,12 +12,12 @@
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_OwnNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Owner NIC" Margin="5 0 0 0" Foreground="Black" GotFocus="txt_OwnNIC_GotFocus"/>
+                            <TextBox x:Name="txt_oNIC" VerticalAlignment="Center" Width="150" FontSize="15" Text="Owner NIC" Margin="5 0 0 0" Foreground="Black" GotFocus="txt_OwnNIC_GotFocus"/>
                             <Button x:Name="btn_searchOwnNIC" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchOwnNIC_Click"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="txt_OwnName" VerticalAlignment="Center" Width="100" FontSize="15" Text="Name" Margin="40 0 5 0" Foreground="Black" GotFocus="txt_OwnName_GotFocus"/>
+                        <TextBox x:Name="txt_OwnName" VerticalAlignment="Center" Width="170" FontSize="15" Text="Name" Margin="40,19,5,19" Foreground="Black" GotFocus="txt_OwnName_GotFocus"/>
                         <Button x:Name="btn_searchOwnName" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Click="btn_searchOwnName_Click"/>
                     </StackPanel>
                 </StackPanel>
@@ -26,11 +26,10 @@
                 <DataGrid x:Name="dg_owner" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btnUpdate" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="651,330,0,0" VerticalAlignment="Top" Width="118" Click="btnUpdate_Click"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Owners]" VerticalAlignment="Top"/>
-                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="426,-40,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
-                <Button x:Name="Add_New" Content="Add New" HorizontalAlignment="Left" Margin="522,331,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="694,-38,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="557,330,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_Click"/>
             </Grid>
 
         </StackPanel>

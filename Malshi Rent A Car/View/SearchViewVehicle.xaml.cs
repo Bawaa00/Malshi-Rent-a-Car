@@ -31,24 +31,37 @@ namespace Malshi_Rent_A_Car
         {
             dt = vehicle.viewVehicle();
             dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_catagory.SelectedIndex = -1;
+            cmb_make.SelectedIndex = -1;
+            cmb_trans.SelectedIndex = -1;
+            cmb_fuel.SelectedIndex = -1;
         }
 
         private void cmb_catagory_DropDownClosed(object sender, EventArgs e)
         {
             dt = vehicle.viewVehicleCategory(cmb_catagory.Text);
             dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_make.SelectedIndex = -1;
+            cmb_trans.SelectedIndex = -1;
+            cmb_fuel.SelectedIndex = -1;
         }
 
         private void cmb_make_DropDownClosed(object sender, EventArgs e)
         {
             dt = vehicle.viewVehicleMake(cmb_make.Text);
             dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_catagory.SelectedIndex = -1;
+            cmb_trans.SelectedIndex = -1;
+            cmb_fuel.SelectedIndex = -1;
         }
 
         private void cmb_trans_DropDownClosed(object sender, EventArgs e)
         {
             dt = vehicle.viewVehicleTrans(cmb_trans.Text);
             dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_catagory.SelectedIndex = -1;
+            cmb_make.SelectedIndex = -1;
+            cmb_fuel.SelectedIndex = -1;
         }
 
 
@@ -56,11 +69,24 @@ namespace Malshi_Rent_A_Car
         {
             dt = vehicle.viewVehicleFuel(cmb_fuel.Text);
             dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_catagory.SelectedIndex = -1;
+            cmb_make.SelectedIndex = -1;
+            cmb_trans.SelectedIndex = -1;
         }
 
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
             frm_viewVehicles_Loaded(this, null);
+        }
+
+        private void btn_available_Click(object sender, RoutedEventArgs e)
+        {
+            dt = vehicle.viewAvaiableVehicle();
+            dg_vehicle.ItemsSource = dt.DefaultView;
+            cmb_catagory.SelectedIndex = -1;
+            cmb_make.SelectedIndex = -1;
+            cmb_trans.SelectedIndex = -1;
+            cmb_fuel.SelectedIndex = -1;
         }
     }
 }
