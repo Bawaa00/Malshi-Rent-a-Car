@@ -68,6 +68,12 @@ namespace Malshi_Rent_A_Car
             dt = db.getData(query);
             return dt;
         }
+        public DataTable viewBookingForm()
+        {
+            string query = "exec viewBookings";
+            dt = db.getData(query);
+            return dt;
+        }
         public DataTable viewBookingID(string bid)
         {
             string query = "select * from booking where bookingID='"+bid+"'";
@@ -77,6 +83,24 @@ namespace Malshi_Rent_A_Car
         public DataTable viewCustomerBooking(string bid)
         {
             string query = "select * from Customer_Booking where B_ID='" + bid + "'";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewBookingVehicle(string vid)
+        {
+            string query = "exec viewBookingsVehicle  '" + vid + "'";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewBookingCustomer(string cno)
+        {
+            string query = "exec viewBookingsCustomer '" + cno + "'";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewBookingDate(string date)
+        {
+            string query = "exec viewBookingsDate '" + date + "'";
             dt = db.getData(query);
             return dt;
         }
