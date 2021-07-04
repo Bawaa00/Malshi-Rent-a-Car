@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Repairs" Height="433.377" Width="830.236" Loaded="frm_addRepair_Loaded">
+        Title="Add Repairs" Height="433.377" Width="830.236" Loaded="frm_addRepair_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="UpdateRepair" Height="459.948" Width="875.131" WindowStartupLocation="CenterScreen" Loaded="frm_updateRepair_Loaded">
+        Title="Update Repair" Height="459.948" Width="875.131" WindowStartupLocation="CenterScreen" Loaded="frm_updateRepair_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
@@ -89,7 +89,7 @@
             <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="201,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD NEW REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <TextBlock Text="UPDATE REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
 
     </Grid>
