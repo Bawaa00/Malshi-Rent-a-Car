@@ -123,7 +123,7 @@ namespace Malshi_Rent_A_Car
         private void txt_CusEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusEmail.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Email  ";
+                error_msg.Text = "Please Enter Custoer Email ";
             else
                 error_msg.Text = "";
         }
