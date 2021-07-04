@@ -22,12 +22,12 @@ namespace Malshi_Rent_A_Car
         string cusKinName;
         string cusKinAd;
         int cusKinTel;
-        //string billProof
+        string cusPhoto;
 
         Database db = new Database();
         DataTable dt = new DataTable();
 
-        public Customer(string fName,string lName,string NIC,string cusEmail,string cusHomeAd,int cusHomeTel,int cudMobileTel,string cusProfession,string cusWorkingAd,int cusWorkiTel,string cusKinName, string cusKinAd,int cusKinTel)
+        public Customer(string fName,string lName,string NIC,string cusEmail,string cusHomeAd,int cusHomeTel,int cudMobileTel,string cusProfession,string cusWorkingAd,int cusWorkiTel,string cusKinName, string cusKinAd,int cusKinTel,string cusPhoto)
         {
 
 
@@ -44,6 +44,7 @@ namespace Malshi_Rent_A_Car
             this. cusKinName= cusKinName;
             this. cusKinAd= cusKinAd;
             this. cusKinTel= cusKinTel;
+            this.cusPhoto = cusPhoto;
         }
 
         public Customer()
@@ -51,9 +52,14 @@ namespace Malshi_Rent_A_Car
 
         public int addCustomer()
         {
-            string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + cusEmail + "','" + cusHomeAd + "','" + cusHomeTel + "','" + cudMobileTel + "','" + cusProfession + "','" + cusWorkingAd + "','" + cusWorkiTel + "','" + cusKinName + "','" + cusKinAd + "','" + cusKinTel + "')";
-            int i = db.save_update_delete(query);
-            return i;
+            string query1 = "insert into Customer values ('" + NIC + "','" + fName + "','" + lName + "','" + cusHomeAd + "','" + cusWorkingAd + "','" + cudMobileTel + "','" + cusHomeTel + "','" + cusWorkiTel + "','" + cusEmail + "','" + cusProfession + "','"+cusPhoto+"')";
+            string query2 = "insert into Customer_Kin values ('" + NIC + "','" + cusKinName + "','" + cusKinAd + "','" + cusKinTel + "')";
+            int i = db.save_update_delete(query1);
+            int j = db.save_update_delete(query2);
+            if (i == 1 && j == 1)
+                return i;
+            else
+                return 0;
         }
         public DataTable viewCustomer()
         {

@@ -10,7 +10,7 @@
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Width="164" Margin="0,0,-14,0">
                     <ListViewItem>
                         <TextBlock Text="First Name" Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -49,9 +49,6 @@
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Kin Contact" Margin="5 3 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Billing Proof" Margin="5 3 0 0"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -99,21 +96,19 @@
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <Button x:Name="btn_proof" Content="UPLOAD" Width="120" Margin="17 0 17 0" FontSize="10"/>
-                    </ListViewItem>
+                    <ListViewItem Height="27.2"/>
                 </ListView>
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
             <TextBlock Text="ADD CUSTOMER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
-        <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
         <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="674,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
-            <TextBlock TextWrapping="Wrap" Text="[A photo of the customer]"/>
+            <Image x:Name="img_customer" HorizontalAlignment="Left" Height="280" Margin="-1" VerticalAlignment="Top" Width="280"/>
         </Border>
-        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="549,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
+        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="549,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
     </Grid>
 </Window>
