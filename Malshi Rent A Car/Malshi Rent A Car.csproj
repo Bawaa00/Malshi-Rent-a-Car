@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AccidentRepair.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Booking.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
