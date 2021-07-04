@@ -56,7 +56,6 @@ namespace Malshi_Rent_A_Car
             view_customer_Loaded(this, null);
         }
 
-
         private void btn_searchNIC_Click(object sender, RoutedEventArgs e)
         {
             dt = customer.viewCustomerNIC(txt_CusNIC.Text);
