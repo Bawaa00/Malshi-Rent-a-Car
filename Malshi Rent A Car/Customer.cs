@@ -73,6 +73,18 @@ namespace Malshi_Rent_A_Car
             dt = db.getData(query);
             return dt;
         }
+        public DataTable viewCustomerNIC(string nic)
+        {
+            string query = "exec viewCustomerNIC '" + nic + "'";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewCustomerName(string name)
+        {
+            string query = "exec viewCustomerName '" + name + "'";
+            dt = db.getData(query);
+            return dt;
+        }
 
     }
 }
