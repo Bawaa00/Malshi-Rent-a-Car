@@ -1,0 +1,19 @@
+﻿<Window x:Class="Malshi_Rent_A_Car.MessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Malshi_Rent_A_Car"
+        mc:Ignorable="d"
+        Title="MessageBox" Height="450" Width="800">
+    <Grid Width="350" Height="170" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="15">
+         
+            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="249" Margin="15,10,15,37" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" TextAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+            <Button x:Name="btn_cancel"  Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden"/>
+            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Width="71"/>
+        </StackPanel>
+    </Grid>
+</Window>

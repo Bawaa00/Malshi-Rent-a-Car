@@ -61,6 +61,9 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
+    <Compile Include="MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Repair.cs" />
@@ -125,6 +128,10 @@
     <Compile Include="View\UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
+    <Page Include="MessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Add Service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
