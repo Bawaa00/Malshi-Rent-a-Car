@@ -50,25 +50,25 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_bid" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_cName" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vYear" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vMake" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vModel" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_advance" Margin="2" Width="180"/>

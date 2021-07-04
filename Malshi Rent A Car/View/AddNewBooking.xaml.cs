@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -25,6 +26,7 @@ namespace Malshi_Rent_A_Car
             InitializeComponent();
         }
         DataTable dt = new DataTable();
+        Database db = new Database();
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
         Booking book = new Booking();
@@ -42,6 +44,21 @@ namespace Malshi_Rent_A_Car
             cmb_cNIC.SelectedValuePath = "NIC";
 
             book_date.Text = DateTime.Now.ToString();
+
+            dt = db.getData("Select max(bookingID) from Booking ");
+            string id = dt.Rows[0][0].ToString();
+            if (id == "")
+            {
+                txt_bid.Text = "B001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_bid.Text = newString;
+            }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -51,7 +68,8 @@ namespace Malshi_Rent_A_Car
             if (i == 1)
             {
                 MessageBox.Show("Data Saved Successfully");
-                //btn_cls_Click(this, null);
+                btn_clr_Click(this, null);
+                form_addBooking_Loaded(this, null);
             }
             else
                 MessageBox.Show("Could not save data,Please try agian");
