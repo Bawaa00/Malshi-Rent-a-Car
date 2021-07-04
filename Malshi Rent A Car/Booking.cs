@@ -15,6 +15,7 @@ namespace Malshi_Rent_A_Car
         string returnDate;
         int advAmount;
         Database db = new Database();
+        DataTable dt = new DataTable();
 
         public Booking(string bookingID, string bookingDate, string lendDate,string returnDate,int advAmount)
         {
@@ -37,6 +38,47 @@ namespace Malshi_Rent_A_Car
                 return i;
             else
                 return 0;
+        }
+        public int updateBooking(string cid, string vid)
+        {
+            string query1 = "update Booking set bookingDate='"+bookingDate+"',lendDate='"+lendDate+"',returnDate='"+returnDate+"',advAmount='"+advAmount+"' where bookingID='"+bookingID+"'";
+            string query2 = "update Customer_Booking set C_ID='"+cid+"',V_No='"+vid+"' where B_ID='"+bookingID+"'";
+            int i = db.save_update_delete(query1);
+            int j = db.save_update_delete(query2);
+            if (i == 1 && j == 1)
+                return i;
+            else
+                return 0;
+        }
+        public int deleteBooking(string bid,string cid, string vid)
+        {
+            string query1 = "delete from Booking where bookingID = '"+bid+"'";
+            string query2 = "delete from Customer_Booking where B_ID = '" + bid + "'";
+            int i = db.save_update_delete(query1);
+            int j = db.save_update_delete(query2);
+            if (i == 1 && j == 1)
+                return i;
+            else
+                return 0;
+        }
+
+        public DataTable viewBooking()
+        {
+            string query = "select * from booking";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewBookingID(string bid)
+        {
+            string query = "select * from booking where bookingID='"+bid+"'";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewCustomerBooking(string bid)
+        {
+            string query = "select * from Customer_Booking where B_ID='" + bid + "'";
+            dt = db.getData(query);
+            return dt;
         }
     }
 }

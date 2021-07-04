@@ -1,24 +1,40 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.UpdateBooking"
+﻿<Window x:Name="form_updateBooking" x:Class="Malshi_Rent_A_Car.UpdateBooking"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="UpdateBooking" Height="320" Width="600">
+        Title="Update Booking" Height="496.754" Width="724.816" WindowStartupLocation="CenterScreen" Loaded="form_updateBooking_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem>
+                        <TextBlock Text="Booking No" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
                         <TextBlock Text="Customer NIC" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Customer Name" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Vehicle License Plate No." Margin="5 3 0 3"/>
                     </ListViewItem>
+
                     <ListViewItem>
-                        <TextBlock Text="Paid Advance (Rs.)" Margin="5 3 0 3"/>
+                        <TextBlock Text="Year" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Make" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Model" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Advance Amount (Rs.)" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Lend Date" Margin="5 3 0 3"/>
@@ -34,18 +50,33 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_cNIC" Margin="2" Width="180"/>
+                        <ComboBox x:Name="cmb_bid" Margin="2" Width="180" DropDownClosed="cmb_bid_DropDownClosed" />
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vLplate" Margin="2" Width="180"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_advance" Margin="2" Width="180"/>
                     </ListViewItem>
-                    <ListViewItem Height="30.4">
+                    <ListViewItem Height="33.4">
                         <DatePicker x:Name="dte_lend" Margin="2" Width="180"/>
                     </ListViewItem>
-                    <ListViewItem Height="30.4">
+                    <ListViewItem Height="33.4">
                         <DatePicker x:Name="dte_return" Margin="2" Width="180"/>
                     </ListViewItem>
                     <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
@@ -55,9 +86,9 @@
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD NEW BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <TextBlock Text="UPDATE BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="509,264,0,0" VerticalAlignment="Top" Width="75" FontSize="10"/>
-        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="427,264,0,0" VerticalAlignment="Top" Width="75" FontSize="10"/>
+        <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="591,425,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_del_Click"/>
+        <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="509,425,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_update_Click"/>
     </Grid>
 </Window>
