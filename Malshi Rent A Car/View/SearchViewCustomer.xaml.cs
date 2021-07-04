@@ -70,7 +70,7 @@ namespace Malshi_Rent_A_Car
         {
 
             DataTable dt = new DataTable();
-            dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',D_ID  as 'KIN NAME',D_name  as 'KIN ADDRESS',Model  as 'KIN TEL'" +
+            dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',kName  as 'KIN NAME',kAddress  as 'KIN ADDRESS',kContact  as 'KIN TEL'" +
                 " from Customer,Customer_Kin" +
                 " where cNIC = CusID  ");
            dg_customer.ItemsSource = dt.DefaultView;
