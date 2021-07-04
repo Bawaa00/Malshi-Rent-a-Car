@@ -45,6 +45,8 @@ namespace Malshi_Rent_A_Car
             this. cusKinTel= cusKinTel;
         }
 
+        public Customer()
+        { }
 
         public int addCustomer()
         {
@@ -52,6 +54,10 @@ namespace Malshi_Rent_A_Car
             int i = db.save_update_delete(query);
             return i;
         }
+
+       
+
+
 
     }
 }
