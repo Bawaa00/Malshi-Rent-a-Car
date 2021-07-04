@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Pricing" Height="450" Width="924" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="4,36,0,4">
-            <StackPanel Margin="0,0,0,29">
+        <Grid Width="150" HorizontalAlignment="Left" Margin="0,40,0,0">
+            <StackPanel>
                 <Grid Height="40"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem>
@@ -43,26 +43,29 @@
 
             </StackPanel>
         </Grid>
-        <Grid Width="250" HorizontalAlignment="Left" Margin="154,39,0,1">
-            <StackPanel Margin="0,31,0,0">
+        <Grid Width="250" HorizontalAlignment="Left" Margin="150,40,0,0">
+            <StackPanel>
                 <Grid Height="40">
-                    <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                    <RadioButton x:Name="rbtn_add" Content="ADD" FontSize="12" FontWeight="Bold" Margin="5 5 0 0" HorizontalAlignment="Left"/>
+                    <RadioButton x:Name="rbtn_update" Content="UPDATE" FontSize="12" FontWeight="Bold" Margin="100 5 0 0" HorizontalAlignment="Left"/>
                 </Grid>
                 <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
-
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cat" Width="162" Margin="5,0,0,0">
-                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
-                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
-                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
-                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left" Width="160"/>
-                            <ComboBoxItem Content="Van" HorizontalAlignment="Left" Width="160"/>
-                            <ComboBoxItem Content="Minivan" HorizontalAlignment="Left" Width="160"/>
+                        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="24" Margin="5 0 0 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="170"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0">
+                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="165"/>
+                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="165"/>
+                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="165"/>
+                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left" Width="165"/>
+                            <ComboBoxItem Content="Van" HorizontalAlignment="Left" Width="165"/>
+                            <ComboBoxItem Content="Minivan" HorizontalAlignment="Left" Width="165"/>
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_make" Width="163" Margin="5,0,0,0">
-                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
+                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0">
+                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="165"/>
                             <ComboBoxItem Content="BMW"/>
                             <ComboBoxItem Content="FORD"/>
                             <ComboBoxItem Content="HONDA"/>
@@ -83,11 +86,11 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="164"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Height="24" Width="170"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_year" Width="162" Margin="5,0,0,0">
-                            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
+                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0">
+                            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="165"/>
                             <ComboBoxItem Content="2023"/>
                             <ComboBoxItem Content="2022"/>
                             <ComboBoxItem Content="2021"/>
@@ -127,21 +130,26 @@
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_short" Width="170" Height="24" Margin="5 0 0 0"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_long" Width="170" Height="24" Margin="5 0 0 0"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_extra" Width="170" Height="24" Margin="5 0 0 0"/>
                         </StackPanel>
                     </ListViewItem>
 
                 </ListView>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btn_add" Content="ADD" FontSize="14" Margin="5" Width="70" FontWeight="DemiBold"/>
+                    <Button x:Name="btn_update" Content="UPDATE" FontSize="14" Margin="5" Width="70" FontWeight="DemiBold"/>
+                    <Button x:Name="btn_delete" Content="DELETE" FontSize="14" Margin="5" Width="70" FontWeight="DemiBold"/>
+                </StackPanel>
 
             </StackPanel>
         </Grid>

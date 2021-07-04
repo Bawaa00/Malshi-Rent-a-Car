@@ -61,9 +61,15 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
+    <Compile Include="ManageAccount.xaml.cs">
+      <DependentUpon>ManageAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Repair.cs" />
+    <Compile Include="updateBooking.xaml.cs">
+      <DependentUpon>updateBooking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="View\Add Service.xaml.cs">
@@ -125,6 +131,14 @@
     <Compile Include="View\UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
+    <Page Include="ManageAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="updateBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Add Service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
