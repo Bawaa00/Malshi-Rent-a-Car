@@ -61,9 +61,6 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
-    <Compile Include="View\ManageAccount.xaml.cs">
-      <DependentUpon>ManageAccount.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Repair.cs" />
@@ -89,6 +86,9 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\ManageAccount.xaml.cs">
+      <DependentUpon>ManageAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
@@ -128,10 +128,6 @@
     <Compile Include="View\UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\ManageAccount.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Add Service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,6 +178,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ManageAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pricing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

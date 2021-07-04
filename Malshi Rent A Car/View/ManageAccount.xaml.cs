@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Malshi_Rent_A_Car
+namespace Malshi_Rent_A_Car.View
 {
     /// <summary>
     /// Interaction logic for ManageAccount.xaml

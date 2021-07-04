@@ -1,16 +1,16 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.ManageAccount"
+﻿<Window x:Class="Malshi_Rent_A_Car.View.ManageAccount"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Malshi_Rent_A_Car"
+        xmlns:local="clr-namespace:Malshi_Rent_A_Car.View"
         mc:Ignorable="d"
-        Title="ManageAccount" Height="400" Width="410">
+        Title="ManageAccount" Height="350" Width="410">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" Foreground="White" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="Username" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -18,7 +18,7 @@
                         <TextBlock Text="New Password" Margin="5 20 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Retype password" Margin="5 3 0 3"/>
+                        <TextBlock Text="Confirm password" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Question" Margin="5 20 0 3"/>
@@ -26,12 +26,15 @@
                     <ListViewItem>
                         <TextBlock Text="Answer" Margin="5 3 0 3"/>
                     </ListViewItem>
-                    
                 </ListView>
+                <DockPanel>
+                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Width="75" FontSize="10" Margin="10"/>
+                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Width="75" FontSize="10" Margin="10"/>
+                </DockPanel>
+                
             </StackPanel>
-
         </Grid>
-        <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FFDAECFC" Offset="0"/>
@@ -42,26 +45,25 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_uName" Margin="2" Width="180" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_cNIC" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <PasswordBox x:Name="newPasswd" Margin="2 20 2 2" Width="180" Background="{x:Null}"/>
+                        <PasswordBox x:Name="pwd_new" Margin="2 20 2 2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <PasswordBox x:Name="confirmPasswd" Margin="2" Width="180" Background="{x:Null}"/>
+                        <PasswordBox x:Name="pwd_confirm" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2 20 2 2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_question" Margin="2 20 2 2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
-                    
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_answer" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
-                    
+                    <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
+                        <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
-            <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="165,301,0,0" FontSize="10" VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="85,301,0,0" FontSize="10" VerticalAlignment="Top" Width="75"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>
@@ -72,5 +74,6 @@
             </Grid.Background>
             <TextBlock Text="MANAGE ACCOUNT" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="#FFEFF3F6"/>
         </Grid>
+        
     </Grid>
 </Window>
