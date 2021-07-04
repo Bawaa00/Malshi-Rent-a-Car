@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Update Booking" Height="496.754" Width="724.816" WindowStartupLocation="CenterScreen" Loaded="form_updateBooking_Loaded">
+        Title="Update Booking" Height="500" Width="420" WindowStartupLocation="CenterScreen" Loaded="form_updateBooking_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
@@ -43,6 +43,11 @@
                         <TextBlock Text="Return Date" Margin="5 3 0 3"/>
                     </ListViewItem>
                 </ListView>
+                <DockPanel Height="55">
+                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_del_Click" Margin="10"/>
+                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_update_Click" Margin="10"/>
+                </DockPanel>
+                
             </StackPanel>
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
@@ -88,7 +93,5 @@
         <Grid VerticalAlignment="Top">
             <TextBlock Text="UPDATE BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="591,425,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_del_Click"/>
-        <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="509,425,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_update_Click"/>
     </Grid>
 </Window>

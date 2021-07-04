@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Booking" Height="490.89" Width="764.188" WindowStartupLocation="CenterScreen" Loaded="form_addBooking_Loaded">
+        Title="Add Booking" Height="500" Width="420" WindowStartupLocation="CenterScreen" Loaded="form_addBooking_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
@@ -43,6 +43,10 @@
                         <TextBlock Text="Return Date" Margin="5 3 0 3"/>
                     </ListViewItem>
                 </ListView>
+                <DockPanel Height="55">
+                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click"/>
+                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click"/>
+                </DockPanel>
             </StackPanel>
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
@@ -88,7 +92,5 @@
         <Grid VerticalAlignment="Top">
             <TextBlock Text="ADD NEW BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="608,391,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_clr_Click"/>
-        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="526,391,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Click="btn_save_Click"/>
     </Grid>
 </Window>

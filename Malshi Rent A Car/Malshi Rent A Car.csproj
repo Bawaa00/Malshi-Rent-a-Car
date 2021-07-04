@@ -89,6 +89,9 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\manageAccount.xaml.cs">
+      <DependentUpon>manageAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\manageAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pricing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
