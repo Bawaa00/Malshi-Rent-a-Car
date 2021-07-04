@@ -25,6 +25,7 @@ namespace Malshi_Rent_A_Car
         //string billProof
 
         Database db = new Database();
+        DataTable dt = new DataTable();
 
         public Customer(string fName,string lName,string NIC,string cusEmail,string cusHomeAd,int cusHomeTel,int cudMobileTel,string cusProfession,string cusWorkingAd,int cusWorkiTel,string cusKinName, string cusKinAd,int cusKinTel)
         {
@@ -54,10 +55,18 @@ namespace Malshi_Rent_A_Car
             int i = db.save_update_delete(query);
             return i;
         }
-
-       
-
-
+        public DataTable viewCustomer()
+        {
+            string query = "exec viewCustomer";
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewCustomer(string id)
+        {
+            string query = "select * from Customer where cNIC= '"+id+"'";
+            dt = db.getData(query);
+            return dt;
+        }
 
     }
 }
