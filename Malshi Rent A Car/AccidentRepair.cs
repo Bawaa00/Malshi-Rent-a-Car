@@ -39,5 +39,26 @@ namespace Malshi_Rent_A_Car
             dt = db.getData(query);
             return dt;
         }
+        public DataTable viewRepair(string id)
+        {
+            string query = "select * from Accident_Repair where acc_RID = '" + id + "'";
+            DataTable dt = new DataTable();
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewRepairVehicle(string vehicle)
+        {
+            string query = "exec view_accidentVehicle '" + vehicle + "'";
+            DataTable dt = new DataTable();
+            dt = db.getData(query);
+            return dt;
+        }
+        public DataTable viewRepairDate(string date)
+        {
+            string query = "exec view_accidentDate '" + date + "'";
+            DataTable dt = new DataTable();
+            dt = db.getData(query);
+            return dt;
+        }
     }
 }
