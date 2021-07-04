@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -15,7 +16,7 @@ namespace Malshi_Rent_A_Car
         protected string repairDetails;
 
         abstract public int addRepair(string vehicle);
-        abstract public void viewRepair();
+        abstract public DataTable viewRepair();
 
     }
 }

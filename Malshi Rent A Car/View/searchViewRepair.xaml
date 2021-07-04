@@ -12,19 +12,18 @@
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <DatePicker x:Name="dte_repairDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black"/>
-                            <Button x:Name="btn_searchRepairDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                            <ComboBox x:Name="cmb_RepCatagory" Width="150" VerticalAlignment="Center" DropDownClosed="cmb_RepCatagory_DropDownClosed">
+                                <ComboBoxItem Content="Maintenance" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Accident" HorizontalAlignment="Left" Width="148"/>
+                            </ComboBox>
                         </StackPanel>
                     </Grid>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_RepCatagory" Width="150" VerticalAlignment="Center">
-                        </ComboBox>
-                    </StackPanel>
+                   
                 </StackPanel>
             </Grid>
             <Grid Height="360">
-                <DataGrid Margin="5,5,4.6,56">
+                <DataGrid x:Name="dg_repair" Margin="5,5,4.6,56">
 
                 </DataGrid>
                 <Button Content="DELETE" HorizontalAlignment="Left" Margin="696,331,0,0" VerticalAlignment="Top" Width="75"/>
