@@ -250,18 +250,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\logo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Customer.png" />
     <Resource Include="Icons\Home.png" />
     <Resource Include="Icons\Owners.png" />
     <Resource Include="Icons\Repair.png" />
     <Resource Include="Icons\Services.png" />
     <Resource Include="Icons\Vehicle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Logout.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\User.png" />
@@ -272,6 +266,15 @@
   <ItemGroup>
     <Folder Include="Control\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
