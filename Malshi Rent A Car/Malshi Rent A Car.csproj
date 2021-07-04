@@ -59,6 +59,7 @@
     <Compile Include="Insurance.cs" />
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="View\Add Service.xaml.cs">
