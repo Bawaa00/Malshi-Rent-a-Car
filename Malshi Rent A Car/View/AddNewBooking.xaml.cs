@@ -63,33 +63,79 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Booking book = new Booking(txt_bid.Text,book_date.Text,dte_lend.Text,dte_return.Text,Int32.Parse(txt_advance.Text));
-            int i = book.addBooking(cmb_cNIC.Text, cmb_vLplate.Text);
-            if (i == 1)
+            try
             {
-                MessageBox.Show("Data Saved Successfully");
-                btn_clr_Click(this, null);
-                form_addBooking_Loaded(this, null);
+                Booking book = new Booking(txt_bid.Text, book_date.Text, dte_lend.Text, dte_return.Text, Int32.Parse(txt_advance.Text));
+                int i = book.addBooking(cmb_cNIC.Text, cmb_vLplate.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Saved Successfully");
+                    btn_clr_Click(this, null);
+                    form_addBooking_Loaded(this, null);
+                }
+                else
+                    MessageBox.Show("Could not save data,Please try agian");
             }
-            else
-                MessageBox.Show("Could not save data,Please try agian");
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_cNIC_DropDownClosed(object sender, EventArgs e)
         {
-            dt = customer.viewCustomer(cmb_cNIC.Text);
-            txt_cName.Text = dt.Rows[0][1].ToString();
+            try
+            {
+                dt = customer.viewCustomer(cmb_cNIC.Text);
+                txt_cName.Text = dt.Rows[0][1].ToString();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_vLplate_DropDownClosed(object sender, EventArgs e)
         {
-            dt = vehicle.viewVehicle(cmb_vLplate.Text);
-            string model= dt.Rows[0][1].ToString();
-            ModelPricing mp = new ModelPricing();
-            dt = mp.viewPricing(model);
-            txt_vYear.Text = dt.Rows[0][2].ToString();
-            txt_vMake.Text = dt.Rows[0][3].ToString();
-            txt_vModel.Text = dt.Rows[0][4].ToString();
+            try
+            {
+                dt = vehicle.viewVehicle(cmb_vLplate.Text);
+                string model = dt.Rows[0][1].ToString();
+                ModelPricing mp = new ModelPricing();
+                dt = mp.viewPricing(model);
+                txt_vYear.Text = dt.Rows[0][2].ToString();
+                txt_vMake.Text = dt.Rows[0][3].ToString();
+                txt_vModel.Text = dt.Rows[0][4].ToString();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
+
         }
 
         private void btn_clr_Click(object sender, RoutedEventArgs e)
