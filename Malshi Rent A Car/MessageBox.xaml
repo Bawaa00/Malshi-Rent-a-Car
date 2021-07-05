@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="MessageBox" Height="450" Width="800">
+        Title="MessageBox" Height="191.866" Width="334.139">
     <Grid Width="350" Height="170" HorizontalAlignment="Center">
         <StackPanel Orientation="Horizontal" Margin="15">
-         
-            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="249" Margin="15,10,15,37" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" TextAlignment="Center"/>
+
+            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="249" Margin="15,10,15,48" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="82" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
             <Button x:Name="btn_cancel"  Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden"/>

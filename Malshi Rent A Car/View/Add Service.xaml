@@ -55,7 +55,7 @@
                 </ListViewItem>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="Black"/>
+                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="Black" KeyUp="txt_mileage_KeyUp"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_sLocation" Margin="2" Width="180" Background="{x:Null}"/>
@@ -78,7 +78,7 @@
                     <TextBox x:Name="txt_details" Width="350" Height="162"/>
                 </ListViewItem>
             </ListView>
-            <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
             <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="198,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">

@@ -59,7 +59,8 @@ namespace Malshi_Rent_A_Car
             if (i == 1)
             {
                 Console.WriteLine("Ela");
-
+                MessageBox msg = new MessageBox();
+                msg.Show();
                 //MessageBox.Show("Data Saved Successfully!");
             }
             else
@@ -67,6 +68,28 @@ namespace Malshi_Rent_A_Car
                 Console.WriteLine("Chora");
                 //MessageBox.Show("Couldnt Save data.Please Try Again");
             }
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            cmb_vid.SelectedIndex = -1;
+            txt_sid.Clear();
+            txt_details.Clear();
+            txt_sLocation.Clear();
+            dte_service.SelectedDate = null;
+            txt_mileage.Clear();
+            txt_mileage.Clear();
+            txt_sCost.Clear();
+        }
+
+        private void txt_mileage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txt_mileage.Text != "")
+            {
+                int next = Int32.Parse(txt_mileage.Text);
+                txt_nxtMileage.Text = (next + 2500).ToString();
+            }
+            
         }
     }
 }
