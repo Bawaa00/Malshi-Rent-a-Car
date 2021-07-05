@@ -81,7 +81,7 @@
                         <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_advance_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
                         <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}"/>
