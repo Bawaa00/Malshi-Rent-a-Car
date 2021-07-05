@@ -52,37 +52,37 @@
                                 <TextBlock Margin="15 0 0 0" Text="HOME" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_vehicle" Height="35" Selected="list_vehicle_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Vehicle.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="VEHICLES" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_customer" Height="35" Selected="list_customer_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Customer.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="CUSTOMERS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_owners" Height="35" Selected="list_owners_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Owners.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="OWNERS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_pricing" Height="35" Selected="list_pricing_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Pricing.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="PRICING" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_repairs" Height="35" Selected="list_repairs_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Repair.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="REPAIRS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="35">
+                        <ListViewItem x:Name="list_service" Height="35" Selected="list_service_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Services.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="SERVICES" VerticalAlignment="Center"/>

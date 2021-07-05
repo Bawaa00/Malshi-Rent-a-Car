@@ -23,5 +23,41 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+
+        private void list_customer_Selected(object sender, RoutedEventArgs e)
+        {
+            SearchViewCustomer obj = new SearchViewCustomer();
+            obj.Show();
+        }
+
+        private void list_owners_Selected(object sender, RoutedEventArgs e)
+        {
+            searchViewOwners obj = new searchViewOwners();
+            obj.Show();
+        }
+
+        private void list_pricing_Selected(object sender, RoutedEventArgs e)
+        {
+            Pricing obj = new Pricing();
+            obj.Show();
+        }
+
+        private void list_repairs_Selected(object sender, RoutedEventArgs e)
+        {
+            searchViewRepair obj = new searchViewRepair();
+            obj.Show();
+        }
+
+        private void list_service_Selected(object sender, RoutedEventArgs e)
+        {
+            searchViewServices obj = new searchViewServices();
+            obj.Show();
+        }
+
+        private void list_vehicle_Selected(object sender, RoutedEventArgs e)
+        {
+            SearchViewVehicle obj = new SearchViewVehicle();
+            obj.Show();
+        }
     }
 }
