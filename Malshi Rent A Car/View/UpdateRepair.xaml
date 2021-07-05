@@ -62,16 +62,16 @@
                         <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_location" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_location" Margin="2" Width="180" TextChanged="txt_location_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_cost" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_cost" Margin="2" Width="180" TextChanged="txt_cost_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
                         <TextBox x:Name="txt_option1" Margin="2" Width="180" Visibility="Hidden"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_option2" Margin="2" Width="180" Visibility="Hidden"/>
+                        <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="203" Background="#FFE2BD0C"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -82,14 +82,14 @@
                     <TextBlock Text="Details"/>
                 </ListViewItem>
                 <ListViewItem Width="362" Height="196">
-                    <TextBox x:Name="txt_details" Width="350" Height="184"/>
+                    <TextBox x:Name="txt_details" Width="350" Height="184" TextChanged="txt_details_TextChanged"/>
                 </ListViewItem>
             </ListView>
             <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_delete_Click"/>
             <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="201,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD NEW REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <TextBlock Text="UPDATE REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
 
     </Grid>

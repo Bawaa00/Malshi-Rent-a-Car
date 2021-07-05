@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -31,33 +32,40 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_Rtype_DropDownClosed(object sender, EventArgs e)
         {
-            if (cmb_Rtype.SelectedIndex == 0)
+            if (cmb_Rtype.SelectedItem == null)
             {
-                lbl_option1.Visibility = Visibility.Visible;
-                lbl_option1.Text = "Next Check";
-                txt_option1.Visibility = Visibility.Visible;
-                lbl_option2.Visibility = Visibility.Hidden;
-
-                txt_option2.Visibility = Visibility.Hidden;
-
-                dt = mr.viewRepair();
-                cmb_id.ItemsSource = dt.DefaultView;
-                cmb_id.DisplayMemberPath = "Repair ID";
-                cmb_id.SelectedValuePath = "Repair ID";
+                error_msg.Text = "Please Select Repair Type";
             }
-            else if (cmb_Rtype.SelectedIndex == 1)
+            else
             {
-                lbl_option1.Visibility = Visibility.Visible;
-                lbl_option1.Text = "Claim (Rs)";
-                lbl_option2.Visibility = Visibility.Visible;
-                lbl_option2.Text = "Duration";
-                txt_option1.Visibility = Visibility.Visible;
-                txt_option2.Visibility = Visibility.Visible;
+                if (cmb_Rtype.SelectedIndex == 0)
+                {
+                    lbl_option1.Visibility = Visibility.Visible;
+                    lbl_option1.Text = "Next Check";
+                    txt_option1.Visibility = Visibility.Visible;
+                    lbl_option2.Visibility = Visibility.Hidden;
 
-                dt = ar.viewRepair();
-                cmb_id.ItemsSource = dt.DefaultView;
-                cmb_id.DisplayMemberPath = "Repair ID";
-                cmb_id.SelectedValuePath = "Repair ID";
+                    txt_option2.Visibility = Visibility.Hidden;
+
+                    dt = mr.viewRepair();
+                    cmb_id.ItemsSource = dt.DefaultView;
+                    cmb_id.DisplayMemberPath = "Repair ID";
+                    cmb_id.SelectedValuePath = "Repair ID";
+                }
+                else if (cmb_Rtype.SelectedIndex == 1)
+                {
+                    lbl_option1.Visibility = Visibility.Visible;
+                    lbl_option1.Text = "Claim (Rs)";
+                    lbl_option2.Visibility = Visibility.Visible;
+                    lbl_option2.Text = "Duration";
+                    txt_option1.Visibility = Visibility.Visible;
+                    txt_option2.Visibility = Visibility.Visible;
+
+                    dt = ar.viewRepair();
+                    cmb_id.ItemsSource = dt.DefaultView;
+                    cmb_id.DisplayMemberPath = "Repair ID";
+                    cmb_id.SelectedValuePath = "Repair ID";
+                }
             }
         }
 
@@ -81,32 +89,47 @@ namespace Malshi_Rent_A_Car
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            if (cmb_Rtype.SelectedIndex == 0)
+            try
             {
-                MaintenanceRepair mr = new MaintenanceRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
-                int i = mr.updateRepair(cmb_vehicle.Text);
-                if (i == 1)
+                if (cmb_Rtype.SelectedIndex == 0)
                 {
-                    MessageBox.Show("Data Updated Successfully!");
-                    frm_updateRepair_Loaded(this, null);
+                    MaintenanceRepair mr = new MaintenanceRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
+                    int i = mr.updateRepair(cmb_vehicle.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Data Updated Successfully!");
+                        frm_updateRepair_Loaded(this, null);
+                    }
+
+                    else
+                        MessageBox.Show("Sorry.Could not update data.Please try again");
                 }
-                    
-                else
-                    MessageBox.Show("Sorry.Could not update data.Please try again");
+                else if (cmb_Rtype.SelectedIndex == 1)
+                {
+                    AccidentRepair ar = new AccidentRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text), Int32.Parse(txt_option2.Text));
+                    int i = ar.updateRepair(cmb_vehicle.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Data Updated Successfully!");
+                        frm_updateRepair_Loaded(this, null);
+                    }
+                    else
+                        MessageBox.Show("Sorry.Could not update data.Please try again");
+                }
             }
-            else if (cmb_Rtype.SelectedIndex == 1)
+            catch (System.Data.SqlClient.SqlException)
             {
-                AccidentRepair ar = new AccidentRepair(cmb_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text), Int32.Parse(txt_option2.Text));
-                int i = ar.updateRepair(cmb_vehicle.Text);
-                if (i == 1)
-                {
-                    MessageBox.Show("Data Updated Successfully!");
-                    frm_updateRepair_Loaded(this, null);
-                }
-                else
-                    MessageBox.Show("Sorry.Could not update data.Please try again");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly. ");
+                msg.Show();
             }
-               
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
         }
 
         private void cmb_id_DropDownClosed(object sender, EventArgs e)
@@ -161,6 +184,34 @@ namespace Malshi_Rent_A_Car
                 else
                     MessageBox.Show("Sorry.Could not delete data.Please try again");
             }
+        }
+
+
+
+        private void txt_cost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cost.Text.Length == 0)
+                error_msg.Text = "Please Enter Repair cost ";
+            else if (!Regex.IsMatch(txt_cost.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_location_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_location.Text.Length == 0)
+                error_msg.Text = "Please Enter Location ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_details.Text.Length == 0)
+                error_msg.Text = "Please Enter Details about the repair ";
+            else
+                error_msg.Text = "";
         }
     }
 }
