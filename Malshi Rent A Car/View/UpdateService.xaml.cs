@@ -39,6 +39,13 @@ namespace Malshi_Rent_A_Car
             cmb_sID.ItemsSource = dt.DefaultView;
             cmb_sID.DisplayMemberPath = "Service ID";
             cmb_sID.SelectedValuePath = "Service ID";
+
+            txt_SLocation.Clear();
+            txt_milage.Clear();
+            date_service.SelectedDate = null;
+            txt_nxtMilage.Clear();
+            txt_sCost.Clear();
+            txt_sDetails.Clear();
         }
 
         private void cmb_sID_DropDownClosed(object sender, EventArgs e)
@@ -67,6 +74,32 @@ namespace Malshi_Rent_A_Car
                 MessageBox msg = new MessageBox();
                 msg.errorMsg("Sorry, couldn't save your data.Please try again");
                 msg.Show();
+            }
+        }
+
+        private void btn_del_Click(object sender, RoutedEventArgs e)
+        {
+            int i = service.deleteService(cmb_sID.Text);
+            if (i == 1)
+            {
+                MessageBox msg = new MessageBox();
+                msg.Show();
+            }
+            else
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Sorry, couldn't delete your data.Please try again");
+                msg.Show();
+                form_updateService_Loaded(this, null);
+            }
+        }
+
+        private void txt_milage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txt_milage.Text != "")
+            {
+                int next = Int32.Parse(txt_milage.Text);
+                txt_nxtMilage.Text = (next + 2500).ToString();
             }
         }
     }

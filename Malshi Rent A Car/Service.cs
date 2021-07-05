@@ -29,12 +29,10 @@ namespace Malshi_Rent_A_Car
             this.milage = milage;
             this.nxtMilage = nxtMilage;
             this.sCost = sCost;
-
         }
 
         public Service()
         {
-
         }
 
         public int addService(string vehicleID)
@@ -66,6 +64,12 @@ namespace Malshi_Rent_A_Car
         public int updateService(string vehicleID)
         {
             string query = "Update Service set vehicleID = '" + vehicleID + "',sDetails = '" + sDetails + "',sLocation = '" + sLocation + "', sDate = '" + sDate + "',milage = '" + milage + "',nxtMilage = '" + nxtMilage + "',sCost = '" + sCost + "' where sID = '" + sID + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
+        public int deleteService (string sid)
+        {
+            string query = "delete from Service  where sID = '" + sid + "'";
             int i = db.save_update_delete(query);
             return i;
         }
