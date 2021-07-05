@@ -36,16 +36,16 @@
             </StackPanel>
         </Grid>
         <Grid Width="220" HorizontalAlignment="Left" Margin="200 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFBFD8ED" Offset="0.261"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                        <GradientStop Color="#FFBFD8ED" Offset="0.261"/>
-                        <GradientStop Color="White" Offset="1"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListViewItem Height="30.4">
-                    <TextBox x:Name="txt_sid" Margin="2" Width="180" Background="Transparent" BorderBrush="Black"/>
+                    <TextBox x:Name="txt_sid" Margin="2" Width="180" Background="Transparent" BorderBrush="#FFABADB3"/>
                 </ListViewItem>
                 <ListViewItem Height="30.4">
                     <ComboBox x:Name="cmb_vid" Margin="2" Width="180" Background="Transparent" BorderBrush="Black"/>
@@ -55,7 +55,7 @@
                 </ListViewItem>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="Black" KeyUp="txt_mileage_KeyUp"/>
+                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="#FFABADB3" KeyUp="txt_mileage_KeyUp"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_sLocation" Margin="2" Width="180" Background="{x:Null}"/>
@@ -70,7 +70,7 @@
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="420 40 0 0">
-            <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Margin="-10,0,9.6,28.4">
+            <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Margin="5">
                 <ListViewItem>
                     <TextBlock Text="Details"/>
                 </ListViewItem>

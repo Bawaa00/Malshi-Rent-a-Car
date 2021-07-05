@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Pricing" Height="450" Width="924" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="Model ID" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -44,17 +44,23 @@
             </StackPanel>
         </Grid>
         <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40">
-                    <RadioButton Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <RadioButton Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    <RadioButton Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6" FontWeight="DemiBold"/>
+                    <RadioButton Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="6" FontWeight="DemiBold"/>
                 </Grid>
                 <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
                     <ListViewItem>
-                        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cat" Width="162" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
@@ -64,7 +70,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_make" Width="163" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
                             <ComboBoxItem Content="BMW"/>
                             <ComboBoxItem Content="FORD"/>
@@ -86,10 +92,10 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="164"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_year" Width="162" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="2023"/>
                             <ComboBoxItem Content="2022"/>
@@ -130,17 +136,17 @@
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
 
@@ -153,7 +159,13 @@
             <TextBlock Margin="179,190,68,0" TextWrapping="Wrap" Text="[Data Grid View Of Pricings]" VerticalAlignment="Top"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
     </Grid>
 </Window>
