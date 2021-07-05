@@ -131,7 +131,7 @@
                         <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 2 0 -3">
+                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 2 0 -3" DropDownClosed="cmb_Ecapacity_DropDownClosed">
                             <ComboBoxItem Content="800" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1000" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1200" HorizontalAlignment="Left" Width="148"/>
@@ -142,7 +142,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 2 0 -5">
+                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 2 0 -5" DropDownClosed="cmb_Ftype_DropDownClosed">
                             <ComboBoxItem Content="Petrol" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Diesel" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Hybrid" HorizontalAlignment="Left" Width="148"/>
@@ -150,7 +150,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_noPassengers" Width="150" Margin="5 6 0 -7">
+                        <ComboBox x:Name="cmb_noPassengers" Width="150" Margin="5 6 0 -7" DropDownClosed="cmb_noPassengers_DropDownClosed">
                             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="148"/>

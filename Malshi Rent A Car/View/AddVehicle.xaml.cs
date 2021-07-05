@@ -122,14 +122,22 @@ namespace Malshi_Rent_A_Car
         }
 
         private void cmb_modelID_DropDownClosed(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = model.viewPricing(cmb_modelID.Text);
-            modelID = dt.Rows[0][0].ToString();
-            txt_catagory.Text = dt.Rows[0][1].ToString();
-            txt_make.Text = dt.Rows[0][3].ToString();
-            txt_model.Text = dt.Rows[0][4].ToString();
-            txt_year.Text = dt.Rows[0][2].ToString();
+        {   
+                if (cmb_modelID.SelectedItem == null)
+                {
+                    error_msg.Text = "Please Select Model";
+                }
+                
+            else
+            {
+                DataTable dt = new DataTable();
+                dt = model.viewPricing(cmb_modelID.Text);
+                modelID = dt.Rows[0][0].ToString();
+                txt_catagory.Text = dt.Rows[0][1].ToString();
+                txt_make.Text = dt.Rows[0][3].ToString();
+                txt_model.Text = dt.Rows[0][4].ToString();
+                txt_year.Text = dt.Rows[0][2].ToString();
+            }
         }
 
         private void cmb_ownerNIC_DropDownClosed(object sender, EventArgs e)
@@ -179,9 +187,17 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = insurance.viewInsurance(cmb_ins.Text);
-            insID = dt.Rows[0][0].ToString();
+
+            if (cmb_ins.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Company";
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt = insurance.viewInsurance(cmb_ins.Text);
+                insID = dt.Rows[0][0].ToString();
+            }
         }
 
         private void txt_catagory_TextChanged(object sender, TextChangedEventArgs e)
@@ -235,6 +251,33 @@ namespace Malshi_Rent_A_Car
             if (txt_color.SelectedItem == null)
             {
                 error_msg.Text = "Please Select Color";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_Ftype_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_Ftype.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Fuel Type";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_Ecapacity_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_Ecapacity.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Engin Capacity";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_noPassengers_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_noPassengers.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Number of Passengers";
             }
             else { error_msg.Text = ""; }
         }
