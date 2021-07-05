@@ -28,8 +28,8 @@
                     </ListViewItem>
                 </ListView>
                 <DockPanel Height="55">
-                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_del_Click" Margin="10"/>
-                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_update_Click" Margin="10"/>
+                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10"  Margin="10"/>
+                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10"  Margin="10"/>
                 </DockPanel>
 
             </StackPanel>
@@ -48,7 +48,7 @@
                         <TextBox x:Name="pwd_confirm" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <ComboBox x:Name="cmb_question" Margin="2 20 2 2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_question" Margin="2 20 2 2" Width="180" />
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_answer" Margin="2" Width="180"/>

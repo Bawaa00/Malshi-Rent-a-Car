@@ -71,6 +71,9 @@
                         <TextBox x:Name="txt_option1" Margin="2" Width="180" Visibility="Hidden"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
+                        <TextBox x:Name="txt_option2" Margin="2" Width="180" Visibility="Hidden"/>
+                    </ListViewItem>
+                    <ListViewItem Height="35.4">
                         <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="203" Background="#FFE2BD0C"/>
                     </ListViewItem>
                 </ListView>
