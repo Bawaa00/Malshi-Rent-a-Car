@@ -11,6 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.Diagnostics;
+using System.IO;
+using System.Data;
+using System.Text.RegularExpressions;
+
 
 namespace Malshi_Rent_A_Car
 {
@@ -27,13 +33,60 @@ namespace Malshi_Rent_A_Car
 
         private void btn_create_Click(object sender, RoutedEventArgs e)
         {
-            HashCode hc = new HashCode();
+            MessageBox msg = new MessageBox();
+           HashCode hc = new HashCode();
             User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), cmb_que.Text, txt_answer.Text);
             int i = user.addAccount();
             if (i == 1)
-                MessageBox.Show("Account Created");
+            {
+                msg.informationMsg("Account Successfully Registered!");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Account Could Not Be Created");
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
+        }
+
+        private void txt_uname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_uname.Text.Length == 0)
+                error_msg.Text = "Please Enter Use Name  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_answer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_answer.Text.Length == 0)
+                error_msg.Text = "Please Enter Answer  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_pass_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            
+        }
+
+        private void cmb_utype_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_utype.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Use Type";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_que_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_que.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Question";
+            }
+            else { error_msg.Text = ""; }
         }
     }
 }

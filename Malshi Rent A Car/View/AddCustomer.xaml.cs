@@ -62,7 +62,7 @@ namespace Malshi_Rent_A_Car
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox msg = new MessageBox();
-                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.errorMsg("Please fill the form correctly.");
                 msg.Show();
             }
             catch (Exception ex)

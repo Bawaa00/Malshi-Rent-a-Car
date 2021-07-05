@@ -97,7 +97,7 @@
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_modelID_DropDownClosed"/>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_catagory" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_catagory" Width="150" Margin="5 0 0 0" TextChanged="txt_catagory_TextChanged" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
@@ -109,13 +109,13 @@
                         <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_trans_DropDownClosed">
                             <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="148"/>
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="txt_color" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="txt_color" Width="150" Margin="5 0 0 0" DropDownClosed="txt_color_DropDownClosed">
                             <ComboBoxItem Content="Red" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Blue" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Silver" HorizontalAlignment="Left" Width="148"/>
@@ -128,10 +128,10 @@
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 2 0 -3">
+                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 2 0 -3" DropDownClosed="cmb_Ecapacity_DropDownClosed">
                             <ComboBoxItem Content="800" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1000" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1200" HorizontalAlignment="Left" Width="148"/>
@@ -142,7 +142,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 2 0 -5">
+                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 2 0 -5" DropDownClosed="cmb_Ftype_DropDownClosed">
                             <ComboBoxItem Content="Petrol" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Diesel" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Hybrid" HorizontalAlignment="Left" Width="148"/>
@@ -150,7 +150,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_noPassengers" Width="150" Margin="5 6 0 -7">
+                        <ComboBox x:Name="cmb_noPassengers" Width="150" Margin="5 6 0 -7" DropDownClosed="cmb_noPassengers_DropDownClosed">
                             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="148"/>
@@ -189,13 +189,13 @@
                         <TextBox x:Name="txt_oPay" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0" TextChanged="txt_wName_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wAdd" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wAdd" Width="150" Margin="5 0 0 0" TextChanged="txt_wAdd_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wContact" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wContact" Width="150" Margin="5 0 0 0" TextChanged="txt_wContact_TextChanged"/>
                     </ListViewItem>
 
                 </ListView>
@@ -212,5 +212,6 @@
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419"/>
         </Border>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="445,547,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" Height="58" Background="#FFE6EE2D"/>
     </Grid>
 </Window>

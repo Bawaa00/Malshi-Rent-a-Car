@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -59,29 +60,74 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            if(cmb_Rtype.SelectedIndex == 0)
+            try
             {
-                MaintenanceRepair mr = new MaintenanceRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
-                int i = mr.addRepair(cmb_vehicle.Text);
-                if (i == 1)
+                if (cmb_Rtype.SelectedIndex == 0)
                 {
-                    MessageBox.Show("Data saved successfully");
+                    MaintenanceRepair mr = new MaintenanceRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, txt_option1.Text);
+                    int i = mr.addRepair(cmb_vehicle.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Data saved successfully");
+                    }
+                    else
+                        MessageBox.Show("Error.Failed to insert data");
                 }
-                else
-                    MessageBox.Show("Error.Failed to insert data");
+                else if (cmb_Rtype.SelectedIndex == 1)
+                {
+                    AccidentRepair ar = new AccidentRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text), Int32.Parse(txt_option2.Text));
+                    int i = ar.addRepair(cmb_vehicle.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Data saved successfully");
+                    }
+                    else
+                        MessageBox.Show("Error.Failed to insert data");
+                }
             }
-            else if(cmb_Rtype.SelectedIndex ==1)
+            catch (System.Data.SqlClient.SqlException)
             {
-                AccidentRepair ar = new AccidentRepair(txt_id.Text, date_repair.Text, txt_location.Text, Int32.Parse(txt_cost.Text), txt_details.Text, Int32.Parse(txt_option1.Text),Int32.Parse(txt_option2.Text));
-                int i = ar.addRepair(cmb_vehicle.Text);
-                if (i == 1)
-                {
-                    MessageBox.Show("Data saved successfully");
-                }
-                else
-                    MessageBox.Show("Error.Failed to insert data");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
 
+
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
+        }
+
+        private void txt_location_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_location.Text.Length == 0)
+                error_msg.Text = "Please Enter Location ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cost.Text.Length == 0)
+                error_msg.Text = "Please Enter Repair cost ";
+            else if (!Regex.IsMatch(txt_cost.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cmb_vehicle_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_vehicle.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Vehicle";
+            }
+            else { error_msg.Text = ""; }
         }
     }
 }

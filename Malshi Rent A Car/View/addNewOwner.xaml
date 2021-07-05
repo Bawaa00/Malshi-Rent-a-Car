@@ -52,34 +52,34 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnFname_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnLname" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnLname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnLname_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnNIC" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnNIC" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnNIC_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnEmail_TextChanged"/>
+                    </ListViewItem>
+                    <ListViewItem Height="27.2" Selected="ListViewItem_Selected">
+                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnResAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelHome_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelMobile_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnProfession_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnWorkAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0"/>
-                    </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelWork_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
                     <ListViewItem Height="27.2"/>
@@ -98,5 +98,6 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
             <TextBlock TextWrapping="Wrap" Text="[A photo of the owner]"/>
         </Border>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="203,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" Height="32"/>
     </Grid>
 </Window>
