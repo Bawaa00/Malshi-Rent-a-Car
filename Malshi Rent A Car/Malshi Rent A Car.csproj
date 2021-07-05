@@ -61,6 +61,9 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
+    <Compile Include="MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Repair.cs" />
@@ -86,6 +89,9 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\manageAccount.xaml.cs">
+      <DependentUpon>manageAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,10 @@
     <Compile Include="View\UpdateVehicle.xaml.cs">
       <DependentUpon>UpdateVehicle.xaml</DependentUpon>
     </Compile>
+    <Page Include="MessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Add Service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +185,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\manageAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pricing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -255,18 +269,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\logo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Customer.png" />
     <Resource Include="Icons\Home.png" />
     <Resource Include="Icons\Owners.png" />
     <Resource Include="Icons\Repair.png" />
     <Resource Include="Icons\Services.png" />
     <Resource Include="Icons\Vehicle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Logout.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\User.png" />
@@ -277,6 +285,15 @@
   <ItemGroup>
     <Folder Include="Control\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

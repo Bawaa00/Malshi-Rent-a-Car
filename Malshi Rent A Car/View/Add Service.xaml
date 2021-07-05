@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Add_Service" Height="300" Width="800">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Foreground="White" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem>
                         <TextBlock Text="Service Date" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -31,22 +31,28 @@
         </Grid>
         <Grid Width="220" HorizontalAlignment="Left" Margin="200 40 0 0">
             <StackPanel>
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FFBFD8ED" Offset="0.261"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListViewItem Height="30.4">
-                    <DatePicker x:Name="dte_service" Margin="2" Width="180"/>
+                    <DatePicker x:Name="dte_service" Margin="2" Width="180" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </ListViewItem>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_mileage" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="Black"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sLocation" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_sLocation" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sCost" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_sCost" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_nxtMileage" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_nxtMileage" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -64,7 +70,13 @@
             <Button Content="SAVE" HorizontalAlignment="Left" Margin="198,207,0,0" VerticalAlignment="Top" Width="75"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD NEW SERVICE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="ADD NEW SERVICE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Margin="10 0 0 0"/>
         </Grid>
     </Grid>
 </Window>

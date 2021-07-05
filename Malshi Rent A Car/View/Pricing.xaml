@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Pricing" Height="450" Width="924" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="4,36,0,4">
-            <StackPanel Margin="0,0,0,29">
+        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
+            <StackPanel>
                 <Grid Height="40"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem>
@@ -43,13 +43,16 @@
 
             </StackPanel>
         </Grid>
-        <Grid Width="250" HorizontalAlignment="Left" Margin="154,39,0,1">
-            <StackPanel Margin="0,31,0,0">
+        <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
+            <StackPanel>
                 <Grid Height="40">
-                    <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                    <RadioButton Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <RadioButton Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                 </Grid>
                 <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
-
+                    <ListViewItem>
+                        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                    </ListViewItem>
                     <ListViewItem Height="30.4">
                         <ComboBox x:Name="cmb_cat" Width="162" Margin="5,0,0,0">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
