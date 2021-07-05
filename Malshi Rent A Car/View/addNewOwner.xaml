@@ -63,7 +63,7 @@
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnEmail_TextChanged"/>
                     </ListViewItem>
-                    <ListViewItem Height="27.2" Selected="ListViewItem_Selected">
+                    <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnResAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">

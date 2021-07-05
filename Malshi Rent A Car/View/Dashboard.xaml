@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Dashboard" Height="450" Width="800">
+        Title="Dashboard" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEFF3F6">
         <Grid VerticalAlignment="Top" Margin="220,0,0,0" Height="35">
             <Grid.Background>
@@ -22,7 +22,7 @@
                         <StackPanel Orientation="Horizontal" Background="Transparent">
                             <Image Source="/Icons/logo.jpg" Margin="0 0 0 0" Width="186"/>
                             <Button x:Name="btn_collapse" Width="30" Height="30" BorderBrush="Transparent" Background="Transparent" Margin="2" VerticalAlignment="Top">
-                                <Image Source="Icons/Menu.png" Height="25"/>
+                                <Image Source="/Icons/Menu.png" Height="25"/>
                             </Button>
                         </StackPanel>
                         <TextBlock HorizontalAlignment="Left" Margin="21 0 0 0 " Text="Malshi Rent A Car" FontSize="16" FontWeight="DemiBold" FontFamily="Viner Hand ITC"/>
@@ -30,13 +30,13 @@
                             <DockPanel Background="Transparent">
                                 <ListViewItem HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="15" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Height="30">
                                     <StackPanel Orientation="Horizontal" Margin="2">
-                                        <Image Source="Icons/User.png" Height="25" VerticalAlignment="Center"/>
+                                        <Image Source="/Icons/User.png" Height="25" VerticalAlignment="Center"/>
                                         <TextBlock x:Name="UserName" Margin="5 0 0 0" Text="user" VerticalAlignment="Center" Foreground="#FF6B6B6B"></TextBlock>
                                     </StackPanel>
                                 </ListViewItem>
                                 <ListViewItem HorizontalAlignment="Right" FontFamily="Century Gothic" FontSize="15" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Height="30">
                                     <StackPanel Orientation="Horizontal" Margin="2">
-                                        <Image Source="Icons/Logout.png" Height="25" VerticalAlignment="Center"/>
+                                        <Image Source="/Icons/Logout.png" Height="25" VerticalAlignment="Center"/>
                                         <TextBlock Margin="5 0 0 0" Text="Logout" VerticalAlignment="Center" Foreground="#FF1763A2"></TextBlock>
                                     </StackPanel>
                                 </ListViewItem>
@@ -48,43 +48,43 @@
                     <ListView FontFamily="Century Gothic" FontSize="15" FontWeight="Bold" Foreground="White" Background="Transparent" BorderBrush="Transparent">
                         <ListViewItem Height="35" Background="{x:Null}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Home.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Home.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="HOME" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Vehicle.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Vehicle.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="VEHICLES" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Customer.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Customer.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="CUSTOMERS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Owners.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Owners.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="OWNERS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Pricing.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Pricing.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="PRICING" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Repair.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Repair.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="REPAIRS" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="35">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Icons/Services.png" Height="25" VerticalAlignment="Center"/>
+                                <Image Source="/Icons/Services.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="SERVICES" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
