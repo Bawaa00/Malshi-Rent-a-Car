@@ -145,14 +145,14 @@
                     </ListViewItem>
 
                 </ListView>
-                <Button x:Name="btn_add" Content="ADD"/>
-                <Button x:Name="btn_update" Content="UPDATE"/>
-                <Button x:Name="btn_del" Content="DELETE"/>
+                <Button x:Name="btn_add" Content="ADD" Click="btn_add_Click"/>
+                <Button x:Name="btn_update" Content="UPDATE" Click="btn_update_Click"/>
+                <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click"/>
 
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="506">
-            <DataGrid x:Name="dg_price" Margin="5,5,-43,5" HorizontalAlignment="Left" Width="544"/>
+            <DataGrid x:Name="dg_price" Margin="5,5,-43,5" SelectionChanged="dg_price_SelectionChanged" SelectionMode="Single" IsEnabled="False"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
