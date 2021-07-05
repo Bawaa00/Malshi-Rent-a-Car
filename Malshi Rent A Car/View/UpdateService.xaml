@@ -1,30 +1,37 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.UpdateService"
+﻿<Window x:Name="form_updateService" x:Class="Malshi_Rent_A_Car.UpdateService"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="UpdateService" Height="300" Width="800">
+        Title="UpdateService" Height="407.144" Width="820.519" Loaded="form_updateService_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="269">
+
+                    <ListViewItem>
+                        <TextBlock Text="Service ID" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem >
+                        <TextBlock Text="Vehicle ID" Margin="5 3 0 3"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock Text="Service Location" Margin="5 3 0 3"/>
+                    </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Service Date" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Mileage" Margin="5 3 0 3"/>
+                        <TextBlock Text="Milage" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Location" Margin="5 3 0 3"/>
+                        <TextBlock Text="Next Milage" Margin="5 3 0 3"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Cost (Rs.)" Margin="5 3 0 3"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Next Mileage" Margin="5 3 0 3"/>
+                        <TextBlock Text="Cost" Margin="5 3 0 3"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -32,36 +39,41 @@
         <Grid Width="220" HorizontalAlignment="Left" Margin="200 40 0 0">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListViewItem Height="30.4">
-                    <DatePicker x:Name="dte_service" Margin="2" Width="180"/>
-                </ListViewItem>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="246">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_mileage" Margin="2" Width="180"/>
+                        <ComboBox x:Name="cmb_sID" Margin="2" Width="180" DropDownClosed="cmb_sID_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sLocation" Margin="2" Width="180"/>
+                        <ComboBox x:Name="cmb_vehicleID" Height="25" Width="182"/>
+                    </ListViewItem>
+
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_SLocation" Margin="2" Width="180"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sCost" Margin="2" Width="180"/>
+                        <DatePicker x:Name="date_service" Height="25" Width="181"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_nxtMileage" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_milage" Margin="2" Width="180"/>
                     </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_nxtMilage" Margin="2,0" Width="180"/>
+                    </ListViewItem>
+                    <TextBox x:Name="txt_sCost" Width="180"/>
                 </ListView>
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="420 40 0 0">
-            <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Margin="-10,0,9.6,28.4">
+            <ListView x:Name="Update1" FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Margin="-10,0,9.6,28.4">
                 <ListViewItem>
                     <TextBlock Text="Details"/>
                 </ListViewItem>
                 <ListViewItem Width="362" Height="169">
-                    <TextBox x:Name="txt_details" Width="350" Height="162"/>
+                    <TextBox x:Name="txt_sDetails" Width="352" Height="162" />
                 </ListViewItem>
             </ListView>
-            <Button Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button Content="SAVE" HorizontalAlignment="Left" Margin="198,207,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="255,253,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="175,253,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <TextBlock Text="UPDATE SERVICE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>

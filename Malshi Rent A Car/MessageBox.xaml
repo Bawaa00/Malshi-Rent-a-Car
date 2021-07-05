@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="MessageBox" Height="191.866" Width="334.139">
+        Title="MessageBox" Height="191.866" Width="334.139" WindowStartupLocation="CenterScreen">
     <Grid Width="350" Height="170" HorizontalAlignment="Center">
         <StackPanel Orientation="Horizontal" Margin="15">
 

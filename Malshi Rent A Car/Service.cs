@@ -56,10 +56,16 @@ namespace Malshi_Rent_A_Car
             dt = db.getData("exec viewServiceVehicle '" + vid+"'");
             return dt;
         }
+        public DataTable viewServiceID(string sid)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Service where  sID='" + sid + "'");
+            return dt;
+        }
 
         public int updateService(string vehicleID)
         {
-            string query = "Update Service set vehicleID = '" + vehicleID + "',sDetails = '" + sDetails + "',sLocation = '" + sLocation + "', sDate = '" + sDate + "',milage = '" + milage + "',nxtMilage = '" + nxtMilage + "',sCost = '" + sCost + "' wehre sID = '" + sID + "')";
+            string query = "Update Service set vehicleID = '" + vehicleID + "',sDetails = '" + sDetails + "',sLocation = '" + sLocation + "', sDate = '" + sDate + "',milage = '" + milage + "',nxtMilage = '" + nxtMilage + "',sCost = '" + sCost + "' where sID = '" + sID + "'";
             int i = db.save_update_delete(query);
             return i;
         }
