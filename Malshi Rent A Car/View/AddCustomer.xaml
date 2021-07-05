@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="AddCustomer" Height="500" Width="850">
+        Title="AddCustomer" Height="500" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>

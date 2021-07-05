@@ -79,6 +79,12 @@ namespace Malshi_Rent_A_Car
             txt_CusName.Clear();
             txt_CusNIC.Text = "Customer NIC";
         }
+
+        private void btn_update_Click_1(object sender, RoutedEventArgs e)
+        {
+            UpdateCustomer obj = new UpdateCustomer();
+            obj.Show();
+        }
     }
 
 }

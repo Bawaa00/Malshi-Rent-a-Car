@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Dashboard" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Dashboard" Height="550" Width="900" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEFF3F6">
         <Grid VerticalAlignment="Top" Margin="220,0,0,0" Height="35">
             <Grid.Background>
