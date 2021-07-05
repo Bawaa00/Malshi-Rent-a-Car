@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="addNewOwner" Height="534.151" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="First Name" Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -48,38 +48,44 @@
             </StackPanel>
         </Grid>
         <Grid Width="170" HorizontalAlignment="Left" Margin="180 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnFname_TextChanged"/>
+                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnFname_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnLname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnLname_TextChanged"/>
+                        <TextBox x:Name="txt_OwnLname" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnLname_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnNIC" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnNIC_TextChanged"/>
+                        <TextBox x:Name="txt_OwnNIC" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnNIC_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnEmail_TextChanged"/>
+                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnEmail_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnResAdrs_TextChanged"/>
+                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnResAdrs_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelHome_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelHome_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelMobile_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelMobile_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnProfession_TextChanged"/>
+                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnProfession_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnWorkAdrs_TextChanged"/>
+                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnWorkAdrs_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelWork_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelWork_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
                     <ListViewItem Height="27.2"/>
@@ -89,7 +95,13 @@
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="ADD OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
         <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
         <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
