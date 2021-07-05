@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\BillPrint.xaml.cs">
+      <DependentUpon>BillPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsuranceManagement.xaml.cs">
+      <DependentUpon>InsuranceManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\manageAccount.xaml.cs">
       <DependentUpon>manageAccount.xaml</DependentUpon>
     </Compile>
@@ -164,9 +170,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BillPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InsuranceManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
