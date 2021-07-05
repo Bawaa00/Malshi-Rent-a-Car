@@ -120,5 +120,14 @@ namespace Malshi_Rent_A_Car
             else
                 error_msg.Text = "";
         }
+
+        private void cmb_vehicle_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_vehicle.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Vehicle";
+            }
+            else { error_msg.Text = ""; }
+        }
     }
 }

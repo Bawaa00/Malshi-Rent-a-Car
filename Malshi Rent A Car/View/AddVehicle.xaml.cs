@@ -15,6 +15,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Data;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
+
+
 
 namespace Malshi_Rent_A_Car
 {
@@ -50,16 +53,25 @@ namespace Malshi_Rent_A_Car
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
+            try
             {
-                filepath = open.FileName; // Stores Original Path in Textbox    
-                ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
-                img_vehicle.Source = imgsource;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    filepath = open.FileName; // Stores Original Path in Textbox    
+                    ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
+                    img_vehicle.Source = imgsource;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
 
         }
@@ -129,18 +141,40 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
-            Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text,txt_color.Text,destinationPath,cmb_trans.Text,Int32.Parse(cmb_Ecapacity.Text) ,Int32.Parse(cmb_noPassengers.Text),date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text,date_InsuranceStart.Text,cmb_Ftype.Text,date_lend.Text,Int32.Parse(txt_oPay.Text),txt_wName.Text ,txt_wAdd.Text,Int32.Parse(txt_wContact.Text));
-            int i=vehicle.addVehicle(modelID,insID,cmb_ownerNIC.Text);
-            if (i == 1)
+            try
             {
-                MessageBox.Show("Data Saved Successfully");
-                btn_cls_Click(this, null);
+
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
+                Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text, txt_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_noPassengers.Text), date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text, date_InsuranceStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_oPay.Text), txt_wName.Text, txt_wAdd.Text, Int32.Parse(txt_wContact.Text));
+                int i = vehicle.addVehicle(modelID, insID, cmb_ownerNIC.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Saved Successfully");
+                    btn_cls_Click(this, null);
+                }
+                else
+                    MessageBox.Show("Could not save data,Please try agian");
             }
-            else
-                MessageBox.Show("Could not save data,Please try agian");
+            catch (ArgumentNullException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly. ");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
@@ -148,6 +182,61 @@ namespace Malshi_Rent_A_Car
             DataTable dt = new DataTable();
             dt = insurance.viewInsurance(cmb_ins.Text);
             insID = dt.Rows[0][0].ToString();
+        }
+
+        private void txt_catagory_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_catagory.Text.Length == 0)
+                error_msg.Text = "Cannot Keep This Empty";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_wName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_wName.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_wAdd_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_wAdd.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_wContact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_wContact.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Contact Number ";
+            else if (!Regex.IsMatch(txt_wContact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cmb_trans_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_trans.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Transmission";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void txt_color_DropDownClosed(object sender, EventArgs e)
+        {
+            if (txt_color.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Color";
+            }
+            else { error_msg.Text = ""; }
         }
     }
 }

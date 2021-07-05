@@ -68,7 +68,7 @@
                         <DatePicker x:Name="date_repair" Margin="2" Width="180"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180"/>
+                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180" DropDownClosed="cmb_vehicle_DropDownClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
                         <TextBox x:Name="txt_location" Margin="2" Width="180" TextChanged="txt_location_TextChanged"/>

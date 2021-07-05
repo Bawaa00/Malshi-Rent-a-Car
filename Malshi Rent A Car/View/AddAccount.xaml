@@ -13,7 +13,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="56,179,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
         <Button x:Name="btn_create" Content="Create Account" HorizontalAlignment="Left" Margin="210,406,0,0" VerticalAlignment="Top" Width="96" Click="btn_create_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,233,0,0" TextWrapping="Wrap" Text="Retype Password" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cmb_utype" HorizontalAlignment="Left" Margin="186,62,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="cmb_utype" HorizontalAlignment="Left" Margin="186,62,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmb_utype_DropDownClosed">
             <ComboBoxItem Content="Manager" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Employee" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
@@ -23,7 +23,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="56,291,0,0" TextWrapping="Wrap" Text="Question" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
         <TextBox x:Name="txt_answer" HorizontalAlignment="Left" Height="23" Margin="187,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="txt_answer_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,340,0,0" TextWrapping="Wrap" Text="Answer" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
-        <ComboBox x:Name="cmb_que" HorizontalAlignment="Left" Margin="186,285,0,0" VerticalAlignment="Top" Width="282">
+        <ComboBox x:Name="cmb_que" HorizontalAlignment="Left" Margin="186,285,0,0" VerticalAlignment="Top" Width="282" DropDownClosed="cmb_que_DropDownClosed">
             <ComboBoxItem Content="Favourite Colour" HorizontalAlignment="Left" Width="280"/>
         </ComboBox>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="89,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="42"/>

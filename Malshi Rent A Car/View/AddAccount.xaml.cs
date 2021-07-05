@@ -70,5 +70,23 @@ namespace Malshi_Rent_A_Car
 
             
         }
+
+        private void cmb_utype_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_utype.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Use Type";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_que_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_que.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Question";
+            }
+            else { error_msg.Text = ""; }
+        }
     }
 }
