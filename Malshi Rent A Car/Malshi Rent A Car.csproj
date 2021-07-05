@@ -90,11 +90,14 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\BillPrint.xaml.cs">
+      <DependentUpon>BillPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsuranceManagement.xaml.cs">
+      <DependentUpon>InsuranceManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\manageAccount.xaml.cs">
       <DependentUpon>manageAccount.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ManageInsurance.xaml.cs">
-      <DependentUpon>ManageInsurance.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
@@ -167,7 +170,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BillPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InsuranceManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,10 +201,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\manageAccount.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ManageInsurance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
