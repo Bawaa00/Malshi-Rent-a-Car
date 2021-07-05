@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="UpdateCustomer" Height="500" Width="850">
+        Title="Update Customer" Height="500" Width="850" WindowStartupLocation="CenterScreen" Loaded="customer_update_Loaded_1">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Margin="0,0,-14,0">
                     <ListViewItem>
                         <TextBlock Text="NIC" Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -50,9 +50,7 @@
                     <ListViewItem>
                         <TextBlock Text="Kin Contact" Margin="5 3 0 0"/>
                     </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Billing Proof" Margin="5 3 0 0"/>
-                    </ListViewItem>
+                    <ListViewItem/>
                     <!--ListViewItem>
                         <TextBlock Text="Revenue License" Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -114,21 +112,19 @@
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0"/>
                     </ListViewItem>
-                    <ListViewItem Height="27.2">
-                        <Button x:Name="btn_proof" Content="UPLOAD" Width="120" Margin="17 0 17 0" FontSize="10"/>
-                    </ListViewItem>
+                    <ListViewItem Height="27.2"/>
                 </ListView>
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
             <TextBlock Text="UPDATE CUSTOMER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
-        <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
-        <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="bttn_delete" Content="Delete" HorizontalAlignment="Left" Margin="677,438,0,0" VerticalAlignment="Top" Width="75" Click="bttn_delete_Click"/>
+
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="588,377,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
+        <Button x:Name="bttn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="677,438,0,0" VerticalAlignment="Top" Width="75" Click="bttn_delete_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
-            <TextBlock TextWrapping="Wrap" Text="[A photo of the customer]"/>
+            <Image x:Name="img_customer" HorizontalAlignment="Left" Height="280" Margin="-1" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
         </Border>
-        <Button x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="497,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
+        <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="497,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
     </Grid>
 </Window>

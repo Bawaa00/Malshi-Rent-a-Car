@@ -17,6 +17,7 @@ using System.IO;
 using System.Data;
 using System.Text.RegularExpressions;
 
+
 namespace Malshi_Rent_A_Car
 {
     /// <summary>
@@ -28,16 +29,17 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+        string path;
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-
-                Customer customer = new Customer(txt_CusFname.Text, txt_CusLname.Text, txt_CusNIC.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text));
-
-
-                int i = customer.addCustomer();
+            string name = System.IO.Path.GetFileName(path);
+            string destinationPath = GetDestinationPath(name);
+            File.Copy(path, destinationPath, true);
+            Customer customer = new Customer(txt_CusFname.Text,txt_CusLname.Text,txt_CusNIC.Text,txt_CusEmail.Text,txt_CusResAdrs.Text,Int32.Parse(txt_CusTelHome.Text),Int32.Parse(txt_CusTelMobile.Text),txt_CusProfession.Text,txt_CusWorkAdrs.Text,Int32.Parse(txt_CusTelWork.Text),txt_CusKinName.Text,txt_CusKinkAdrs.Text,Int32.Parse(txt_CusKinConatct.Text),destinationPath);
+            int i = customer.addCustomer();
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
@@ -88,6 +90,35 @@ namespace Malshi_Rent_A_Car
             txt_CusKinName.Clear();
             txt_CusKinkAdrs.Clear();
             txt_CusKinConatct.Clear();
+            img_customer.Source = null;
+        }
+
+        private String GetDestinationPath(string filename)
+        {
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + txt_CusNIC.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + txt_CusNIC.Text + ".jpg");
+            return appStartPath;
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Multiselect = false;
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            bool? result = open.ShowDialog();
+
+            if (result == true)
+            {
+                path = open.FileName; // Stores Original Path in Textbox    
+                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                img_customer.Source = imgsource;
+            }
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)

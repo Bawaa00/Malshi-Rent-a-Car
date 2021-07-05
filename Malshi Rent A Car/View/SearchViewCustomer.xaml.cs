@@ -28,6 +28,7 @@ namespace Malshi_Rent_A_Car
 
         Customer customer = new Customer();
         Database db = new Database();
+        DataTable dt = new DataTable();
       
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
@@ -46,56 +47,37 @@ namespace Malshi_Rent_A_Car
 
         private void view_customer_Loaded(object sender, RoutedEventArgs e)
         {
-           
-                DataTable dt = new DataTable();
-                dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',D_ID  as 'KIN NAME',D_name  as 'KIN ADDRESS',Model  as 'KIN TEL'" +
-                    " from Customer,Customer_Kin" +
-                    " where cNIC = CusID ");
-                dg_customer.ItemsSource = dt.DefaultView;
-
-                dt = db.getData("select * from Customer;");
-                cmb_CusNIC.ItemsSource = dt.DefaultView;
-                cmb_CusNIC.DisplayMemberPath = "BK_No";
-                cmb_CusNIC.SelectedValuePath = "BK_No";
-
-                dt = db.getData("Select * from Customer");
-                cmb_CusName.ItemsSource = dt.DefaultView;
-                cmb_CusName.DisplayMemberPath = "Cus_ID";
-                cmb_CusName.SelectedValuePath = "Cus_ID";     
-
-          
+            dt = customer.viewCustomer();
+            dg_customer.ItemsSource = dt.DefaultView;
         }
 
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
-
-            DataTable dt = new DataTable();
-            dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',kName  as 'KIN NAME',kAddress  as 'KIN ADDRESS',kContact  as 'KIN TEL'" +
-                " from Customer,Customer_Kin" +
-                " where cNIC = CusID  ");
-           dg_customer.ItemsSource = dt.DefaultView;
+            view_customer_Loaded(this, null);
         }
 
-        private void cmb_CusNIC_DropDownClosed(object sender, EventArgs e)
+        private void btn_searchNIC_Click(object sender, RoutedEventArgs e)
         {
-            cmb_CusName.Text = "";
-
-            DataTable dt = new DataTable();
-            dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',D_ID  as 'KIN NAME',D_name  as 'KIN ADDRESS',Model  as 'KIN TEL'" +
-                " from Customer,Customer_Kin" +
-                 " where cNIC = CusID and DNO = D_ID and cNIC = '" + cmb_CusNIC.Text + "'");
+            dt = customer.viewCustomerNIC(txt_CusNIC.Text);
             dg_customer.ItemsSource = dt.DefaultView;
         }
 
-        private void cmb_CusName_DropDownClosed(object sender, EventArgs e)
+        private void btn_searchName_Click(object sender, RoutedEventArgs e)
         {
-            cmb_CusNIC.Text = "";
-
-            DataTable dt = new DataTable();
-            dt = db.getData("select cus_FName  as 'FIRST NAME', cus_LName  as 'LAST NAME', cNIC as'NIC',cEmail  as 'EMAIL',residentAd  as 'HOME ADDRESS',homeTel  as 'HOME TEL',mobileTel  as 'MOBILE TEL',cProffession  as 'PROFESSION',workAd   as 'WORK ADDRESS',workTel   as 'WORK TEL',D_ID  as 'KIN NAME',D_name  as 'KIN ADDRESS',Model  as 'KIN TEL'" +
-                " from Customer,Customer_Kin," +
-                 " where cNIC = CusID  and cus_FName = '" + cmb_CusName.Text + "'");
+            dt = customer.viewCustomerName(txt_CusName.Text);
             dg_customer.ItemsSource = dt.DefaultView;
+        }
+
+        private void txt_CusNIC_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txt_CusNIC.Clear();
+            txt_CusName.Text = "Name";
+        }
+
+        private void txt_CusName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txt_CusName.Clear();
+            txt_CusNIC.Text = "Customer NIC";
         }
     }
 

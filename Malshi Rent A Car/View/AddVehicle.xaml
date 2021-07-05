@@ -210,7 +210,7 @@
         <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="650,715,0,0" VerticalAlignment="Top" Width="76" Click="btn_save_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE">
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
-            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419" Stretch="Fill"/>
+            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419"/>
         </Border>
     </Grid>
 </Window>
