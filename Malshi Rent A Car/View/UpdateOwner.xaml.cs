@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -38,17 +39,24 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_onic_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = owner.viewOwner(cmb_onic.Text);
-            txt_OwnFname.Text = dt.Rows[0][1].ToString();
-            txt_OwnLame.Text = dt.Rows[0][2].ToString();
-            txt_OwnEmail.Text = dt.Rows[0][9].ToString();
-            txt_OwnResAdrs.Text = dt.Rows[0][3].ToString();
-            txt_OwnTelHome.Text = dt.Rows[0][4].ToString();
-            txt_OwnTelMobile.Text = dt.Rows[0][5].ToString();
-            txt_OwnProfession.Text = dt.Rows[0][6].ToString();
-            txt_OwnWorkAdrs.Text = dt.Rows[0][7].ToString();
-            txt_OwnTelWork.Text = dt.Rows[0][8].ToString();
+            if (cmb_onic.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select NIC";
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt = owner.viewOwner(cmb_onic.Text);
+                txt_OwnFname.Text = dt.Rows[0][1].ToString();
+                txt_OwnLame.Text = dt.Rows[0][2].ToString();
+                txt_OwnEmail.Text = dt.Rows[0][9].ToString();
+                txt_OwnResAdrs.Text = dt.Rows[0][3].ToString();
+                txt_OwnTelHome.Text = dt.Rows[0][4].ToString();
+                txt_OwnTelMobile.Text = dt.Rows[0][5].ToString();
+                txt_OwnProfession.Text = dt.Rows[0][6].ToString();
+                txt_OwnWorkAdrs.Text = dt.Rows[0][7].ToString();
+                txt_OwnTelWork.Text = dt.Rows[0][8].ToString();
+            }
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
@@ -88,5 +96,87 @@ namespace Malshi_Rent_A_Car
             else
                 MessageBox.Show("Sorry.Could not delete data.Please try again");
         }
+
+        private void txt_OwnFname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnFname.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner First Name  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnLame_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnLame.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Last Name  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnEmail.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Emal";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnResAdrs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnResAdrs.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Home Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnTelHome_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnTelHome.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Home Number ";
+            else if (!Regex.IsMatch(txt_OwnTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnTelMobile_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnTelMobile.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Mobile Number ";
+            else if (!Regex.IsMatch(txt_OwnTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnProfession_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnProfession.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Profession";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnWorkAdrs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnWorkAdrs.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Work Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnTelWork_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_OwnTelWork.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Work Number ";
+            else if (!Regex.IsMatch(txt_OwnTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
     }
+    
 }
