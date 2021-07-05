@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
+
+
         Title="Pricing" Height="497" Width="988" WindowStartupLocation="CenterScreen" Loaded="form_pricing_Loaded">
-    <Grid Margin="0,0,2,0">
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
+    <Grid>
+        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="Model ID" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -44,17 +46,24 @@
             </StackPanel>
         </Grid>
         <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40">
-                    <RadioButton x:Name="rbtn_add" Content="ADD" GroupName="grp_option" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Checked="rbtn_add_Checked"/>
-                    <RadioButton x:Name="rbtn_update" Content="UPDATE" GroupName="grp_option" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,106,0" Checked="rbtn_update_Checked"/>
+                    <RadioButton x:Name="rbtn_add" Content="ADD" GroupName="grp_option" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Checked="rbtn_add_Checked" FontWeight="DemiBold"/>
+                    <RadioButton x:Name="rbtn_update" Content="UPDATE" GroupName="grp_option" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,106,0" Checked="rbtn_update_Checked" FontWeight="DemiBold"/>
                     <GroupBox x:Name="grp_option" Header="" HorizontalAlignment="Left" Margin="0,-10,0,0" Width="174"/>
                 </Grid>
                 <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
                     <ListViewItem/>
-                    <TextBox x:Name="txt_modelID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" IsEnabled="False"/>
+                    <TextBox x:Name="txt_modelID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Width="170" Background="{x:Null}" IsEnabled="False"/>
+
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cat" Width="162" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
@@ -64,7 +73,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_make" Width="163" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
                             <ComboBoxItem Content="BMW"/>
                             <ComboBoxItem Content="FORD"/>
@@ -86,10 +95,10 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="164"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_year" Width="162" Margin="5,0,0,0">
+                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}">
                             <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="2023"/>
                             <ComboBoxItem Content="2022"/>
@@ -130,17 +139,17 @@
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2"/>
+                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
                         </StackPanel>
                     </ListViewItem>
 
@@ -155,7 +164,13 @@
             <DataGrid x:Name="dg_price" Margin="5,5,-43,5" SelectionChanged="dg_price_SelectionChanged" SelectionMode="Single" IsEnabled="False"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
     </Grid>
 </Window>

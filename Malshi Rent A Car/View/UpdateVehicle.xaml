@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="UpdateVehicle" Height="810.932" Width="850" Loaded="frm_updateVehicle_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="License Plate No. " Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -93,17 +93,23 @@
             </StackPanel>
         </Grid>
         <Grid Width="170" HorizontalAlignment="Left" Margin="150 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_plateNo" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_plateNo_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_plateNo" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_plateNo_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_modelID_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_modelID" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_modelID_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_category" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_category" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="148"/>
@@ -113,13 +119,13 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" IsEnabled="False">
-                        <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
+                        <TextBox x:Name="txt_make" Width="150" Margin="5 0 0 0" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
+                        <TextBox x:Name="txt_model" Width="150" Margin="5 0 0 0" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_color" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_color" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="Red" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Blue" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Silver" HorizontalAlignment="Left" Width="148"/>
@@ -131,10 +137,10 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" IsEnabled="False">
-                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_year" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="800" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1000" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="1200" HorizontalAlignment="Left" Width="148"/>
@@ -145,13 +151,13 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_trans" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="148"/>
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_Ftype" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="Petrol" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Diesel" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="Hybrid" HorizontalAlignment="Left" Width="148"/>
@@ -159,7 +165,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_passengers" Width="150" Margin="5 0 0 0">
+                        <ComboBox x:Name="cmb_passengers" Width="150" Margin="5 0 0 0" Background="{x:Null}">
                             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="148"/>
                             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="148"/>
@@ -170,48 +176,54 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.8 0 0">
-                        <ComboBox x:Name="cmb_ins" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ins_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_ins" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ins_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsStart" Width="150" Margin="5 0 0 0"/>
+                        <DatePicker x:Name="date_InsStart" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsEnd" Width="150" Margin="5 0 0 0"/>
+                        <DatePicker x:Name="date_InsEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.2 0 0">
-                        <DatePicker x:Name="date_LicStart" Width="150" Margin="5 0 0 0"/>
+                        <DatePicker x:Name="date_LicStart" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_LicEnd" Width="150" Margin="5 0 0 0"/>
+                        <DatePicker x:Name="date_LicEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_oNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_oNIC_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_oNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_oNIC_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0" IsEnabled="False"/>
+                        <TextBox x:Name="txt_oName" Width="150" Margin="5 0 0 0" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_lend" Width="150" Margin="5 0 0 0"/>
+                        <DatePicker x:Name="date_lend" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_pay" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_pay" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wAddress" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wAddress" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_wContact" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_wContact" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
 
                 </ListView>
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="UPDATE VEHICLE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="UPDATE VEHICLE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
         <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="598,406,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
         <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="746,736,0,0" VerticalAlignment="Top" Width="74" Click="btn_delete_Click"/>

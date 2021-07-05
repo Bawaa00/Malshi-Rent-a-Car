@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Update Owner" Height="530" Width="850" WindowStartupLocation="CenterScreen" Loaded="form_updateOwner_Loaded">
     <Grid>
-        <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="NIC" Margin="5 3 0 0"/>
                     </ListViewItem>
@@ -50,38 +50,44 @@
             </StackPanel>
         </Grid>
         <Grid Width="170" HorizontalAlignment="Left" Margin="180 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
-                    <ListViewItem Height="27" Width="158">
-                        <ComboBox x:Name="cmb_onic" Width="148" DropDownClosed="cmb_onic_DropDownClosed"/>
+                    <ListViewItem Height="27">
+                        <ComboBox x:Name="cmb_onic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_onic_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnLame" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnLame" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0"/>
+                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
                     <ListViewItem Height="27.2"/>
@@ -92,7 +98,13 @@
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="UPDATE OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="UPDATE OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
         <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
         <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
