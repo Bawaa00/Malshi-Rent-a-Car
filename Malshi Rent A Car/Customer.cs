@@ -85,8 +85,8 @@ namespace Malshi_Rent_A_Car
         }
         public int updateCustomer ()
         {
-            string query1 = " update Customer set  cus_FName = '" +fName+ "', cus_LName='" + lName + "', cEmail='" + cusEmail + "', residentAd='" + cusHomeAd + "', homeTel='" + cusHomeTel + "', mobileTel='" +cusMobileTel+ "', cProffession='" + cusProfession + "', workAd='" + cusWorkingAd + "', workTel='" + cusWorkiTel + "' where cNIC = '" + NIC + "'";
-            string query2 = " update Customer_Kin set kNmae='" +cusKinName+ "' , kAddress = '" + cusKinAd + "' , kContact = '" + cusKinTel + "' where  CusID = '" + NIC + "'";
+            string query1 = " update Customer set  cus_FName = '" +fName+ "', cus_LName='" + lName + "', cEmail='" + cusEmail + "', residentAd='" + cusHomeAd + "', homeTel='" + cusHomeTel + "', mobileTel='" +cusMobileTel+ "', cProffession='" + cusProfession + "', workAd='" + cusWorkingAd + "', workTel='" + cusWorkiTel + "', cusPhoto='"+cusPhoto+"' where cNIC = '" + NIC + "'";
+            string query2 = " update Customer_Kin set kName='" +cusKinName+ "' , kAddress = '" + cusKinAd + "' , kContact = '" + cusKinTel + "' where  CusID = '" + NIC + "'";
 
             int x = db.save_update_delete(query1);
             int y = db.save_update_delete(query2);
@@ -98,9 +98,14 @@ namespace Malshi_Rent_A_Car
         }
         public int deleteCustomer(string id)
         {
-            string a = " Delete from Customer where S_ID = '" + id + "'"; 
+            string a = " Delete from Customer where cNIC = '" + id + "'";
+            string b = "Delete from Customer_Kin where CusID= '" + id + "'";
             int i = db.save_update_delete(a);
-            return i;
+            int j = db.save_update_delete(b);
+            if (i == 1 && j == 1)
+                return i;
+            else
+                return 0;
         }
     }
 }

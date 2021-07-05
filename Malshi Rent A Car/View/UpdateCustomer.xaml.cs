@@ -45,31 +45,24 @@ namespace Malshi_Rent_A_Car
             return appStartPath;
         }
 
-        private void customer_update_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataTable dt1 = new DataTable();
-            dt1 = customer.viewCustomer();
-            cmb_nic.ItemsSource = dt1.DefaultView;
-            cmb_nic.DisplayMemberPath = "NIC";
-            cmb_nic.SelectedValuePath = "NIC";
-
-        }
-
         private void cmb_nic_DropDownClosed(object sender, EventArgs e)
         {
-            dt = customer.viewCustomer(cmb_nic.Text);
+            dt = customer.viewCustomerNIC(cmb_nic.Text);
 
-            cmb_nic.Text = dt.Rows[0][0].ToString();
+           // cmb_nic.Text = dt.Rows[0][0].ToString();
             txt_firstname.Text = dt.Rows[0][1].ToString();
             txt_lname.Text = dt.Rows[0][2].ToString();
             txt_CusResAdrs.Text = dt.Rows[0][3].ToString();
-            txt_CusWorkAdrs.Text = dt.Rows[0][4].ToString();
+            txt_CusWorkAdrs.Text = dt.Rows[0][8].ToString();
             txt_CusTelHome.Text = dt.Rows[0][5].ToString();
-            txt_CusTelMobile.Text = dt.Rows[0][6].ToString();
-            txt_CusTelWork.Text = dt.Rows[0][7].ToString();
-            txt_CusEmail.Text = dt.Rows[0][8].ToString();
-            txt_CusProfession.Text = dt.Rows[0][9].ToString();
+            txt_CusTelMobile.Text = dt.Rows[0][4].ToString();
+            txt_CusTelWork.Text = dt.Rows[0][9].ToString();
+            txt_CusEmail.Text = dt.Rows[0][6].ToString();
+            txt_CusProfession.Text = dt.Rows[0][7].ToString();
             path = dt.Rows[0][10].ToString();
+            txt_CusKinName.Text = dt.Rows[0][11].ToString();
+            txt_CusKinkAdrs.Text = dt.Rows[0][12].ToString();
+            txt_CusKinConatct.Text = dt.Rows[0][13].ToString();
 
             if (path != "")
             {
@@ -141,6 +134,14 @@ namespace Malshi_Rent_A_Car
                 ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
                 img_customer.Source = imgsource;
             }
+        }
+
+        private void customer_update_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            dt = customer.viewCustomer();
+            cmb_nic.ItemsSource = dt.DefaultView;
+            cmb_nic.DisplayMemberPath = "NIC";
+            cmb_nic.SelectedValuePath = "NIC";
         }
     }
 }
