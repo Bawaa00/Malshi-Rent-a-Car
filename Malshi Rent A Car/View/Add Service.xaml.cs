@@ -58,14 +58,15 @@ namespace Malshi_Rent_A_Car
             int i = Service.addService(cmb_vid.Text);
             if (i == 1)
             {
-                Console.WriteLine("Ela");
                 MessageBox msg = new MessageBox();
                 msg.Show();
                 //MessageBox.Show("Data Saved Successfully!");
             }
             else
             {
-                Console.WriteLine("Chora");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
                 //MessageBox.Show("Couldnt Save data.Please Try Again");
             }
         }

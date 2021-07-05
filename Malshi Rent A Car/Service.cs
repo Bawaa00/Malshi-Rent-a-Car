@@ -46,9 +46,14 @@ namespace Malshi_Rent_A_Car
 
         public DataTable viewService()
         {
-
             DataTable dt = new DataTable();
-            dt = db.getData("Select * from Service");
+            dt = db.getData("exec viewService");
+            return dt;
+        }
+        public DataTable viewService(string vid)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec viewServiceVehicle '" + vid+"'");
             return dt;
         }
 
