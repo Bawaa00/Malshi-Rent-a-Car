@@ -54,20 +54,36 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Service Service = new Service(txt_sid.Text, txt_details.Text, txt_sLocation.Text, dte_service.Text, Convert.ToDouble(txt_mileage.Text), Convert.ToDouble(txt_nxtMileage.Text), Convert.ToDouble(txt_sCost.Text));
-            int i = Service.addService(cmb_vid.Text);
-            if (i == 1)
+            try
             {
-                MessageBox msg = new MessageBox();
-                msg.Show();
-                //MessageBox.Show("Data Saved Successfully!");
+                Service Service = new Service(txt_sid.Text, txt_details.Text, txt_sLocation.Text, dte_service.Text, Convert.ToDouble(txt_mileage.Text), Convert.ToDouble(txt_nxtMileage.Text), Convert.ToDouble(txt_sCost.Text));
+                int i = Service.addService(cmb_vid.Text);
+                if (i == 1)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.Show();
+                    //MessageBox.Show("Data Saved Successfully!");
+                }
+                else
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                    //MessageBox.Show("Couldnt Save data.Please Try Again");
+                }
             }
-            else
+          
+            catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox msg = new MessageBox();
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.errorMsg("Please fill the form correctly. ");
                 msg.Show();
-                //MessageBox.Show("Couldnt Save data.Please Try Again");
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
@@ -91,6 +107,52 @@ namespace Malshi_Rent_A_Car
                 txt_nxtMileage.Text = (next + 2500).ToString();
             }
             
+        }
+
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_vid.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Number of Passengers";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void txt_mileage_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_mileage.Text.Length == 0)
+                error_msg.Text = "Please Enter Milage";
+            else if (!Regex.IsMatch(txt_mileage.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_sCost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_sCost.Text.Length == 0)
+                error_msg.Text = "Please Enter cost";
+            else if (!Regex.IsMatch(txt_sCost.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_sLocation_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_sLocation.Text.Length == 0)
+                error_msg.Text = "Please Enter Location ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_details.Text.Length == 0)
+                error_msg.Text = "Please Enter Details";
+            else
+                error_msg.Text = "";
         }
     }
 }

@@ -150,5 +150,10 @@ namespace Malshi_Rent_A_Car
             dte_lend.SelectedDate = null;
             dte_return.SelectedDate = null;
         }
+
+        private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
