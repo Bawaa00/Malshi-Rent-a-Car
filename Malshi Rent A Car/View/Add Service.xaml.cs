@@ -61,6 +61,7 @@ namespace Malshi_Rent_A_Car
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
                     //MessageBox.Show("Data Saved Successfully!");
                 }

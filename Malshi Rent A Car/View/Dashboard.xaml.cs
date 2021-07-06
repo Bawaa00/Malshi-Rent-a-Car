@@ -31,10 +31,11 @@ namespace Malshi_Rent_A_Car
             InitializeComponent();
             this.PieChart();
         }
-        public Dashboard(string utype)
+        public Dashboard(string utype,string uname)
         {
             InitializeComponent();
             this.utype = utype;
+            lbl_user.Text = uname;
             this.PieChart();
         }
 
