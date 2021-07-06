@@ -78,6 +78,12 @@ namespace Malshi_Rent_A_Car
             int i = db.save_update_delete(query);
             return i;
         }
+        public int deleteAccount()
+        {
+            string query = "delete from UserAcc where Uname = '" + uname + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
        
     }
 }

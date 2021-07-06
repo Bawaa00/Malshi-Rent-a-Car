@@ -24,7 +24,7 @@
                     <ListViewItem/>
                 </ListView>
                 <DockPanel Height="55">
-                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Margin="10"/>
+                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Margin="10" Click="btn_del_Click"/>
                     <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10"  Margin="10" Click="btn_update_Click"/>
                 </DockPanel>
 
@@ -41,18 +41,19 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_uName" Margin="2" Width="180" IsEnabled="False"/>
+                        <TextBox x:Name="txt_uName" Margin="2" Width="180" IsEnabled="False" TextInput="txt_uName_TextInput"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <PasswordBox x:Name="txt_pass" Margin="2 20 2 2" Width="180"/>
+                        <PasswordBox x:Name="txt_pass" Margin="2 20 2 2" Width="180" KeyUp="txt_pass_KeyUp"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <PasswordBox x:Name="txt_retype" Margin="2" Width="180" IsEnabled="False"/>
+                        <PasswordBox x:Name="txt_retype" Margin="2" Width="180" KeyUp="txt_retype_KeyUp"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2"/>
                     <ListViewItem Height="30.4"/>
                 </ListView>
             </StackPanel>
+            <TextBlock x:Name="txt_info" HorizontalAlignment="Left" Margin="10,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="47"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>
