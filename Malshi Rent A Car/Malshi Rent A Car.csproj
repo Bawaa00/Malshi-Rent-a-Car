@@ -102,6 +102,9 @@
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ResetPassword.xaml.cs">
+      <DependentUpon>ResetPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\searchViewBooking.xaml.cs">
       <DependentUpon>searchViewBooking.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pricing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ResetPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
