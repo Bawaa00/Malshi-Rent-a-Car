@@ -23,5 +23,10 @@ namespace Malshi_Rent_A_Car.View
         {
             InitializeComponent();
         }
+        public manageAccount(string uname)
+        {
+            InitializeComponent();
+            txt_uName.Text = uname;
+        }
     }
 }

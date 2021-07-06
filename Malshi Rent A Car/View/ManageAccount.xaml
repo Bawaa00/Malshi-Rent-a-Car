@@ -45,7 +45,7 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_uName" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_uName" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
                         <PasswordBox x:Name="pwd_new" Margin="2 20 2 2" Width="180"/>
@@ -54,10 +54,10 @@
                         <TextBox x:Name="pwd_confirm" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <ComboBox x:Name="cmb_question" Margin="2 20 2 2" Width="180" />
+                        <ComboBox x:Name="cmb_question" Margin="2 20 2 2" Width="180" IsEnabled="False" />
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_answer" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_answer" Margin="2" Width="180" IsEnabled="False"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
