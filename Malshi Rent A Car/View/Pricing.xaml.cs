@@ -61,12 +61,19 @@ namespace Malshi_Rent_A_Car
                 var newString = prefix + i.ToString(new string('0', number.Length));
                 txt_modelID.Text = newString;
             }
+            btn_add.Visibility = Visibility.Visible;
+            btn_update.Visibility = Visibility.Hidden;
+            btn_del.Visibility = Visibility.Hidden;
         }
 
         private void rbtn_update_Checked(object sender, RoutedEventArgs e)
         {
             dg_price.IsEnabled = true;
-            txt_modelID.Text = "";
+            form_pricing_Loaded(this, null);
+            btn_add.Visibility = Visibility.Hidden;
+            btn_update.Visibility = Visibility.Visible;
+            btn_del.Visibility = Visibility.Visible;
+
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
