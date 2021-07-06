@@ -47,7 +47,7 @@ namespace Malshi_Rent_A_Car
         }
         public int deleteInsurance(string id)
         {
-            string query = "delete from insurance where insID='" + insID + "'";
+            string query = "delete from insurance where insID='" + id + "'";
             int i = db.save_update_delete(query);
             return i;
         }
