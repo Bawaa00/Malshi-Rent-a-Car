@@ -93,7 +93,7 @@
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="238" Margin="399,259,0,0" VerticalAlignment="Top" Width="309">
-            <!--lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="0,0,0,10">
+            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="0,0,0,10">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="SEDAN" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
                     <lvc:PieSeries Title="HATCHBACK" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
@@ -101,7 +101,7 @@
                     <lvc:PieSeries Title="MINIVAN" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
                     <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
                 </lvc:PieChart.Series>
-            </-->
+            </lvc:PieChart>
 
         </Grid>
         <Grid HorizontalAlignment="Left" Height="126" Margin="300,70,0,0" VerticalAlignment="Top" Width="238">

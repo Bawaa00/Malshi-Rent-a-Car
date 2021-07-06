@@ -122,6 +122,12 @@ namespace Malshi_Rent_A_Car
              int count = Int32.Parse(dt.Rows[0][0].ToString());
              return count;
           }
+        public int getSedans()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where bookingStatus='0'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
     }
 
 }
