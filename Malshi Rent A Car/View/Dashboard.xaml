@@ -37,7 +37,7 @@
                                 <ListViewItem HorizontalAlignment="Right" FontFamily="Century Gothic" FontSize="15" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Height="30">
                                     <StackPanel Orientation="Horizontal" Margin="2">
                                         <Image Source="/Icons/Logout.png" Height="25" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="5 0 0 0" Text="Logout" VerticalAlignment="Center" Foreground="#FF1763A2"></TextBlock>
+                                        <TextBlock x:Name="txt_logout" Margin="5 0 0 0" Text="Logout" VerticalAlignment="Center" Foreground="#FF1763A2" MouseLeftButtonUp="txt_logout_MouseLeftButtonUp"></TextBlock>
                                     </StackPanel>
                                 </ListViewItem>
                             </DockPanel>

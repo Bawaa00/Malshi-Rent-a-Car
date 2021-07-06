@@ -124,7 +124,31 @@ namespace Malshi_Rent_A_Car
           }
         public int getSedans()
         {
-            dt = db.getData("select count(plateNumber) from Vehicle where bookingStatus='0'");
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='Sedan'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
+        public int getHatchback()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='HatchBack'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
+        public int getSUV()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='SUV'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
+        public int getMinivan()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='Minivan'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
+        public int getVan()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='Van'");
             int count = Int32.Parse(dt.Rows[0][0].ToString());
             return count;
         }
