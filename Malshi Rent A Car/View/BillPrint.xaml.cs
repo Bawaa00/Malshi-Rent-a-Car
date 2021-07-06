@@ -34,12 +34,12 @@ namespace Malshi_Rent_A_Car.View
 
         private void txt_used_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txt_used.Text != "")
+            if (txt_used.Text != "" && txt_allocated.Text != "")
             {
                 if((Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)) >0)
                 {
                     txt_extraM.Text = (Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)).ToString();
-                    txt_extraC.Text = (Int32.Parse(txt_used.Text) * extra).ToString();
+                    txt_extraC.Text = (Int32.Parse(txt_extraM.Text) * extra).ToString();
                 }     
                 else
                 {
@@ -47,15 +47,55 @@ namespace Malshi_Rent_A_Car.View
                     txt_extraC.Text = "0";
                 }
 
-                calculateRent();
                    
             }
         }
 
-        public void calculateRent()
+        private void btn_print_Click(object sender, RoutedEventArgs e)
+        {
+            btn_cal.Visibility = Visibility.Hidden;
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(this, "test");
+            }
+        }
+
+        private void txt_months_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(txt_months.Text != "")
+            {
+                if (Int32.Parse(txt_months.Text) <= 3)
+                {
+                    txt_rent.Text = shortRent.ToString();
+                    txt_tot_rent.Text = (shortRent * Int32.Parse(txt_months.Text)).ToString();
+                }
+                else
+                {
+                    txt_rent.Text = longRent.ToString();
+                    txt_tot_rent.Text = (longRent * Int32.Parse(txt_months.Text)).ToString();
+                }
+            }
+           
+        }
+
+
+        private void btn_cal_Click(object sender, RoutedEventArgs e)
+        {
+            if (txt_tot_rent.Text != "" && txt_extraC.Text != "")
+            {
+                txt_totCost.Text = (Int32.Parse(txt_tot_rent.Text) + Int32.Parse(txt_extraC.Text)).ToString();
+                txt_due.Text = (Int32.Parse(txt_totCost.Text) - Int32.Parse(txt_adv.Text)).ToString();
+            }
+        }
+
+        /*public void calculateRent()
         {
             System.TimeSpan diff = Convert.ToDateTime(txt_pickup.Text) - Convert.ToDateTime(txt_lend.Text);
             int days = diff.Days;
+            int months = days / 30;
+            txt_months.Text = (days / 30).ToString();
+           
             if(days<90)
             {
                 txt_totCost.Text = ((days /30)*shortRent).ToString();
@@ -66,7 +106,7 @@ namespace Malshi_Rent_A_Car.View
             }
 
             txt_due.Text = (Int32.Parse(txt_totCost.Text) - Int32.Parse(txt_adv.Text)).ToString();
-        }
+        }*/
 
         private void form_bill_Loaded(object sender, RoutedEventArgs e)
         {
@@ -99,12 +139,28 @@ namespace Malshi_Rent_A_Car.View
             txt_lend.Text = dt.Rows[0][10].ToString();
             txt_pickup.Text = dt.Rows[0][9].ToString();
             txt_adv.Text = dt.Rows[0][14].ToString();
-
             shortRent = Int32.Parse(dt.Rows[0][11].ToString());
             longRent = Int32.Parse(dt.Rows[0][12].ToString());
             extra = Int32.Parse(dt.Rows[0][13].ToString());
 
-            //calculateRent();
+            System.TimeSpan diff = Convert.ToDateTime(txt_pickup.Text) - Convert.ToDateTime(txt_lend.Text);
+            int days = diff.Days;
+            int months = days / 30;
+            txt_months.Text = (days / 30).ToString();
+            if (days < 90)
+            {
+                txt_rent.Text = shortRent.ToString();
+                txt_tot_rent.Text = (shortRent * months).ToString();
+            }              
+            else
+            {
+                txt_rent.Text = longRent.ToString();
+                txt_tot_rent.Text = (longRent * months).ToString();
+            }
+                
+
+
+
 
         }
     }
