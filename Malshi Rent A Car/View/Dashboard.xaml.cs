@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Charts;
+using System.Data;
 
 namespace Malshi_Rent_A_Car
 {
@@ -19,15 +23,60 @@ namespace Malshi_Rent_A_Car
     /// </summary>
     public partial class Dashboard : Window
     {
+        String utype;
+        Vehicle vehicle = new Vehicle();
+
         public Dashboard()
         {
             InitializeComponent();
+            this.PieChart();
         }
-        String utype;
         public Dashboard(string utype)
         {
             InitializeComponent();
             this.utype = utype;
+            this.PieChart();
+        }
+
+        public Func<ChartPoint, string> PointLabel { get; set; }
+
+        public void PieChart()
+        {
+            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataContext = this;
+
+            piechart.Series = new SeriesCollection
+        {
+            new PieSeries
+            {
+                Title = "SEDANS",
+                Values = new ChartValues<double> {3},
+                PushOut = 15,
+                DataLabels = true,
+                LabelPoint = PointLabel
+            },
+            new PieSeries
+            {
+                Title = "HATCHBACKS",
+                Values = new ChartValues<double> {4},
+                DataLabels = true,
+                LabelPoint = PointLabel
+            },
+            new PieSeries
+            {
+                Title = "SUVS",
+                Values = new ChartValues<double> {0},
+                DataLabels = true,
+                LabelPoint = PointLabel
+            },
+            new PieSeries
+            {
+                Title = "VAN",
+                Values = new ChartValues<double> {2},
+                DataLabels = true,
+                LabelPoint = PointLabel
+            }
+        };
         }
 
         private void list_customer_Selected(object sender, RoutedEventArgs e)
@@ -64,6 +113,12 @@ namespace Malshi_Rent_A_Car
         {
             SearchViewVehicle obj = new SearchViewVehicle();
             obj.Show();
+        }
+
+        private void form_dashboard_Loaded(object sender, RoutedEventArgs e)
+        {
+            txt_totV.Text=vehicle.getTotalVehicleCount().ToString();
+            txt_available.Text = vehicle.getAvaialableVehicleCount().ToString();
         }
     }
 }

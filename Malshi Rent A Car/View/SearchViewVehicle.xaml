@@ -66,7 +66,7 @@
                 </StackPanel>
             </Grid>
             <Grid Height="371">
-                <DataGrid x:Name="dg_vehicle" Margin="5,5,5,10">
+                <DataGrid x:Name="dg_vehicle" Margin="5,5,5,10" IsEnabled="False">
 
                 </DataGrid>
                 <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="917,379,0,-28" VerticalAlignment="Top" Width="123" Click="btn_update_Click"/>
