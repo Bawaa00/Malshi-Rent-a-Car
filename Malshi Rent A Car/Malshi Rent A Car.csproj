@@ -67,6 +67,7 @@
     <Compile Include="ModelPricing.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Repair.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="View\Add Service.xaml.cs">
@@ -89,6 +90,12 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="HashCode.cs" />
+    <Compile Include="View\BillPrint.xaml.cs">
+      <DependentUpon>BillPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsuranceManagement.xaml.cs">
+      <DependentUpon>InsuranceManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\manageAccount.xaml.cs">
       <DependentUpon>manageAccount.xaml</DependentUpon>
     </Compile>
@@ -163,7 +170,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BillPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InsuranceManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

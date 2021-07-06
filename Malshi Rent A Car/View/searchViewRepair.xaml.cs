@@ -81,5 +81,17 @@ namespace Malshi_Rent_A_Car
                 dg_repair.ItemsSource = dt.DefaultView;
             }
         }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            AddRepairs_Maintenance_ obj = new AddRepairs_Maintenance_();
+            obj.Show();
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRepair obj = new UpdateRepair();
+            obj.Show();
+        }
     }
 }

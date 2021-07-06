@@ -14,44 +14,39 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Text.RegularExpressions;
 
-namespace Malshi_Rent_A_Car
+namespace Malshi_Rent_A_Car.View
 {
     /// <summary>
-    /// Interaction logic for Pricing.xaml
+    /// Interaction logic for InsuranceManagement.xaml
     /// </summary>
-    public partial class Pricing : Window
+    public partial class InsuranceManagement : Window
     {
-        public Pricing()
+        public InsuranceManagement()
         {
             InitializeComponent();
         }
         Database db = new Database();
         DataTable dt = new DataTable();
-        ModelPricing price = new ModelPricing();
+        Insurance ins = new Insurance();
 
-        private void form_pricing_Loaded(object sender, RoutedEventArgs e)
+        private void form_insurance_Loaded(object sender, RoutedEventArgs e)
         {
-            dt =price.viewPricing();
-            dg_price.ItemsSource = dt.DefaultView;
+            dt = ins.viewInsurance();
+            dg_insurance.ItemsSource = dt.DefaultView;
+            txt_insID.Clear();
+            txt_company.Clear();
 
-            cmb_cat.SelectedIndex = -1;
-            cmb_make.SelectedIndex = -1;
-            cmb_year.SelectedIndex = -1;
-            txt_model.Clear();
-            txt_short.Clear();
-            txt_long.Clear();
-            txt_extra.Clear();
         }
 
         private void rbtn_add_Checked(object sender, RoutedEventArgs e)
         {
-            dg_price.IsEnabled = false;
+            dg_insurance.IsEnabled = false;
 
-            dt = db.getData("Select max(pID) from Pricing ");
+            dt = db.getData("Select max(insID) from Insurance ");
             string id = dt.Rows[0][0].ToString();
             if (id == "")
             {
-                txt_modelID.Text = "P001";
+                txt_insID.Text = "I001";
             }
             else
             {
@@ -59,7 +54,7 @@ namespace Malshi_Rent_A_Car
                 var number = Regex.Replace(id, "^\\D+", "");
                 var i = int.Parse(number) + 1;
                 var newString = prefix + i.ToString(new string('0', number.Length));
-                txt_modelID.Text = newString;
+                txt_insID.Text = newString;
             }
             btn_add.Visibility = Visibility.Visible;
             btn_update.Visibility = Visibility.Hidden;
@@ -68,23 +63,22 @@ namespace Malshi_Rent_A_Car
 
         private void rbtn_update_Checked(object sender, RoutedEventArgs e)
         {
-            dg_price.IsEnabled = true;
-            form_pricing_Loaded(this, null);
+            dg_insurance.IsEnabled = true;
+            form_insurance_Loaded(this, null);
             btn_add.Visibility = Visibility.Hidden;
             btn_update.Visibility = Visibility.Visible;
             btn_del.Visibility = Visibility.Visible;
-
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            ModelPricing price = new ModelPricing(txt_modelID.Text, cmb_cat.Text,Int32.Parse(cmb_year.Text), cmb_make.Text, txt_model.Text,Int32.Parse(txt_short.Text),Int32.Parse(txt_long.Text),float.Parse(txt_extra.Text));
-            int i = price.addPricing();
+            Insurance insurance = new Insurance(txt_insID.Text, txt_company.Text);
+            int i = insurance.addInsurance();
             if (i == 1)
             {
                 MessageBox msg = new MessageBox();
                 msg.Show();
-                form_pricing_Loaded(this, null);
+                form_insurance_Loaded(this, null);
                 rbtn_add_Checked(this, null);
             }
             else
@@ -95,34 +89,16 @@ namespace Malshi_Rent_A_Car
             }
         }
 
-        private void dg_price_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {  
-            DataRowView dataRow = (DataRowView)dg_price.SelectedItem;
-            if (dataRow != null)
-            {
-                int index = dg_price.CurrentCell.Column.DisplayIndex;
-                txt_modelID.Text = dataRow.Row.ItemArray[0].ToString();
-                cmb_cat.Text = dataRow.Row.ItemArray[1].ToString();
-                cmb_year.Text = dataRow.Row.ItemArray[2].ToString();
-                cmb_make.Text = dataRow.Row.ItemArray[3].ToString();
-                txt_model.Text = dataRow.Row.ItemArray[4].ToString();
-                txt_short.Text = dataRow.Row.ItemArray[5].ToString();
-                txt_long.Text = dataRow.Row.ItemArray[6].ToString();
-                txt_extra.Text = dataRow.Row.ItemArray[7].ToString();
-            }
-              
-        }
-
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            ModelPricing upPrice = new ModelPricing(txt_modelID.Text, cmb_cat.Text, Int32.Parse(cmb_year.Text), cmb_make.Text, txt_model.Text, Int32.Parse(txt_short.Text), Int32.Parse(txt_long.Text), float.Parse(txt_extra.Text));
-            int i = upPrice.updatePricing();
+            Insurance insurance = new Insurance(txt_insID.Text, txt_company.Text);
+            int i = insurance.updateInsurance();
             if (i == 1)
             {
                 MessageBox msg = new MessageBox();
                 msg.Show();
-                form_pricing_Loaded(this, null);
-                rbtn_add_Checked(this, null);
+                form_insurance_Loaded(this, null);
+                //rbtn_add_Checked(this, null);
             }
             else
             {
@@ -133,20 +109,32 @@ namespace Malshi_Rent_A_Car
         }
 
         private void btn_del_Click(object sender, RoutedEventArgs e)
-        {
-            int i = price.deletePricing(txt_modelID.Text);
+        {           
+            int i = ins.deleteInsurance(txt_insID.Text);
             if (i == 1)
             {
                 MessageBox msg = new MessageBox();
                 msg.Show();
-                form_pricing_Loaded(this, null);
-                rbtn_add_Checked(this, null);
+                form_insurance_Loaded(this, null);
+                //rbtn_add_Checked(this, null);
             }
             else
             {
                 MessageBox msg = new MessageBox();
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.errorMsg("Sorry, couldn't delete your data.Please try again");
                 msg.Show();
+            }
+        }
+
+        private void dg_insurance_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView)dg_insurance.SelectedItem;
+            if (dataRow != null)
+            {
+                int index = dg_insurance.CurrentCell.Column.DisplayIndex;
+                txt_insID.Text = dataRow.Row.ItemArray[0].ToString();
+                txt_company.Text = dataRow.Row.ItemArray[1].ToString();
+
             }
         }
     }

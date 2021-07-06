@@ -88,5 +88,17 @@ namespace Malshi_Rent_A_Car
             cmb_trans.SelectedIndex = -1;
             cmb_fuel.SelectedIndex = -1;
         }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            AddVehicle obj = new AddVehicle();
+            obj.Show();
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateVehicle obj = new UpdateVehicle();
+            obj.Show();
+        }
     }
 }

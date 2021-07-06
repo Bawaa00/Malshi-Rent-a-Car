@@ -33,13 +33,19 @@
                 <DataGrid x:Name="dg_repair" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="647,330,0,0" VerticalAlignment="Top" Width="122"/>
+                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="647,330,0,0" VerticalAlignment="Top" Width="122" Click="btn_update_Click"/>
                 <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Repairs]" VerticalAlignment="Top"/>
-                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="567,330,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="567,330,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_Click"/>
             </Grid>
         </StackPanel>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="Repairs" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Repairs" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
     </Grid>
 </Window>

@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Update Booking" Height="500" Width="420" WindowStartupLocation="CenterScreen" Loaded="form_updateBooking_Loaded">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="Booking No" Margin="5 3 0 3"/>
                     </ListViewItem>
@@ -47,42 +47,50 @@
                     <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_del_Click" Margin="10"/>
                     <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_update_Click" Margin="10"/>
                 </DockPanel>
-                
+
             </StackPanel>
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_bid" Margin="2" Width="180" DropDownClosed="cmb_bid_DropDownClosed" />
+                        <ComboBox x:Name="cmb_bid" Margin="2" Width="180" DropDownClosed="cmb_bid_DropDownClosed" Background="{x:Null}" />
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}"/>
+                    </ListViewItem>
+
+                    <ListViewItem Height="30.4" IsEnabled="False">
+                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4" IsEnabled="False">
-                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False"/>
+                        <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed"/>
-                    </ListViewItem>
-                    <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False"/>
-                    </ListViewItem>
-                    <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False"/>
-                    </ListViewItem>
-                    <ListViewItem Height="30.4" IsEnabled="False">
-                        <TextBox x:Name="txt_vModel" Margin="2" Width="180"/>
-                    </ListViewItem>
-                    <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_advance" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_lend" Margin="2" Width="180"/>
+                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_return" Margin="2" Width="180"/>
+                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
                         <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>
@@ -92,7 +100,13 @@
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="UPDATE BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="UPDATE BOOKING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
     </Grid>
 </Window>

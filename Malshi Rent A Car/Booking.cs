@@ -78,6 +78,12 @@ namespace Malshi_Rent_A_Car
             dt = db.getData(query);
             return dt;
         }
+        public DataTable viewBillForm(string bid)
+        {
+            string query = "exec billForm '"+bid+"'";
+            dt = db.getData(query);
+            return dt;
+        }
         public DataTable viewBookingID(string bid)
         {
             string query = "select * from booking where bookingID='"+bid+"'";

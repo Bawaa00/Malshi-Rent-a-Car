@@ -31,8 +31,7 @@ namespace Malshi_Rent_A_Car
         Customer customer = new Customer();
 
         private void form_updateBooking_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataTable dt = new DataTable();
+        {           
             dt = booking.viewBooking();
             cmb_bid.ItemsSource = dt.DefaultView;
             cmb_bid.DisplayMemberPath = "bookingID";
