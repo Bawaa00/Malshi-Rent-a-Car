@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Repairs" Height="433.377" Width="830.236" Loaded="frm_addRepair_Loaded">
+        Title="Add Repairs" Height="433.377" Width="830.236" Loaded="frm_addRepair_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
                     <ListViewItem>
                         <TextBlock Text="Type" Margin="5 5.5 0 5.5"/>
                     </ListViewItem>
@@ -39,20 +39,21 @@
             </StackPanel>
         </Grid>
         <Grid Width="220" HorizontalAlignment="Left" Margin="200 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top">
                     <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="23">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
+
                     </TextBlock>
                 </Grid>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="35.4">
-                        <ComboBox Name="cmb_Rtype" Margin="2" Width="180" DropDownClosed="cmb_Rtype_DropDownClosed">
+                        <ComboBox Name="cmb_Rtype" Margin="2" Width="180" DropDownClosed="cmb_Rtype_DropDownClosed" Background="{x:Null}">
                             <ComboBoxItem>
                                 <TextBlock Text="Maintenance"/>
                             </ComboBoxItem>
@@ -62,19 +63,19 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_id" Margin="2" Width="180"/>
+                        <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <DatePicker x:Name="date_repair" Margin="2" Width="180"/>
+                        <DatePicker x:Name="date_repair" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180" DropDownClosed="cmb_vehicle_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180" DropDownClosed="cmb_vehicle_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_location" Margin="2" Width="180" TextChanged="txt_location_TextChanged"/>
+                        <TextBox x:Name="txt_location" Margin="2" Width="180" TextChanged="txt_location_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_cost" Margin="2" Width="180" TextChanged="txt_cost_TextChanged"/>
+                        <TextBox x:Name="txt_cost" Margin="2" Width="180" TextChanged="txt_cost_TextChanged" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
                         <TextBox x:Name="txt_option1" Margin="2" Width="180" Visibility="Hidden"/>
@@ -98,7 +99,13 @@
             <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="201,252,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="ADD NEW REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="ADD NEW REPAIR" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White" />
         </Grid>
 
     </Grid>

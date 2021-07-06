@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Account" Height="580" Width="539.164" WindowStartupLocation="CenterScreen">
+        Title="Add Account" Height="492" Width="513.164" WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Left" Width="529">
         <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="184,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="txt_uname_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,62,0,0" TextWrapping="Wrap" Text="User Type" VerticalAlignment="Top"/>
