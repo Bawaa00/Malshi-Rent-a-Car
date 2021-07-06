@@ -15,6 +15,7 @@ namespace Malshi_Rent_A_Car
         string que;
         string answer;
         Database db = new Database();
+        DataTable dt = new DataTable();
 
         public User(string utype, string uname, string pass, string que, string answer)
         {
@@ -30,12 +31,21 @@ namespace Malshi_Rent_A_Car
             this.uname = uname;
             this.pass = pass;
         }
+        public User()
+        {
+
+        }
 
         public int addAccount()
         {
             string query = "insert into UserAcc values ('" + uname + "','" + pass + "','" + utype + "','" + que + "','" + answer + "')";
             int i = db.save_update_delete(query);
             return i;
+        }
+        public DataTable checkUser(string user)
+        {
+            dt = db.getData("select * from UserAcc where Uname = '" + user + "'");
+            return dt;
         }
 
         public int authorizeAccount()

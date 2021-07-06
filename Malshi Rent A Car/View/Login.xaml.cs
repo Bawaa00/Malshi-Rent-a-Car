@@ -33,7 +33,6 @@ namespace Malshi_Rent_A_Car
             int i = user.authorizeAccount();
             if (i == 1)
             {
-                MessageBox.Show("Login Success");
                 Dashboard dash = new Dashboard();
                 this.Close();
                 dash.Show();

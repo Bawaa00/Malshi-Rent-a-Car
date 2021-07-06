@@ -30,10 +30,13 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+        DataTable dt = new DataTable();
+        Database db = new Database();
+        User user = new User();
 
         private void btn_create_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox msg = new MessageBox();
+           MessageBox msg = new MessageBox();
            HashCode hc = new HashCode();
             User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), cmb_que.Text, txt_answer.Text);
             int i = user.addAccount();
@@ -41,10 +44,11 @@ namespace Malshi_Rent_A_Car
             {
                 msg.informationMsg("Account Successfully Registered!");
                 msg.Show();
+                fom_addAccount_Loaded(this, null);
             }
             else
             {
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.errorMsg("Sorry, couldn't create Account.Please try again");
                 msg.Show();
             }
         }
@@ -52,9 +56,25 @@ namespace Malshi_Rent_A_Car
         private void txt_uname_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_uname.Text.Length == 0)
-                error_msg.Text = "Please Enter Use Name  ";
+            {
+                error_msg.Text = "Please Enter a UserName  ";
+            }    
             else
-                error_msg.Text = "";
+            {
+                dt = user.checkUser(txt_uname.Text);
+                if (dt.Rows.Count == 1)
+                {
+                    error_msg.Text = "Sorry Username already taken";
+                    txt_uname.Focus();
+                }
+                else
+                {
+                    error_msg.Text = "Valid Username";
+                }
+            }
+              //error_msg.Text = "";
+
+           
         }
 
         private void txt_answer_TextChanged(object sender, TextChangedEventArgs e)
@@ -67,8 +87,15 @@ namespace Malshi_Rent_A_Car
 
         private void txt_pass_KeyUp(object sender, KeyEventArgs e)
         {
+            if (!Regex.IsMatch(txt_pass.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"))
+            {
+                error_msg.Text = "Invalid Password";
+            }
+            else
+            {
+                error_msg.Text = "Valid Password";
+            }
 
-            
         }
 
         private void cmb_utype_DropDownClosed(object sender, EventArgs e)
@@ -87,6 +114,28 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Please Select Question";
             }
             else { error_msg.Text = ""; }
+        }
+
+        private void txt_retype_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txt_pass.Password != txt_retype.Password)
+            {
+                error_msg.Text = "Passwords do not match";
+            }
+            else if (txt_pass.Password == txt_retype.Password)
+            {
+                error_msg.Text = "Passwords Match";
+            }
+        }
+
+        private void fom_addAccount_Loaded(object sender, RoutedEventArgs e)
+        {
+            cmb_utype.SelectedIndex = -1;
+            txt_uname.Clear();
+            txt_pass.Clear();
+            txt_retype.Clear();
+            cmb_que.SelectedIndex = -1;
+            txt_answer.Clear();
         }
     }
 }
