@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -62,15 +63,26 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_bid_DropDownClosed(object sender, EventArgs e)
         {
-            dt = booking.viewBookingID(cmb_bid.Text);
-            txt_advance.Text = dt.Rows[0][4].ToString();
-            dte_lend.Text = dt.Rows[0][2].ToString();
-            dte_return.Text = dt.Rows[0][3].ToString();
-            dt = booking.viewCustomerBooking(cmb_bid.Text);
-            cmb_cNIC.Text = dt.Rows[0][1].ToString();
-            cmb_vLplate.Text = dt.Rows[0][2].ToString();
-            cmb_cNIC_DropDownClosed(this, null);
-            cmb_vLplate_DropDownClosed(this, null);
+
+            if (cmb_bid.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Booking ID";
+            }
+            else
+            {
+                dt = booking.viewBookingID(cmb_bid.Text);
+                txt_advance.Text = dt.Rows[0][4].ToString();
+                dte_lend.Text = dt.Rows[0][2].ToString();
+                dte_return.Text = dt.Rows[0][3].ToString();
+                dt = booking.viewCustomerBooking(cmb_bid.Text);
+                cmb_cNIC.Text = dt.Rows[0][1].ToString();
+                cmb_vLplate.Text = dt.Rows[0][2].ToString();
+                cmb_cNIC_DropDownClosed(this, null);
+                cmb_vLplate_DropDownClosed(this, null);
+            }
+
+
+            
         }
 
         private void cmb_cNIC_DropDownClosed(object sender, EventArgs e)
@@ -115,5 +127,7 @@ namespace Malshi_Rent_A_Car
             else
                 MessageBox.Show("Could not delete data,Please try agian");
         }
+
+       
     }
 }

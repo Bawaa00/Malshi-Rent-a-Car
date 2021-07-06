@@ -71,6 +71,7 @@
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnResAdrs_TextChanged" Background="{x:Null}"/>
+
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_OwnTelHome_TextChanged" Background="{x:Null}"/>

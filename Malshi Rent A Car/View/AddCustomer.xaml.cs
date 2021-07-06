@@ -171,7 +171,7 @@ namespace Malshi_Rent_A_Car
         private void txt_CusTelHome_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusTelHome.Text.Length == 0)
-                error_msg.Text = "Please Enter Customer Kin Contact Number ";
+                error_msg.Text = "Please Enter Customer  Home Telephone ";
             else if (!Regex.IsMatch(txt_CusTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
 
                 error_msg.Text = "Contact No not Valid";
@@ -182,7 +182,7 @@ namespace Malshi_Rent_A_Car
         private void txt_CusTelMobile_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusTelMobile.Text.Length == 0)
-                error_msg.Text = "Please Enter Customer Kin Contact Number ";
+                error_msg.Text = "Please Enter Customer Mobile Number ";
             else if (!Regex.IsMatch(txt_CusTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
 
                 error_msg.Text = "Contact No not Valid";
@@ -211,7 +211,7 @@ namespace Malshi_Rent_A_Car
         private void txt_CusTelWork_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusTelWork.Text.Length == 0)
-                error_msg.Text = "Please Enter Customer Kin Contact Number ";
+                error_msg.Text = "Please Enter Customer Work Telephone Number ";
             else if (!Regex.IsMatch(txt_CusTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
 
                 error_msg.Text = "Contact No not Valid";

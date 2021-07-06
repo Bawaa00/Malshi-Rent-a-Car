@@ -66,7 +66,8 @@
                     <ListViewItem Height="30.4">
                         <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
-                    <ListViewItem Height="30.4">
+
+                    <ListViewItem Height="30.4" IsEnabled="False">
                         <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
@@ -78,8 +79,9 @@
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
-                    <ListViewItem Height="30.4">
+                    <ListViewItem Height="30.4" IsEnabled="False">
                         <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}"/>
@@ -94,6 +96,7 @@
                         <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>
                     </ListViewItem>
                 </ListView>
+                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Height="20" Background="#FFD8D92C"/>
             </StackPanel>
         </Grid>
         <Grid VerticalAlignment="Top">

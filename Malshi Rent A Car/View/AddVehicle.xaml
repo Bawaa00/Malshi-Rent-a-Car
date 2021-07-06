@@ -192,7 +192,9 @@
                         <DatePicker x:Name="date_lend" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_oPay" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+
+                        <TextBox x:Name="txt_oPay" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_oPay_TextChanged"/>
+
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_wName" Width="150" Margin="5 0 0 0" TextChanged="txt_wName_TextChanged" Background="{x:Null}"/>

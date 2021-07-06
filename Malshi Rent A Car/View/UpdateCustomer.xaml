@@ -69,40 +69,40 @@
                         <ComboBox x:Name="cmb_nic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_nic_DropDownClosed" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_firstname" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_firstname" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_firstname_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_lname" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_lname" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_lname_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusEmail" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusEmail" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusEmail_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusResAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusResAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusResAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelHome" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelHome" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusTelHome_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelMobile" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelMobile" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusTelMobile_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusProfession" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusProfession" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusProfession_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusWorkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusWorkAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelWork" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelWork" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusTelWork_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinName" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinName" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusKinName_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusKinkAdrs_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_CusKinConatct_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
                 </ListView>
@@ -124,5 +124,6 @@
             <Image x:Name="img_customer" HorizontalAlignment="Left" Height="280" Margin="-1" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
         </Border>
         <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="497,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="420,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396" Height="32" Background="#FFCCEA22"/>
     </Grid>
 </Window>

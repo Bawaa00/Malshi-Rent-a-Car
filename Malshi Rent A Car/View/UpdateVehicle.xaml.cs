@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Data;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace Malshi_Rent_A_Car
 {
@@ -58,46 +59,52 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_plateNo_DropDownClosed(object sender, EventArgs e)
         {
-            dt = vehicle.viewVehicle(cmb_plateNo.Text);
-            cmb_modelID.Text = dt.Rows[0][1].ToString();
-            cmb_category.Text = dt.Rows[0][2].ToString();
-            txt_year.Text = dt.Rows[0][3].ToString();
-            txt_make.Text = dt.Rows[0][4].ToString();
-            txt_model.Text = dt.Rows[0][5].ToString();
-            cmb_color.Text = dt.Rows[0][6].ToString();
-            cmb_trans.Text = dt.Rows[0][7].ToString();
-            cmb_Ecapacity.Text = dt.Rows[0][8].ToString();
-            cmb_Ftype.Text = dt.Rows[0][9].ToString();
-            cmb_passengers.Text = dt.Rows[0][10].ToString();
-            //insID = dt.Rows[0][].ToString();
-            
-            path = dt.Rows[0][12].ToString();
-            date_LicStart.Text = dt.Rows[0][13].ToString();
-            date_LicEnd.Text = dt.Rows[0][14].ToString();
-            cmb_ins.Text = dt.Rows[0][16].ToString();
-            date_InsStart.Text = dt.Rows[0][17].ToString();
-            date_InsEnd.Text = dt.Rows[0][18].ToString();   
-            cmb_oNIC.Text = dt.Rows[0][19].ToString();
-            txt_oName.Text = dt.Rows[0][20].ToString();
-            date_lend.Text = dt.Rows[0][21].ToString();
-            txt_pay.Text = dt.Rows[0][22].ToString();
-            txt_wName.Text = dt.Rows[0][23].ToString();
-            txt_wAddress.Text = dt.Rows[0][24].ToString();
-            txt_wContact.Text = dt.Rows[0][25].ToString();
-            cmb_ins_DropDownClosed(this, null);
-
-            if (path != "")
+            if (cmb_plateNo.SelectedItem == null)
             {
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = new Uri(path);
-                image.EndInit();
-                img_vehicle.Source = image;
+                error_msg.Text = "Please Select Vehicle Number";
             }
             else
-            {
-                img_vehicle.Source = null;
+            { dt = vehicle.viewVehicle(cmb_plateNo.Text);
+                cmb_modelID.Text = dt.Rows[0][1].ToString();
+                cmb_category.Text = dt.Rows[0][2].ToString();
+                txt_year.Text = dt.Rows[0][3].ToString();
+                txt_make.Text = dt.Rows[0][4].ToString();
+                txt_model.Text = dt.Rows[0][5].ToString();
+                cmb_color.Text = dt.Rows[0][6].ToString();
+                cmb_trans.Text = dt.Rows[0][7].ToString();
+                cmb_Ecapacity.Text = dt.Rows[0][8].ToString();
+                cmb_Ftype.Text = dt.Rows[0][9].ToString();
+                cmb_passengers.Text = dt.Rows[0][10].ToString();
+                //insID = dt.Rows[0][].ToString();
+
+                path = dt.Rows[0][12].ToString();
+                date_LicStart.Text = dt.Rows[0][13].ToString();
+                date_LicEnd.Text = dt.Rows[0][14].ToString();
+                cmb_ins.Text = dt.Rows[0][16].ToString();
+                date_InsStart.Text = dt.Rows[0][17].ToString();
+                date_InsEnd.Text = dt.Rows[0][18].ToString();
+                cmb_oNIC.Text = dt.Rows[0][19].ToString();
+                txt_oName.Text = dt.Rows[0][20].ToString();
+                date_lend.Text = dt.Rows[0][21].ToString();
+                txt_pay.Text = dt.Rows[0][22].ToString();
+                txt_wName.Text = dt.Rows[0][23].ToString();
+                txt_wAddress.Text = dt.Rows[0][24].ToString();
+                txt_wContact.Text = dt.Rows[0][25].ToString();
+                cmb_ins_DropDownClosed(this, null);
+
+                if (path != "")
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(path);
+                    image.EndInit();
+                    img_vehicle.Source = image;
+                }
+                else
+                {
+                    img_vehicle.Source = null;
+                }
             }
         }
 
@@ -115,38 +122,79 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
         {
-            dt = insurance.viewInsurance(cmb_ins.Text);
-            insID = dt.Rows[0][0].ToString();
+            if (cmb_ins.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Company";
+            }
+            else
+            {
+                dt = insurance.viewInsurance(cmb_ins.Text);
+                insID = dt.Rows[0][0].ToString();
+            }
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            string name = System.IO.Path.GetFileName(path);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(path, destinationPath, true);
-            int i = vehicle.updateVehicle(cmb_plateNo.Text, cmb_category.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_passengers.Text), date_LicStart.Text, date_LicEnd.Text, date_InsEnd.Text, date_InsStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_pay.Text), txt_wName.Text, txt_wAddress.Text, Int32.Parse(txt_wContact.Text), cmb_modelID.Text, insID, cmb_oNIC.Text);
-            if (i == 1)
+            try
             {
-                MessageBox.Show("Data Update Successfully");
+                string name = System.IO.Path.GetFileName(path);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(path, destinationPath, true);
+                int i = vehicle.updateVehicle(cmb_plateNo.Text, cmb_category.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_passengers.Text), date_LicStart.Text, date_LicEnd.Text, date_InsEnd.Text, date_InsStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_pay.Text), txt_wName.Text, txt_wAddress.Text, Int32.Parse(txt_wContact.Text), cmb_modelID.Text, insID, cmb_oNIC.Text);
+                if (i == 1)
+                {
+                    MessageBox.Show("Data Update Successfully");
+                }
+                else
+                    MessageBox.Show("Error.Could not update data");
             }
-            else
-                MessageBox.Show("Error.Could not update data");
+            catch (ArgumentNullException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_modelID_DropDownClosed(object sender, EventArgs e)
         {
-            dt = model.viewPricing(cmb_modelID.Text);
-            //modelID = dt.Rows[0][0].ToString();
-            cmb_category.Text = dt.Rows[0][1].ToString();
-            txt_make.Text = dt.Rows[0][3].ToString();
-            txt_model.Text = dt.Rows[0][4].ToString();
-            txt_year.Text = dt.Rows[0][2].ToString();
+            if (cmb_modelID.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Model";
+            }
+            else {
+                dt = model.viewPricing(cmb_modelID.Text);
+                //modelID = dt.Rows[0][0].ToString();
+                cmb_category.Text = dt.Rows[0][1].ToString();
+                txt_make.Text = dt.Rows[0][3].ToString();
+                txt_model.Text = dt.Rows[0][4].ToString();
+                txt_year.Text = dt.Rows[0][2].ToString();
+            }
         }
 
         private void cmb_oNIC_DropDownClosed(object sender, EventArgs e)
         {
-            dt = owner.viewOwner(cmb_oNIC.Text);
-            txt_oName.Text = dt.Rows[0][1].ToString();
+            if (cmb_oNIC.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Owner NIC";
+            }
+            else
+            {
+                dt = owner.viewOwner(cmb_oNIC.Text);
+                txt_oName.Text = dt.Rows[0][1].ToString();
+            }
         }
 
         private String GetDestinationPath(string filename)
@@ -164,6 +212,7 @@ namespace Malshi_Rent_A_Car
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
+            try { 
             OpenFileDialog open = new OpenFileDialog();
             open.Multiselect = false;
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
@@ -175,6 +224,104 @@ namespace Malshi_Rent_A_Car
                 ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
                 img_vehicle.Source = imgsource;
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
+        }
+
+        private void cmb_category_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_category.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Category";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_color_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_color.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Color";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_Ecapacity_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_Ecapacity.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Engin Capacity";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_trans_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_trans.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Transmission";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_Ftype_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_Ftype.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Fuel Type";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cmb_passengers_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_passengers.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Number of Passengers";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void txt_wName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_wName.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_wAddress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_wAddress.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_wContact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_wContact.Text.Length == 0)
+                error_msg.Text = "Please Enter Witness Contact Number ";
+            else if (!Regex.IsMatch(txt_wContact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_pay_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_pay.Text.Length == 0)
+                error_msg.Text = "Please Enter Cost per month ";
+            else if (!Regex.IsMatch(txt_pay.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
         }
     }
 }

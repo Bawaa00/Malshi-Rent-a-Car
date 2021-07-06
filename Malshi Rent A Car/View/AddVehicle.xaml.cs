@@ -281,5 +281,15 @@ namespace Malshi_Rent_A_Car
             }
             else { error_msg.Text = ""; }
         }
+
+        private void txt_oPay_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_oPay.Text.Length == 0)
+                error_msg.Text = "Please Enter Cost per month ";
+            else if (!Regex.IsMatch(txt_oPay.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
     }
 }
