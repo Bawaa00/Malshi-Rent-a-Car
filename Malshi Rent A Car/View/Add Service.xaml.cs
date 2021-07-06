@@ -58,11 +58,14 @@ namespace Malshi_Rent_A_Car
             {
                 Service Service = new Service(txt_sid.Text, txt_details.Text, txt_sLocation.Text, dte_service.Text, Convert.ToDouble(txt_mileage.Text), Convert.ToDouble(txt_nxtMileage.Text), Convert.ToDouble(txt_sCost.Text));
                 int i = Service.addService(cmb_vid.Text);
+                Console.WriteLine(i);
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
-                    msg.errorMsg("Please fill the form correctly. ");
+                    msg.errorMsg("Data Saved Successfully!");
                     msg.Show();
+                    btn_cls_Click(this, null);
+                    form_addService_Loaded(this, null);
                     //MessageBox.Show("Data Saved Successfully!");
                 }
                 else
@@ -72,8 +75,7 @@ namespace Malshi_Rent_A_Car
                     msg.Show();
                     //MessageBox.Show("Couldnt Save data.Please Try Again");
                 }
-            }
-          
+            }          
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox msg = new MessageBox();
@@ -91,12 +93,11 @@ namespace Malshi_Rent_A_Car
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
             cmb_vid.SelectedIndex = -1;
-            txt_sid.Clear();
             txt_details.Clear();
             txt_sLocation.Clear();
             dte_service.SelectedDate = null;
             txt_mileage.Clear();
-            txt_mileage.Clear();
+            txt_nxtMileage.Clear();
             txt_sCost.Clear();
         }
 
