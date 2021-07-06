@@ -154,9 +154,9 @@
                     </ListViewItem>
 
                 </ListView>
-                <Button x:Name="btn_add" Content="ADD" Click="btn_add_Click"/>
-                <Button x:Name="btn_update" Content="UPDATE" Click="btn_update_Click"/>
-                <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click"/>
+                <Button x:Name="btn_add" Content="ADD" Click="btn_add_Click" Visibility="Hidden"/>
+                <Button x:Name="btn_update" Content="UPDATE" Click="btn_update_Click" Visibility="Hidden"/>
+                <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click" Visibility="Hidden"/>
 
             </StackPanel>
         </Grid>
