@@ -46,5 +46,12 @@ namespace Malshi_Rent_A_Car
                 msg.Show();
             }                
         }
+
+        private void lbl_forgot_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            View.ResetPassword obj = new View.ResetPassword();
+            obj.Show();
+            this.Close();
+        }
     }
 }

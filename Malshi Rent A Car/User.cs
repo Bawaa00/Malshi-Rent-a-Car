@@ -31,6 +31,10 @@ namespace Malshi_Rent_A_Car
             this.uname = uname;
             this.pass = pass;
         }
+        public User(string uname)
+        {
+            this.uname = uname;
+        }
         public User()
         {
 
@@ -61,5 +65,13 @@ namespace Malshi_Rent_A_Car
             string type = dt.Rows[0][2].ToString();
             return type;
         }
+        public string getEmail()
+        {
+            string query = "select * from UserAcc where Uname='" + uname + "'";
+            dt = db.getData(query);
+            string email = dt.Rows[0][3].ToString();
+            return email;
+        }
+       
     }
 }
