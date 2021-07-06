@@ -25,9 +25,9 @@ namespace Malshi_Rent_A_Car
             this.que = que;
             this.answer = answer;
         }
-        public User(string utype, string uname, string pass)
+        public User(string uname, string pass)
         {
-            this.utype = utype;
+           // this.utype = utype;
             this.uname = uname;
             this.pass = pass;
         }
@@ -50,10 +50,16 @@ namespace Malshi_Rent_A_Car
 
         public int authorizeAccount()
         {
-            DataTable dt = new DataTable();
-            string query = "select * from UserAcc where Uname='"+uname+"' and Utype='"+utype+"' and Upass='"+pass+"'";
+            string query = "select * from UserAcc where Uname='" + uname + "' and Upass='" + pass + "'";
             dt = db.getData(query);
             return dt.Rows.Count;
+        }
+        public string getUserType()
+        {
+            string query = "select * from UserAcc where Uname='" + uname + "' and Upass='" + pass + "'";
+            dt = db.getData(query);
+            string type = dt.Rows[0][2].ToString();
+            return type;
         }
     }
 }

@@ -23,6 +23,12 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+        String utype;
+        public Dashboard(string utype)
+        {
+            InitializeComponent();
+            this.utype = utype;
+        }
 
         private void list_customer_Selected(object sender, RoutedEventArgs e)
         {

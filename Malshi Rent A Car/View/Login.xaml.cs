@@ -29,16 +29,22 @@ namespace Malshi_Rent_A_Car
         private void btn_log_Click(object sender, RoutedEventArgs e)
         {
             HashCode hc = new HashCode();
-            User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password));
+            User user = new User(txt_uname.Text, hc.PassHash(txt_pass.Password));
             int i = user.authorizeAccount();
             if (i == 1)
             {
+                //string type = user.getUserType();
+                //Dashboard dash = new Dashboard(type);
                 Dashboard dash = new Dashboard();
                 this.Close();
                 dash.Show();
             }
             else
-                MessageBox.Show("Invalid Username or Password");
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Sorry,Invalid username or password");
+                msg.Show();
+            }                
         }
     }
 }
