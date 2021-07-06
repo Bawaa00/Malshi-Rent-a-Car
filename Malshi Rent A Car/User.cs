@@ -72,6 +72,12 @@ namespace Malshi_Rent_A_Car
             string email = dt.Rows[0][3].ToString();
             return email;
         }
+        public int updatePassword(string newPass)
+        {
+            string query = "update UserAcc set Upass='"+newPass+"' where Uname='" + uname + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
        
     }
 }

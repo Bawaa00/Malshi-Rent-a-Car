@@ -22,11 +22,34 @@ namespace Malshi_Rent_A_Car.View
         public manageAccount()
         {
             InitializeComponent();
+            txt_uName.IsEnabled = true;
         }
         public manageAccount(string uname)
         {
             InitializeComponent();
             txt_uName.Text = uname;
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            HashCode hc = new HashCode();
+            User user = new User(txt_uName.Text);
+            int i = user.updatePassword(hc.PassHash(txt_pass.Password));
+            if (i ==1)
+            {
+                MessageBox msg = new MessageBox();
+                msg.informationMsg("Password Reseted Successfully!");
+                this.Close();                 
+                MainWindow login = new MainWindow();
+                login.Show();
+                msg.Show();
+            }
+            else
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Error.Please try again");
+                msg.Show();
+            }
         }
     }
 }
