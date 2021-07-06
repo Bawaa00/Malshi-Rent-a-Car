@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Data;
 using System.Text.RegularExpressions;
-
+using System.Net.Mail;
 
 namespace Malshi_Rent_A_Car
 {
@@ -38,7 +38,7 @@ namespace Malshi_Rent_A_Car
         {
            MessageBox msg = new MessageBox();
            HashCode hc = new HashCode();
-            User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), cmb_que.Text, txt_answer.Text);
+            User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), txt_email.Text);
             int i = user.addAccount();
             if (i == 1)
             {
@@ -56,9 +56,9 @@ namespace Malshi_Rent_A_Car
         private void txt_uname_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_uname.Text.Length == 0)
-            {
                 error_msg.Text = "Please Enter a UserName  ";
-            }    
+            else if (txt_uname.Text.Length <= 5)
+                error_msg.Text = "Username to short ";
             else
             {
                 dt = user.checkUser(txt_uname.Text);
@@ -72,60 +72,31 @@ namespace Malshi_Rent_A_Car
                     error_msg.Text = "Valid Username";
                 }
             }
-              //error_msg.Text = "";
-
-           
-        }
-
-        private void txt_answer_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt_answer.Text.Length == 0)
-                error_msg.Text = "Please Enter Answer  ";
-            else
-                error_msg.Text = "";
+          
         }
 
         private void txt_pass_KeyUp(object sender, KeyEventArgs e)
         {
             if (!Regex.IsMatch(txt_pass.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"))
-            {
                 error_msg.Text = "Invalid Password";
-            }
             else
-            {
                 error_msg.Text = "Valid Password";
-            }
 
         }
 
         private void cmb_utype_DropDownClosed(object sender, EventArgs e)
         {
             if (cmb_utype.SelectedItem == null)
-            {
                 error_msg.Text = "Please Select Use Type";
-            }
-            else { error_msg.Text = ""; }
-        }
-
-        private void cmb_que_DropDownClosed(object sender, EventArgs e)
-        {
-            if (cmb_que.SelectedItem == null)
-            {
-                error_msg.Text = "Please Select Question";
-            }
             else { error_msg.Text = ""; }
         }
 
         private void txt_retype_KeyUp(object sender, KeyEventArgs e)
         {
             if (txt_pass.Password != txt_retype.Password)
-            {
                 error_msg.Text = "Passwords do not match";
-            }
             else if (txt_pass.Password == txt_retype.Password)
-            {
                 error_msg.Text = "Passwords Match";
-            }
         }
 
         private void fom_addAccount_Loaded(object sender, RoutedEventArgs e)
@@ -134,8 +105,30 @@ namespace Malshi_Rent_A_Car
             txt_uname.Clear();
             txt_pass.Clear();
             txt_retype.Clear();
-            cmb_que.SelectedIndex = -1;
-            txt_answer.Clear();
+            txt_email.Clear();
+        }
+
+        private void txt_email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_email.Text.Length == 0)
+                error_msg.Text = "Please enter a email address  ";
+            else if(!IsValid(txt_email.Text))
+                error_msg.Text = "Please enter a valid email address ";
+            else
+                error_msg.Text = "";
+        }
+
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }

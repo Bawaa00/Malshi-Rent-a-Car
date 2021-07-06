@@ -36,11 +36,11 @@ namespace Malshi_Rent_A_Car.View
             HashCode hc = new HashCode();
             User user = new User(txt_uName.Text);
             int i = user.updatePassword(hc.PassHash(txt_pass.Password));
-            if (i ==1)
+            if (i == 1)
             {
                 MessageBox msg = new MessageBox();
                 msg.informationMsg("Password Reseted Successfully!");
-                this.Close();                 
+                this.Close();
                 MainWindow login = new MainWindow();
                 login.Show();
                 msg.Show();
@@ -80,33 +80,25 @@ namespace Malshi_Rent_A_Car.View
         private void txt_retype_KeyUp(object sender, KeyEventArgs e)
         {
             if (txt_pass.Password != txt_retype.Password)
-            {
                 txt_info.Text = "Passwords do not match";
-            }
             else if (txt_pass.Password == txt_retype.Password)
-            {
                 txt_info.Text = "Passwords Match";
-            }
         }
 
         private void txt_pass_KeyUp(object sender, KeyEventArgs e)
         {
             if (!Regex.IsMatch(txt_pass.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"))
-            {
                 txt_info.Text = "Invalid Password";
-            }
             else
-            {
                 txt_info.Text = "Valid Password";
-            }
         }
 
         private void txt_uName_TextInput(object sender, TextCompositionEventArgs e)
         {
             if (txt_uName.Text.Length == 0)
-            {
-                txt_info.Text = "Please Enter a UserName  ";
-            }
+                txt_info.Text = "Username cannot be blank ";
+            else
+                txt_info.Text = "";
         }
     }
 }

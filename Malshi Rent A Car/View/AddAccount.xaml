@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Account" Height="553" Width="515.164" WindowStartupLocation="CenterScreen" Loaded="fom_addAccount_Loaded">
-    <Grid HorizontalAlignment="Left" Width="503">
+        Title="Add Account" Height="467" Width="468.164" WindowStartupLocation="CenterScreen" Loaded="fom_addAccount_Loaded">
+    <Grid HorizontalAlignment="Left" Width="458">
         <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="184,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="txt_uname_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,62,0,0" TextWrapping="Wrap" Text="User Type" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,114,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,179,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
-        <Button x:Name="btn_create" Content="Create Account" HorizontalAlignment="Left" Margin="372,492,0,0" VerticalAlignment="Top" Width="96" Click="btn_create_Click"/>
+        <Button x:Name="btn_create" Content="Create Account" HorizontalAlignment="Left" Margin="325,389,0,0" VerticalAlignment="Top" Width="96" Click="btn_create_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,233,0,0" TextWrapping="Wrap" Text="Retype Password" VerticalAlignment="Top"/>
         <ComboBox x:Name="cmb_utype" HorizontalAlignment="Left" Margin="186,62,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmb_utype_DropDownClosed">
             <ComboBoxItem Content="Manager" HorizontalAlignment="Left" Width="118"/>
@@ -19,17 +19,9 @@
         </ComboBox>
         <PasswordBox x:Name="txt_pass" HorizontalAlignment="Left" Margin="184,177,0,0" VerticalAlignment="Top" Width="151" KeyUp="txt_pass_KeyUp"/>
         <PasswordBox x:Name="txt_retype" HorizontalAlignment="Left" Margin="184,233,0,0" VerticalAlignment="Top" Width="151" KeyUp="txt_retype_KeyUp"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,291,0,0" TextWrapping="Wrap" Text="Question" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,291,0,0" TextWrapping="Wrap" Text="Question" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
-        <TextBox x:Name="txt_answer" HorizontalAlignment="Left" Height="23" Margin="187,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="txt_answer_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,340,0,0" TextWrapping="Wrap" Text="Answer" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
-        <ComboBox x:Name="cmb_que" HorizontalAlignment="Left" Margin="186,285,0,0" VerticalAlignment="Top" Width="282" DropDownClosed="cmb_que_DropDownClosed">
-            <ComboBoxItem Content="Favourite Colour" HorizontalAlignment="Left" Width="280"/>
-            <ComboBoxItem Content="Pets Name" HorizontalAlignment="Left" Width="280"/>
-            <ComboBoxItem Content="Mothers Last Name" HorizontalAlignment="Left" Width="280"/>
-            <ComboBoxItem Content="Hometown" HorizontalAlignment="Left" Width="280"/>
-        </ComboBox>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="158,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="42"/>
+        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="23" Margin="184,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="txt_email_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,286,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="78,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="42"/>
 
     </Grid>
 </Window>

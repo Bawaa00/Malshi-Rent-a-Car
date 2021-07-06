@@ -12,22 +12,19 @@ namespace Malshi_Rent_A_Car
         string utype;
         string uname;
         string pass;
-        string que;
-        string answer;
+        string email;
         Database db = new Database();
         DataTable dt = new DataTable();
 
-        public User(string utype, string uname, string pass, string que, string answer)
+        public User(string utype, string uname, string pass, string email)
         {
             this.utype = utype;
             this.uname = uname;
             this.pass = pass;
-            this.que = que;
-            this.answer = answer;
+            this.email = email;
         }
         public User(string uname, string pass)
         {
-           // this.utype = utype;
             this.uname = uname;
             this.pass = pass;
         }
@@ -42,7 +39,7 @@ namespace Malshi_Rent_A_Car
 
         public int addAccount()
         {
-            string query = "insert into UserAcc values ('" + uname + "','" + pass + "','" + utype + "','" + que + "','" + answer + "')";
+            string query = "insert into UserAcc values ('" + uname + "','" + pass + "','" + utype + "','" + email + "')";
             int i = db.save_update_delete(query);
             return i;
         }
