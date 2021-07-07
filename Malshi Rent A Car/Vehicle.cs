@@ -103,12 +103,30 @@ namespace Malshi_Rent_A_Car
             int i = db.save_update_delete(query);
             return i;
         }
-
         public int deleteVehicle(string plate)
         {
             string query = "delete from Vehicle where plateNumber = '" + plate + "'";
             int i = db.save_update_delete(query);
             return i;
+        }
+        public int getTotalVehicleCount()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+
+        }
+        public int getAvaialableVehicleCount()
+          {
+             dt = db.getData("select count(plateNumber) from Vehicle where bookingStatus='0'");
+             int count = Int32.Parse(dt.Rows[0][0].ToString());
+             return count;
+          }
+        public int getSedans()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where bookingStatus='0'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
         }
     }
 

@@ -134,7 +134,8 @@
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+
+                        <TextBox x:Name="txt_Lplate" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_Ecapacity" Width="150" Margin="5 2 0 -3" DropDownClosed="cmb_Ecapacity_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1">
@@ -224,7 +225,7 @@
         <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="650,715,0,0" VerticalAlignment="Top" Width="76" Height="25" Click="btn_save_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE">
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
-            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419"/>
+            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419" Stretch="Fill"/>
         </Border>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="445,547,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" Height="58"/>
     </Grid>
