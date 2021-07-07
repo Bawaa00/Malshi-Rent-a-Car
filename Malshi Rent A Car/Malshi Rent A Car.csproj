@@ -15,8 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
 
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    
 
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -348,10 +347,6 @@
   </ItemGroup>
   <ItemGroup>
 
-    <Resource Include="Icons\Back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Home1.png" />
 
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
