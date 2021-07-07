@@ -108,13 +108,14 @@ namespace Malshi_Rent_A_Car
             {
                 MessageBox msg = new MessageBox();
                 msg.Show();
+                form_updateService_Loaded(this, null);
             }
             else
             {
                 MessageBox msg = new MessageBox();
                 msg.errorMsg("Sorry, couldn't delete your data.Please try again");
                 msg.Show();
-                form_updateService_Loaded(this, null);
+               
             }
         }
 
