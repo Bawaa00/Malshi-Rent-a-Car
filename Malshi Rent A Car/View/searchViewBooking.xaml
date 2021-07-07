@@ -13,7 +13,6 @@
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" CalendarClosed="dte_bDate_CalendarClosed"/>
-                            <Button x:Name="btn_searchbDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5"/>
                         </StackPanel>
 
                     </Grid>
@@ -32,7 +31,6 @@
 
                 </DataGrid>
                 <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="642,330,0,0" VerticalAlignment="Top" Width="124" Click="btn_update_Click"/>
-                <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Bookings]" VerticalAlignment="Top"/>
                 <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="562,330,0,0" VerticalAlignment="Top" Width="74" Click="btn_add_Click"/>
                 <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" Width="74" Click="btn_view_Click"/>
             </Grid>

@@ -70,10 +70,12 @@ namespace Malshi_Rent_A_Car
 
         private void dte_bDate_CalendarClosed(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(dte_bDate.SelectedDate.Value.ToString("yyyy-MM-dd"));
-            Console.WriteLine(dte_bDate.Text);
-            dt = book.viewBookingDate(dte_bDate.Text);           
-            dg_booking.ItemsSource = dt.DefaultView;
+            if(dte_bDate.SelectedDate != null)
+            {
+                dt = book.viewBookingDate(dte_bDate.SelectedDate.Value.ToString("yyyy-MM-dd"));
+                dg_booking.ItemsSource = dt.DefaultView;
+            }
+            
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
