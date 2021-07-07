@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="addNewOwner" Height="534.151" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE"/>
         <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
@@ -104,13 +105,10 @@
             </Grid.Background>
             <TextBlock Text="ADD OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
-        <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
-        <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
+        <Image x:Name="img_owner" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
         <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="758,471,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
         <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="678,471,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
-            <TextBlock TextWrapping="Wrap" Text="[A photo of the owner]"/>
-        </Border>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="203,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" Height="32"/>
     </Grid>
 </Window>

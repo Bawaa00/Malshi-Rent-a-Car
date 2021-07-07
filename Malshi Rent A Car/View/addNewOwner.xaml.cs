@@ -28,18 +28,36 @@ namespace Malshi_Rent_A_Car
         {
             InitializeComponent();
         }
+        string filepath;
+
+
+        private String GetDestinationPath(string filename)
+        {
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + txt_OwnNIC.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + txt_OwnNIC.Text + ".jpg");
+            return appStartPath;
+        }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Owner owner = new Owner(txt_OwnFname.Text, txt_OwnLname.Text, txt_OwnNIC.Text, txt_OwnResAdrs.Text, txt_OwnWorkAdrs.Text, txt_OwnEmail.Text, Int32.Parse(txt_OwnTelMobile.Text), Int32.Parse(txt_OwnTelHome.Text), Int32.Parse(txt_OwnTelWork.Text), txt_OwnProfession.Text);
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
+                Owner owner = new Owner(txt_OwnFname.Text, txt_OwnLname.Text, txt_OwnNIC.Text, txt_OwnResAdrs.Text, txt_OwnWorkAdrs.Text, txt_OwnEmail.Text, Int32.Parse(txt_OwnTelMobile.Text), Int32.Parse(txt_OwnTelHome.Text), Int32.Parse(txt_OwnTelWork.Text), txt_OwnProfession.Text,destinationPath);
                 int i = owner.addOwner();
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
                     msg.Show();
-
+                    btn_cls_Click(this, null);
                 }
                 else
                 {
@@ -80,6 +98,7 @@ namespace Malshi_Rent_A_Car
             txt_OwnProfession.Clear();
             txt_OwnWorkAdrs.Clear();
             txt_OwnTelWork.Clear();
+            img_owner.Source = null;
         }
 
         private void txt_OwnFname_TextChanged(object sender, TextChangedEventArgs e)
@@ -174,6 +193,30 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    filepath = open.FileName; // Stores Original Path in Textbox    
+                    ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
+                    img_owner.Source = imgsource;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
     }
 }

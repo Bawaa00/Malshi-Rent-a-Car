@@ -16,9 +16,10 @@ namespace Malshi_Rent_A_Car
         string email;
         int mobileContact, homeContact ,offContact;
         string profession;
+        string photo;
         Database db = new Database();
 
-        public Owner(string fName, string lName, string NIC, string homeAddress, string offAddress, string email, int mobileContact, int homeContact,int offContact, string profession)
+        public Owner(string fName, string lName, string NIC, string homeAddress, string offAddress, string email, int mobileContact, int homeContact,int offContact, string profession,string photo)
         {
             this.fName = fName;
             this.lName = lName;
@@ -30,6 +31,7 @@ namespace Malshi_Rent_A_Car
             this.homeContact = homeContact;
             this.offContact = offContact;
             this.profession = profession;
+            this.photo = photo;
         }
 
         public Owner()
@@ -39,7 +41,7 @@ namespace Malshi_Rent_A_Car
 
         public int addOwner()
         {
-            string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','"+offContact+"','" + email + "')";
+            string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','"+offContact+"','" + email + "','"+photo+"')";
             int i = db.save_update_delete(query);
             return i;
         }
