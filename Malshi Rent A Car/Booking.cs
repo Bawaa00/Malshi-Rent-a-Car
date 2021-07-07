@@ -54,11 +54,11 @@ namespace Malshi_Rent_A_Car
         }
         public int deleteBooking(string bid,string cid, string vid)
         {
-            string query1 = "delete from Booking where bookingID = '"+bid+"'";
-            string query2 = "delete from Customer_Booking where B_ID = '" + bid + "'";
-            string query3 = "update vehicle set bookingStatus='0' where plateNUmber='" + vid + "'";
-            int i = db.save_update_delete(query1);
-            int j = db.save_update_delete(query2);
+            string query2 = "delete from Customer_Booking where B_ID ='" + bid + "'";
+            string query1 = "delete from Booking where bookingID ='" + bid+"'";            
+            string query3 = "update vehicle set bookingStatus = '0' where plateNumber = '" + vid + "'";
+            int i = db.save_update_delete(query2);
+            int j = db.save_update_delete(query1);
             db.save_update_delete(query3);
             if (i == 1 && j == 1)
                 return i;
