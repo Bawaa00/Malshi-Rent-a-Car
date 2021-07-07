@@ -39,10 +39,10 @@ namespace Malshi_Rent_A_Car
         }
         public override DataTable viewRepair(string id)
         {
-            string query = "select * from Maintenance_Repair where main_RID = '"+id+"'";
-            DataTable dt = new DataTable();
-            dt = db.getData(query);
-            return dt;
+                string query = "select * from Maintenance_Repair where main_RID = '" + id + "'";
+                DataTable dt = new DataTable();
+                dt = db.getData(query);
+                return dt;         
         }
         public DataTable viewRepairVehicle(string vehicle)
         {
