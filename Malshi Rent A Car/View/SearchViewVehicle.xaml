@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="SearchViewVehicle" Height="568.245" Width="1108.546" Loaded="frm_viewVehicles_Loaded" WindowStartupLocation="CenterScreen">
+        Title="SearchViewVehicle" Height="500" Width="900" Loaded="frm_viewVehicles_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="0 40 0 0">
-            <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
+            <Grid Height="60" VerticalAlignment="Top" Background="#FF1763A2">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal"/>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <TextBlock Foreground="White" Text="Catagory" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
                         <ComboBox x:Name="cmb_catagory" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_catagory_DropDownClosed">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="98"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="98"/>
@@ -25,7 +25,7 @@
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Make" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <TextBlock Foreground="White" Text="Make" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
                         <ComboBox x:Name="cmb_make" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_make_DropDownClosed">
                             <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="98"/>
                             <ComboBoxItem Content="BMW"/>
@@ -48,14 +48,14 @@
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Transmission" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <TextBlock Foreground="White" Text="Transmission" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
                         <ComboBox x:Name="cmb_trans" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_trans_DropDownClosed">
                             <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="98"/>
                             <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="98"/>
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Fuel Type" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <TextBlock Foreground="White" Text="Fuel Type" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
                         <ComboBox x:Name="cmb_fuel" Width="100" VerticalAlignment="Center" DropDownClosed="cmb_fuel_DropDownClosed">
                             <ComboBoxItem Content="Petrol" HorizontalAlignment="Left" Width="98"/>
                             <ComboBoxItem Content="Diesel" HorizontalAlignment="Left" Width="98"/>
@@ -66,12 +66,13 @@
                 </StackPanel>
             </Grid>
             <Grid Height="371">
-                <DataGrid x:Name="dg_vehicle" Margin="5,5,5,10">
+                <DataGrid x:Name="dg_vehicle" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="917,379,0,-28" VerticalAlignment="Top" Width="123" Click="btn_update_Click"/>
-                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="837,379,0,-28" VerticalAlignment="Top" Width="75" Click="btn_add_Click"/>
-                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="998,-39,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
+                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="744,330,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="140" Click="btn_update_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="659,330,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_add_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_view_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_available" Content="VIEW AVAILABLE" HorizontalAlignment="Left" Margin="110,331,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="130" Click="btn_available_Click" Style="{DynamicResource RoundedButtonStyle}"/>
             </Grid>
         </StackPanel>
         <Grid VerticalAlignment="Top">
@@ -83,6 +84,6 @@
             </Grid.Background>
             <TextBlock Text="VEHICLES" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
-        <Button x:Name="btn_available" Content="VIEW AVAILABLE" HorizontalAlignment="Left" Margin="875,61,0,0" VerticalAlignment="Top" Width="99" Click="btn_available_Click"/>
+        
     </Grid>
 </Window>

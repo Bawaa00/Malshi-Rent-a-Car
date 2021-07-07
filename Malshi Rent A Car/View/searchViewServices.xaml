@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="View Services" Height="500" Width="800" WindowStartupLocation="CenterScreen" Loaded="form_viewService_Loaded">
+        Title="View Services" Height="500" Width="900" WindowStartupLocation="CenterScreen" Loaded="form_viewService_Loaded">
     <Grid>
         <StackPanel Margin="0 40 0 0">
-            <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
+            <Grid Height="60" VerticalAlignment="Top" Background="#FF1763A2">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Vehicle No" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                            <ComboBox x:Name="cmb_vehicle" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_vehicle_DropDownClosed"/>
+                            <TextBlock Text="Vehicle No" Foreground="White" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                            <ComboBox x:Name="cmb_vehicle" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_vehicle_DropDownClosed" BorderThickness="0,0,0,1"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
@@ -22,10 +22,9 @@
                 <DataGrid x:Name="dg_service" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button x:Name="btn_update" Content="SEARCH &amp;UPDATE" HorizontalAlignment="Left" Margin="616,331,0,0" VerticalAlignment="Top" Width="121" Click="btn_update_Click"/>
-                <TextBlock HorizontalAlignment="Left" Margin="304,145,0,0" TextWrapping="Wrap" Text="[Data Grid View of Services]" VerticalAlignment="Top"/>
-                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="536,331,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_Click"/>
-                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="691,-37,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
+                <Button x:Name="btn_update" Content="SEARCH &amp;UPDATE" HorizontalAlignment="Left" Margin="744,330,0,0" VerticalAlignment="Top" Height="25" Width="140" Foreground="White" FontSize="15" FontWeight="DemiBold" Click="btn_update_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="659,330,0,0" VerticalAlignment="Top" Height="25" Width="75" FontSize="15" Foreground="White" FontWeight="DemiBold" Click="btn_add_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" FontSize="15" Margin="26,331,0,0" VerticalAlignment="Top" Height="25" Width="75" Foreground="White" FontWeight="DemiBold" Click="btn_view_Click" Style="{DynamicResource RoundedButtonStyle}"/>
             </Grid>
         </StackPanel>
         <Grid VerticalAlignment="Top">
