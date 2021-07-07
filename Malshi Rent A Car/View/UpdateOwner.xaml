@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Update Owner" Height="530" Width="850" WindowStartupLocation="CenterScreen" Loaded="form_updateOwner_Loaded">
     <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE"/>
         <Grid Width="180" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
@@ -107,13 +108,10 @@
             </Grid.Background>
             <TextBlock Text="UPDATE OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
-        <!--Image HorizontalAlignment="Left" Height="320" Margin="478,81,0,0" VerticalAlignment="Top" Width="320"/-->
-        <Button Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="img_owner" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
         <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="751,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
         <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="590,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
-            <TextBlock TextWrapping="Wrap" Text="[A photo of the owner]"/>
-        </Border>
         <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="670,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_del_Click"/>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="486,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="40" Background="#FFEAE31B"/>
     </Grid>

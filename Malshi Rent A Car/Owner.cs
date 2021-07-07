@@ -68,9 +68,9 @@ namespace Malshi_Rent_A_Car
         }
        
 
-        public int updateOwner(string NIC,string fname,string lname,string haddress,int hcontact,int mobile,string prof,string offadd,int offtel,string email)
+        public int updateOwner()
         {
-            string query = "exec update_owner '"+NIC+"','"+fname+"','"+lname+"','"+haddress+"','"+hcontact+"','"+mobile+"','"+prof+"','"+offadd+"','"+offtel+"','"+email+"'";
+            string query = "exec update_owner '"+NIC+"','"+fName+"','"+lName+"','"+homeAddress+"','"+homeContact+"','"+mobileContact+"','"+profession+"','"+offAddress+"','"+offContact+"','"+email+"','"+photo+"'";
             int i = db.save_update_delete(query);
             return i;
         }
