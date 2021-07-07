@@ -51,7 +51,7 @@
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_retype" Margin="2" Width="180" IsEnabled="False" KeyUp="txt_retype_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
-                    </ListViewItem>
+                    
                     <ListViewItem Height="47.2"/>
                     <ListViewItem Height="30.4"/>
                 </ListView>
