@@ -31,10 +31,11 @@ namespace Malshi_Rent_A_Car
             InitializeComponent();
             this.PieChart();
         }
-        public Dashboard(string utype)
+        public Dashboard(string utype,string uname)
         {
             InitializeComponent();
             this.utype = utype;
+            lbl_user.Text = uname;
             this.PieChart();
         }
 
@@ -50,7 +51,7 @@ namespace Malshi_Rent_A_Car
             new PieSeries
             {
                 Title = "SEDANS",
-                Values = new ChartValues<double> {3},
+                Values = new ChartValues<double> {vehicle.getSedans()},
                 PushOut = 15,
                 DataLabels = true,
                 LabelPoint = PointLabel
@@ -58,21 +59,29 @@ namespace Malshi_Rent_A_Car
             new PieSeries
             {
                 Title = "HATCHBACKS",
-                Values = new ChartValues<double> {4},
+                Values = new ChartValues<double> {vehicle.getHatchback()},
                 DataLabels = true,
                 LabelPoint = PointLabel
             },
             new PieSeries
             {
                 Title = "SUVS",
-                Values = new ChartValues<double> {0},
+                Values = new ChartValues<double> {vehicle.getSUV()},
                 DataLabels = true,
                 LabelPoint = PointLabel
             },
             new PieSeries
             {
                 Title = "VAN",
-                Values = new ChartValues<double> {2},
+                Values = new ChartValues<double> {vehicle.getVan()},
+                DataLabels = true,
+                LabelPoint = PointLabel
+            }
+            ,
+            new PieSeries
+            {
+                Title = "MINI-VAN",
+                Values = new ChartValues<double> {vehicle.getMinivan()},
                 DataLabels = true,
                 LabelPoint = PointLabel
             }
@@ -119,6 +128,13 @@ namespace Malshi_Rent_A_Car
         {
             txt_totV.Text=vehicle.getTotalVehicleCount().ToString();
             txt_available.Text = vehicle.getAvaialableVehicleCount().ToString();
+        }
+
+        private void txt_logout_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow login = new MainWindow();
+            login.Show();
+            this.Close();   
         }
     }
 }

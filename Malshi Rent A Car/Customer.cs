@@ -100,8 +100,8 @@ namespace Malshi_Rent_A_Car
         {
             string a = " Delete from Customer where cNIC = '" + id + "'";
             string b = "Delete from Customer_Kin where CusID= '" + id + "'";
-            int i = db.save_update_delete(a);
-            int j = db.save_update_delete(b);
+            int i = db.save_update_delete(b);
+            int j = db.save_update_delete(a);
             if (i == 1 && j == 1)
                 return i;
             else

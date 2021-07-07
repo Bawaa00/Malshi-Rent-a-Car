@@ -98,10 +98,17 @@ namespace Malshi_Rent_A_Car
                 Customer upCustomer = new Customer(txt_firstname.Text, txt_lname.Text, cmb_nic.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath); ;
                 int i = upCustomer.updateCustomer();
                 if (i == 1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data updated successfully!");
+                    msg.Show();
+                }
                 else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try agian");
+                    msg.Show();
+                }                 
             }
             catch (ArgumentNullException)
             {
@@ -125,11 +132,13 @@ namespace Malshi_Rent_A_Car
 
         private void bttn_delete_Click(object sender, RoutedEventArgs e)
         {
-            int line = customer.deleteCustomer(cmb_nic.Text);            
+            int line = customer.deleteCustomer(cmb_nic.Text);
             if (line == 1)
             {
-                MessageBox.Show("Data delete Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                cmb_nic.Items.Clear();
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Data deleted successfully");
+                msg.Show();
+                cmb_nic.SelectedIndex = -1;
                 txt_firstname.Clear();
                 txt_lname.Clear();
                 txt_CusEmail.Clear();
@@ -143,9 +152,13 @@ namespace Malshi_Rent_A_Car
                 txt_CusKinkAdrs.Clear();
                 txt_CusKinConatct.Clear();
             }
-               
+
             else
-                MessageBox.Show("Data cannot delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Could not save data,Please try agian");
+                msg.Show();
+            }
 
         }
 

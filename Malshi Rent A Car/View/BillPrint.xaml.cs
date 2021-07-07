@@ -25,6 +25,11 @@ namespace Malshi_Rent_A_Car.View
         {
             InitializeComponent();
         }
+        public BillPrint(string bid)
+        {
+            InitializeComponent();
+            txt_bid.Text = bid;
+        }
         Database db = new Database();
         DataTable dt = new DataTable();
         Booking booking = new Booking();

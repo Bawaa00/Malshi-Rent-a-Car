@@ -29,6 +29,7 @@ namespace Malshi_Rent_A_Car
         Booking booking = new Booking();
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
+        string vplate;
 
         private void form_updateBooking_Loaded(object sender, RoutedEventArgs e)
         {           
@@ -70,6 +71,7 @@ namespace Malshi_Rent_A_Car
             }
             else
             {
+                btn_bill.IsEnabled = true;
                 dt = booking.viewBookingID(cmb_bid.Text);
                 txt_advance.Text = dt.Rows[0][4].ToString();
                 dte_lend.Text = dt.Rows[0][2].ToString();
@@ -77,6 +79,7 @@ namespace Malshi_Rent_A_Car
                 dt = booking.viewCustomerBooking(cmb_bid.Text);
                 cmb_cNIC.Text = dt.Rows[0][1].ToString();
                 cmb_vLplate.Text = dt.Rows[0][2].ToString();
+                vplate = dt.Rows[0][2].ToString();
                 cmb_cNIC_DropDownClosed(this, null);
                 cmb_vLplate_DropDownClosed(this, null);
             }
@@ -93,41 +96,101 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_vLplate_DropDownClosed(object sender, EventArgs e)
         {
-            dt = vehicle.viewVehicle(cmb_vLplate.Text);
-            string model = dt.Rows[0][1].ToString();
-            ModelPricing mp = new ModelPricing();
-            dt = mp.viewPricing(model);
-            txt_vYear.Text = dt.Rows[0][2].ToString();
-            txt_vMake.Text = dt.Rows[0][3].ToString();
-            txt_vModel.Text = dt.Rows[0][4].ToString();
+            if(cmb_bid.SelectedIndex != -1)
+            {
+                
+                dt = vehicle.viewVehicle(cmb_vLplate.Text);
+                string model = dt.Rows[0][1].ToString();
+                ModelPricing mp = new ModelPricing();
+                dt = mp.viewPricing(model);
+                txt_vYear.Text = dt.Rows[0][2].ToString();
+                txt_vMake.Text = dt.Rows[0][3].ToString();
+                txt_vModel.Text = dt.Rows[0][4].ToString();
+            }
+            else
+            {
+                error_msg.Text = "Please select a vehicle";
+            }
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            Booking book = new Booking(cmb_bid.Text, book_date.Text, dte_lend.Text, dte_return.Text, Int32.Parse(txt_advance.Text));
-            int i = book.updateBooking(cmb_cNIC.Text, cmb_vLplate.Text);
-            if (i == 1)
+            try
             {
-                MessageBox.Show("Data Saved Successfully");
-               // btn_clr_Click(this, null);
-               // form_addBooking_Loaded(this, null);
+                Booking book = new Booking(cmb_bid.Text, book_date.Text, dte_lend.Text, dte_return.Text, Int32.Parse(txt_advance.Text));
+                int i = book.updateBooking(cmb_cNIC.Text, cmb_vLplate.Text);
+                if (i == 1)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data updated successfully!");
+                    msg.Show();
+                    // btn_clr_Click(this, null);
+                    // form_addBooking_Loaded(this, null);
+                }
+                else
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try agian");
+                    msg.Show();
+                }
             }
-            else
-                MessageBox.Show("Could not save data,Please try agian");
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
+
         }
 
         private void btn_del_Click(object sender, RoutedEventArgs e)
         {
-            int i = booking.deleteBooking(cmb_bid.Text, cmb_cNIC.Text, cmb_vLplate.Text);           
-            if (i == 1)
+            try
             {
-                MessageBox.Show("Data Deleted Successfully");
-                form_updateBooking_Loaded(this, null);
+
+
+                int i = booking.deleteBooking(cmb_bid.Text, cmb_cNIC.Text, vplate);
+                if (i == 1)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data Deleted successfully!");
+                    msg.Show();
+                    //MessageBox.Show("Data Deleted Successfully");
+                    form_updateBooking_Loaded(this, null);
+                }
+                else
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not delete data,Please try agian");
+                    msg.Show();
+                }
             }
-            else
-                MessageBox.Show("Could not delete data,Please try agian");
+           catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form correctly");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
         }
 
-       
+        private void btn_bill_Click(object sender, RoutedEventArgs e)
+        {
+            View.BillPrint obj = new View.BillPrint(cmb_bid.Text);
+            obj.Show();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace Malshi_Rent_A_Car
             if (i == 1)
             {
                 //string type = user.getUserType();
-                //Dashboard dash = new Dashboard(type);
+                //Dashboard dash = new Dashboard(type,txt_uname.Text);
                 Dashboard dash = new Dashboard();
                 this.Close();
                 dash.Show();

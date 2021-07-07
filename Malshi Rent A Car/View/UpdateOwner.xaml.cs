@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Text.RegularExpressions;
+using Microsoft.Win32;
+using System.IO;
+using System.Diagnostics;
 
 namespace Malshi_Rent_A_Car
 {
@@ -27,6 +30,20 @@ namespace Malshi_Rent_A_Car
         }
         Database db = new Database();
         Owner owner = new Owner();
+        string path;
+
+        private String GetDestinationPath(string filename)
+        {
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + cmb_onic.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + cmb_onic.Text + ".jpg");
+            return appStartPath;
+        }
 
         private void form_updateOwner_Loaded(object sender, RoutedEventArgs e)
         {
@@ -56,6 +73,20 @@ namespace Malshi_Rent_A_Car
                 txt_OwnProfession.Text = dt.Rows[0][6].ToString();
                 txt_OwnWorkAdrs.Text = dt.Rows[0][7].ToString();
                 txt_OwnTelWork.Text = dt.Rows[0][8].ToString();
+                path = dt.Rows[0][10].ToString();
+                if (path != "")
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(path);
+                    image.EndInit();
+                    img_owner.Source = image;
+                }
+                else
+                {
+                    img_owner.Source = null;
+                }
             }
         }
 
@@ -70,20 +101,32 @@ namespace Malshi_Rent_A_Car
             txt_OwnProfession.Clear();
             txt_OwnWorkAdrs.Clear();
             txt_OwnTelWork.Clear();
+            img_owner.Source = null;
             cmb_onic.Text = "";
+            error_msg.Text = "";
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int i = owner.updateOwner(cmb_onic.Text, txt_OwnFname.Text, txt_OwnLame.Text, txt_OwnResAdrs.Text, Int32.Parse(txt_OwnTelHome.Text), Int32.Parse(txt_OwnTelMobile.Text), txt_OwnProfession.Text, txt_OwnWorkAdrs.Text, Int32.Parse(txt_OwnTelWork.Text), txt_OwnEmail.Text);
+                string name = System.IO.Path.GetFileName(path);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(path, destinationPath, true);
+                Owner owner = new Owner(txt_OwnFname.Text, txt_OwnLame.Text, cmb_onic.Text, txt_OwnResAdrs.Text, txt_OwnWorkAdrs.Text,txt_OwnEmail.Text, Int32.Parse(txt_OwnTelMobile.Text), Int32.Parse(txt_OwnTelHome.Text), Int32.Parse(txt_OwnTelWork.Text), txt_OwnProfession.Text,destinationPath );
+                int i = owner.updateOwner();
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Updated Successfully!");
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data updated successfully!");
+                    msg.Show();
                 }
                 else
-                    MessageBox.Show("Sorry.Could not update data.Please try again");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try agian");
+                    msg.Show();
+                }
             }
             catch (ArgumentNullException)
             {
@@ -110,12 +153,18 @@ namespace Malshi_Rent_A_Car
             int i = owner.deleteOwner(cmb_onic.Text);
             if (i == 1)
             {
-                MessageBox.Show("Data Deleted Successfully!");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Data deleted successfully");
+                msg.Show();
                 form_updateOwner_Loaded(this, null);
                 btn_cls_Click(this, null);
             }
             else
-                MessageBox.Show("Sorry.Could not delete data.Please try again");
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Could not save data,Please try agian");
+                msg.Show();
+            }
         }
 
         private void txt_OwnFname_TextChanged(object sender, TextChangedEventArgs e)
@@ -197,6 +246,30 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    path = open.FileName; // Stores Original Path in Textbox    
+                    ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                    img_owner.Source = imgsource;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
     }
     

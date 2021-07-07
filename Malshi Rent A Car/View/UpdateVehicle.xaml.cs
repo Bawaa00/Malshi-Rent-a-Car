@@ -113,11 +113,17 @@ namespace Malshi_Rent_A_Car
             int i = vehicle.deleteVehicle(cmb_plateNo.Text);
             if (i == 1)
             {
-                MessageBox.Show("Data Deleted Successfully");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Data deleted successfully!");
+                msg.Show();
                 frm_updateVehicle_Loaded(this, null);
             }
             else
-                MessageBox.Show("Error.Could not delete data");
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Could not delete data,Please try agian");
+                msg.Show();
+            }
         }
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
@@ -140,13 +146,20 @@ namespace Malshi_Rent_A_Car
                 string name = System.IO.Path.GetFileName(path);
                 string destinationPath = GetDestinationPath(name);
                 File.Copy(path, destinationPath, true);
-                int i = vehicle.updateVehicle(cmb_plateNo.Text, cmb_category.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_passengers.Text), date_LicStart.Text, date_LicEnd.Text, date_InsEnd.Text, date_InsStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_pay.Text), txt_wName.Text, txt_wAddress.Text, Int32.Parse(txt_wContact.Text), cmb_modelID.Text, insID, cmb_oNIC.Text);
+                Vehicle vehicle = new Vehicle(cmb_plateNo.Text, cmb_category.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_passengers.Text), date_LicStart.Text, date_LicEnd.Text, date_InsEnd.Text, date_InsStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_pay.Text), txt_wName.Text, txt_wAddress.Text, Int32.Parse(txt_wContact.Text));
+                int i = vehicle.updateVehicle( cmb_modelID.Text, insID, cmb_oNIC.Text);
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Update Successfully");
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data updated successfully!");
+                    msg.Show();
                 }
                 else
-                    MessageBox.Show("Error.Could not update data");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try agian");
+                    msg.Show();
+                }
             }
             catch (ArgumentNullException)
             {

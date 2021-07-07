@@ -44,7 +44,7 @@ namespace Malshi_Rent_A_Car
                 {
                     MessageBox msg = new MessageBox();
                     msg.Show();
-                   
+                    btn_clear_Click(this, null);
                 }
                 else
                 {

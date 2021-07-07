@@ -51,6 +51,8 @@ namespace Malshi_Rent_A_Car
                     cmb_id.ItemsSource = dt.DefaultView;
                     cmb_id.DisplayMemberPath = "Repair ID";
                     cmb_id.SelectedValuePath = "Repair ID";
+
+                    frm_updateRepair_Loaded(this, null);
                 }
                 else if (cmb_Rtype.SelectedIndex == 1)
                 {
@@ -65,6 +67,8 @@ namespace Malshi_Rent_A_Car
                     cmb_id.ItemsSource = dt.DefaultView;
                     cmb_id.DisplayMemberPath = "Repair ID";
                     cmb_id.SelectedValuePath = "Repair ID";
+
+                    frm_updateRepair_Loaded(this, null);
                 }
             }
         }
@@ -97,12 +101,18 @@ namespace Malshi_Rent_A_Car
                     int i = mr.updateRepair(cmb_vehicle.Text);
                     if (i == 1)
                     {
-                        MessageBox.Show("Data Updated Successfully!");
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data updated successfully!");
+                        msg.Show();
                         frm_updateRepair_Loaded(this, null);
                     }
 
                     else
-                        MessageBox.Show("Sorry.Could not update data.Please try again");
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Could not save data,Please try agian");
+                        msg.Show();
+                    }
                 }
                 else if (cmb_Rtype.SelectedIndex == 1)
                 {
@@ -110,11 +120,17 @@ namespace Malshi_Rent_A_Car
                     int i = ar.updateRepair(cmb_vehicle.Text);
                     if (i == 1)
                     {
-                        MessageBox.Show("Data Updated Successfully!");
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data updated successfully!");
+                        msg.Show();
                         frm_updateRepair_Loaded(this, null);
                     }
                     else
-                        MessageBox.Show("Sorry.Could not update data.Please try again");
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Could not save data,Please try agian");
+                        msg.Show();
+                    }
                 }
             }
             catch (System.Data.SqlClient.SqlException)
@@ -167,22 +183,34 @@ namespace Malshi_Rent_A_Car
                 int i = mr.deleteRepair(cmb_id.Text);
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Deleted Successfully!");
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data deleted successfully!");
+                    msg.Show();
                     frm_updateRepair_Loaded(this, null);
                 }
                 else
-                    MessageBox.Show("Sorry.Could not delete data.Please try again");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not delete data,Please try agian");
+                    msg.Show();
+                }
             }
             else if (cmb_Rtype.SelectedIndex == 1)
             {
-                int i = mr.deleteRepair(cmb_id.Text);
+                int i = ar.deleteRepair(cmb_id.Text);
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Deleted Successfully!");
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data deleted successfully!");
+                    msg.Show();
                     frm_updateRepair_Loaded(this, null);
                 }
                 else
-                    MessageBox.Show("Sorry.Could not delete data.Please try again");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not delete data,Please try agian");
+                    msg.Show();
+                }
             }
         }
 

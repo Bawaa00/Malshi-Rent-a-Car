@@ -12,8 +12,10 @@
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
+
                             <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" CalendarClosed="dte_bDate_CalendarClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                             <Button x:Name="btn_searchbDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Height="25" Width="60" FontWeight="DemiBold" Style="{DynamicResource RoundedButtonStyle1}"/>
+
                         </StackPanel>
 
                     </Grid>
@@ -31,9 +33,11 @@
                 <DataGrid x:Name="dg_booking" Margin="5,5,4.6,56">
 
                 </DataGrid>
+
                 <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="744,330,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_update_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}" />
                 <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="659,330,0,0" VerticalAlignment="Top" Width="80" Height="25" Click="btn_add_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
                 <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btn_view_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+
             </Grid>
 
         </StackPanel>

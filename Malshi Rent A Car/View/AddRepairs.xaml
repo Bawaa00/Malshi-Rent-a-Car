@@ -33,7 +33,7 @@
                         <TextBlock x:Name="lbl_option1" Text="Next Check"  Margin="5 5.5 0 5.5" Visibility="Hidden"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock x:Name="lbl_option2" Text="Repair Claim" Margin="5 5.5 0 5.5" Visibility="Hidden"/>
+                        <TextBlock x:Name="lbl_option2" Text="Repair Claim (Rs)" Margin="5 5.5 0 5.5" Visibility="Hidden"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -63,7 +63,11 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+
+                        <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}" IsEnabled="False"/>
+
+                        <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}" IsEnabled="False" BorderThickness="0,0,0,1"/>
+
                     </ListViewItem>
                     <ListViewItem Height="35.4">
                         <DatePicker x:Name="date_repair" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
@@ -95,8 +99,10 @@
                     <TextBox x:Name="txt_details" Width="350" Height="184"/>
                 </ListViewItem>
             </ListView>
-            <Button Content="CLEAR" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+
+            <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource RoundedButtonStyle}"  Click="btn_cls_Click" Foreground="White"/>
             <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="201,252,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource RoundedButtonStyle}" Click="btn_save_Click" Foreground="White"/>
+
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>

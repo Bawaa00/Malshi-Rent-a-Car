@@ -27,7 +27,8 @@ namespace Malshi_Rent_A_Car
         Owner owner = new Owner();
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
-            
+            txt_oNIC.Clear();
+            txt_OwnName.Clear();
             DataTable dt = new DataTable();
             dt = owner.viewOwner();
             dg_owner.ItemsSource = dt.DefaultView;

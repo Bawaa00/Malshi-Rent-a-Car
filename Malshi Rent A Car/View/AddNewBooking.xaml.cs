@@ -69,9 +69,12 @@ namespace Malshi_Rent_A_Car
                 int i = book.addBooking(cmb_cNIC.Text, cmb_vLplate.Text);
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Saved Successfully");
-                    btn_clr_Click(this, null);
-                    form_addBooking_Loaded(this, null);
+                    MessageBox msg = new MessageBox();
+                    msg.Show();
+                    /*btn_clr_Click(this, null);
+                    form_addBooking_Loaded(this, null);*/
+                    btn_bill.IsEnabled = true;
+                    btn_clr.IsEnabled = true;
                 }
                 else
                     MessageBox.Show("Could not save data,Please try agian");
@@ -149,10 +152,18 @@ namespace Malshi_Rent_A_Car
             txt_advance.Clear();
             dte_lend.SelectedDate = null;
             dte_return.SelectedDate = null;
+            form_addBooking_Loaded(this, null);
         }
 
         private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void btn_bill_Click(object sender, RoutedEventArgs e)
+        {
+            View.BillPrint obj = new View.BillPrint(txt_bid.Text);
+            obj.Show();
 
         }
     }
