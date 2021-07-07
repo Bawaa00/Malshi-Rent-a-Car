@@ -346,6 +346,11 @@
   <ItemGroup>
     <Resource Include="Icons\Menu.png" />
   </ItemGroup>
+      <Resource Include="Icons\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Home1.png" />
+
  
  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
