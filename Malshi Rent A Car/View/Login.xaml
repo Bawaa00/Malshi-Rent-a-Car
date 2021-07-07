@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Login" Height="333" Width="346.429" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Login" Height="364" Width="364.429" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.Background>
@@ -20,9 +20,7 @@
             </Grid>
             <DockPanel>
                 <ListView HorizontalAlignment="Left" Foreground="Black" FontSize="15" Margin="10 10 10 10" FontWeight="DemiBold" BorderBrush="{x:Null}">
-                    <ListViewItem>
-                        <Label Content="User Type" HorizontalAlignment="Left" Margin="10 0 0 0"  VerticalAlignment="Top"/>
-                    </ListViewItem>
+                    <ListViewItem/>
                     <ListViewItem>
                         <Label Content="Username" HorizontalAlignment="Left" Margin="10 25 0 0" VerticalAlignment="Top"/>
                     </ListViewItem>
@@ -31,12 +29,6 @@
                     </ListViewItem>
                 </ListView>
                 <ListView HorizontalAlignment="Right" Foreground="Black" FontSize="15" Margin="10 10 30 10" FontWeight="Light" BorderBrush="{x:Null}">
-                    <ListViewItem Height="33.6">
-                        <ComboBox x:Name="cmb_utype" HorizontalAlignment="Right" Margin="10 0 0 0" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1">
-                            <ComboBoxItem Content="Manager" HorizontalAlignment="Left" Width="118"/>
-                            <ComboBoxItem Content="Employee" HorizontalAlignment="Left" Width="118"/>
-                        </ComboBox>
-                    </ListViewItem>
                     <ListViewItem Height="59.2">
                         <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="10 25 0 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
@@ -50,10 +42,10 @@
 
         </StackPanel>
 
-        <Button x:Name="btn_log" Content="LOGIN" HorizontalAlignment="Left" Margin="129,308,0,0" FontWeight="DemiBold" VerticalAlignment="Top" Width="75" Click="btn_log_Click" Style="{DynamicResource RoundedButtonStyle}" Height="25"/>
+        <Button x:Name="btn_log" Content="LOGIN" HorizontalAlignment="Left" Margin="129,263,0,0" FontWeight="DemiBold" VerticalAlignment="Top" Width="75" Click="btn_log_Click" Style="{DynamicResource RoundedButtonStyle}" Height="25"/>
 
 
 
-        
+
     </Grid>
 </Window>

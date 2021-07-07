@@ -37,6 +37,11 @@ namespace Malshi_Rent_A_Car
             this.utype = utype;
             lbl_user.Text = uname;
             this.PieChart();
+            if(utype == "Manager")
+            {
+                list_report.Visibility = Visibility.Visible;
+                list_accounts.Visibility = Visibility.Visible;
+            }
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }
@@ -135,6 +140,12 @@ namespace Malshi_Rent_A_Car
             MainWindow login = new MainWindow();
             login.Show();
             this.Close();   
+        }
+
+        private void list_accounts_Selected(object sender, RoutedEventArgs e)
+        {
+            View.manageAccount ma = new View.manageAccount();
+            ma.Show();
         }
     }
 }
