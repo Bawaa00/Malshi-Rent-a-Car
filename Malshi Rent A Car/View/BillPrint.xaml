@@ -19,30 +19,29 @@
             <Label Content="MODEL" HorizontalAlignment="Left" Margin="622,198,0,0" VerticalAlignment="Top"/>
             <Label Content="PICKUP DATE" HorizontalAlignment="Left" Margin="44,253,0,0" VerticalAlignment="Top"/>
             <Label Content="LEND DATE" HorizontalAlignment="Left" Margin="322,253,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txt_bid" HorizontalAlignment="Left" Height="23" Margin="153,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="B001" IsEnabled="False"/>
-            <TextBox x:Name="txt_bdate" HorizontalAlignment="Left" Height="23" Margin="503,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+            <TextBox x:Name="txt_bid" HorizontalAlignment="Left" Height="23" Margin="153,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="B001" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_bdate" HorizontalAlignment="Left" Height="23" Margin="503,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="47,70,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-            <TextBox x:Name="txt_cnic" HorizontalAlignment="Left" Height="23" Margin="105,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="363,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_lname" HorizontalAlignment="Left" Height="23" Margin="584,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+            <TextBox x:Name="txt_cnic" HorizontalAlignment="Left" Height="23" Margin="105,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="363,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_lname" HorizontalAlignment="Left" Height="23" Margin="584,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
             <Label Content="VEHICLE" HorizontalAlignment="Left" Margin="47,159,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-            <TextBox x:Name="txt_lplate" HorizontalAlignment="Left" Height="23" Margin="147,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_year" HorizontalAlignment="Left" Height="23" Margin="335,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" IsEnabled="False"/>
-            <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="488,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="677,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_lend" HorizontalAlignment="Left" Height="23" Margin="419,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_pickup" HorizontalAlignment="Left" Height="23" Margin="153,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+            <TextBox x:Name="txt_lplate" HorizontalAlignment="Left" Height="23" Margin="147,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_year" HorizontalAlignment="Left" Height="23" Margin="335,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="488,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="677,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_lend" HorizontalAlignment="Left" Height="23" Margin="419,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_pickup" HorizontalAlignment="Left" Height="23" Margin="153,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="197" VerticalAlignment="Top" Width="826">
-            <Separator HorizontalAlignment="Left" Height="100" Margin="40,147,0,-50" VerticalAlignment="Top" Width="756"/>
-            <Label x:Name="lbl_billDate" Content="DATE" HorizontalAlignment="Left" Margin="653,153,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_billID" Content="BILLING ID" HorizontalAlignment="Left" Margin="33,153,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="197" Margin="0" VerticalAlignment="Top" Background="#FF1763A2" Width="827">
+            <Label Foreground="White" x:Name="lbl_billDate" Content="DATE" HorizontalAlignment="Left" Margin="653,153,0,0" VerticalAlignment="Top"/>
+            <Label Foreground="White" x:Name="lbl_billID" Content="BILLING ID" HorizontalAlignment="Left" Margin="48,153,0,0" VerticalAlignment="Top"/>
             <Grid HorizontalAlignment="Left" Height="137" Margin="225,10,0,0" VerticalAlignment="Top" Width="371">
-                <TextBlock HorizontalAlignment="Left" Margin="62,7,0,0" TextWrapping="Wrap" Text="MALSHI RENT A CAR (PVT) LTD" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-                <TextBlock HorizontalAlignment="Left" Margin="72,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="312/1 ARALILYA MAWATHA,PAHALBIYANWILA"/><LineBreak/><Run Text="KADAWTHA,"/><LineBreak/><Run Text="SRI LANKA"/></TextBlock>
-                <TextBlock HorizontalAlignment="Left" Margin="122,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="138" TextAlignment="Center"><Run Text="077 878 2939"/><LineBreak/><Run Text="www.malshirentacar.com"/></TextBlock>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="62,7,0,0" TextWrapping="Wrap" Text="MALSHI RENT A CAR (PVT) LTD" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="72,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="312/1 ARALILYA MAWATHA,PAHALBIYANWILA"/><LineBreak/><Run Text="KADAWTHA,"/><LineBreak/><Run Text="SRI LANKA"/></TextBlock>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="122,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="138" TextAlignment="Center"><Run Text="077 878 2939"/><LineBreak/><Run Text="www.malshirentacar.com"/></TextBlock>
             </Grid>
-            <Button x:Name="btn_print" Content="PRINT" HorizontalAlignment="Left" Margin="741,21,0,0" VerticalAlignment="Top" Width="75" Click="btn_print_Click"/>
+            <Button x:Name="btn_print" FontWeight="DemiBold" Content="PRINT" HorizontalAlignment="Left" Margin="741,21,0,0" VerticalAlignment="Top" Width="75" Click="btn_print_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="501" Margin="0,491,0,0" VerticalAlignment="Top" Width="826">
             <Separator HorizontalAlignment="Left" Height="100" Margin="87,391,0,0" VerticalAlignment="Top" Width="106"/>
@@ -58,24 +57,30 @@
             <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="80,337,0,0" VerticalAlignment="Top"/>
             <Label Content="COMPANY OFFICER" HorizontalAlignment="Left" Margin="80,448,0,0" VerticalAlignment="Top"/>
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="640,448,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txt_allocated" HorizontalAlignment="Left" Height="23" Margin="626,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.3,0.783"/>
-            <TextBox x:Name="txt_used" HorizontalAlignment="Left" Height="23" Margin="626,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_used_TextChanged"/>
-            <TextBox x:Name="txt_extraM" HorizontalAlignment="Left" Height="23" Margin="626,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_extraC" HorizontalAlignment="Left" Height="23" Margin="263,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_totCost" HorizontalAlignment="Left" Height="23" Margin="263,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <TextBox x:Name="txt_adv" HorizontalAlignment="Left" Height="23" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_due" HorizontalAlignment="Left" Height="23" Margin="263,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <ComboBox x:Name="cmb_method" HorizontalAlignment="Left" Margin="263,337,0,0" VerticalAlignment="Top" Width="120">
+            <TextBox x:Name="txt_allocated" HorizontalAlignment="Left" Height="23" Margin="626,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.3,0.783" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_used" HorizontalAlignment="Left" Height="23" Margin="626,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_used_TextChanged" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_extraM" HorizontalAlignment="Left" Height="23" Margin="626,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_extraC" HorizontalAlignment="Left" Height="23" Margin="263,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_totCost" HorizontalAlignment="Left" Height="23" Margin="263,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_adv" HorizontalAlignment="Left" Height="23" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_due" HorizontalAlignment="Left" Height="23" Margin="263,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <ComboBox x:Name="cmb_method" HorizontalAlignment="Left" Margin="263,337,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White" BorderThickness="0,0,0,1">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
                 <ComboBoxItem Content="CASH" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="CARD" HorizontalAlignment="Left" Width="118"/>
             </ComboBox>
             <Label Content="NO OF MONTHS" HorizontalAlignment="Left" Margin="80,27,0,0" VerticalAlignment="Top"/>
             <Label Content="RENT PER MONTH (RS)" HorizontalAlignment="Left" Margin="80,70,0,0" VerticalAlignment="Top"/>
             <Label Content="TOTAL RENT (RS)" HorizontalAlignment="Left" Margin="80,114,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txt_months" HorizontalAlignment="Left" Height="23" Margin="263,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_months_TextChanged"/>
-            <TextBox x:Name="txt_rent" HorizontalAlignment="Left" Height="23" Margin="263,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_tot_rent" HorizontalAlignment="Left" Height="23" Margin="263,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btn_cal" Content="CALCULATE" HorizontalAlignment="Left" Margin="454,169,0,0" VerticalAlignment="Top" Width="75" Click="btn_cal_Click"/>
+            <TextBox x:Name="txt_months" HorizontalAlignment="Left" Height="23" Margin="263,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_months_TextChanged" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_rent" HorizontalAlignment="Left" Height="23" Margin="263,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_tot_rent" HorizontalAlignment="Left" Height="23" Margin="263,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <Button x:Name="btn_cal" Content="CALCULATE" HorizontalAlignment="Left" Height="30" Margin="454,169,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Style="{DynamicResource RoundedButtonStyle}" Background="#4caf50" Click="btn_cal_Click"/>
         </Grid>
 
     </Grid>

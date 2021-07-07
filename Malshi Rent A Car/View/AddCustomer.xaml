@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="AddCustomer" Height="500" Width="850" WindowStartupLocation="CenterScreen">
+        Title="AddCustomer" Height="520" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
@@ -51,6 +51,11 @@
                         <TextBlock Text="Kin Contact" Margin="5 3 0 0"/>
                     </ListViewItem>
                 </ListView>
+                <DockPanel>
+                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="5 10 5 5" VerticalAlignment="Top" Height="25" Width="60" Foreground="White" Click="btn_save_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                    <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="5 10 5 5" VerticalAlignment="Top" Height="25" FontWeight="DemiBold" Width="75" Foreground="White" Click="btn_clear_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+                    
+                </DockPanel>
             </StackPanel>
         </Grid>
         <Grid Width="170" HorizontalAlignment="Left" Margin="150 40 0 0">
@@ -64,43 +69,43 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusFname" Width="150" Margin="5 0 0 0" TextChanged="txt_CusFname_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusFname" Width="150" Margin="5 0 0 0" TextChanged="txt_CusFname_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusLname" Width="150" Margin="5 0 0 0" TextChanged="txt_CusLname_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusLname" Width="150" Margin="5 0 0 0" TextChanged="txt_CusLname_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusNIC" Width="150" Margin="5 0 0 0" TextChanged="txt_CusNIC_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusNIC" Width="150" Margin="5 0 0 0" TextChanged="txt_CusNIC_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_CusEmail_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusEmail" Width="150" Margin="5 0 0 0" TextChanged="txt_CusEmail_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusResAdrs_TextChanged_1" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusResAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusResAdrs_TextChanged_1" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelHome_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelHome" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelHome_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelMobile" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelMobile_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelMobile" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelMobile_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusProfession" Width="150" Margin="5 0 0 0" TextChanged="txt_CusProfession_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusProfession" Width="150" Margin="5 0 0 0" TextChanged="txt_CusProfession_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusWorkAdrs_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusWorkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusWorkAdrs_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusTelWork" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelWork_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusTelWork" Width="150" Margin="5 0 0 0" TextChanged="txt_CusTelWork_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinName" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinName_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinName" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinName_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinkAdrs_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinkAdrs" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinkAdrs_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinConatct_TextChanged" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_CusKinConatct" Width="150" Margin="5 0 0 0" TextChanged="txt_CusKinConatct_TextChanged" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
                 </ListView>
@@ -113,18 +118,21 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+            <Button x:Name="btn_back" HorizontalAlignment="Right" Margin="5 10 5 5" VerticalAlignment="Top" Height="30" Width="30" Background="Transparent" Click="btn_back_Click" Style="{DynamicResource IconButton}">
+                <Image Source="Icons/Back.png"/>
+            </Button>
             <TextBlock Text="ADD CUSTOMER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
-            <Button x:Name="btn_home" Content="HOME" HorizontalAlignment="Left" Margin="658,25,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btn_home" HorizontalAlignment="Right" Margin="5 10 50 5" VerticalAlignment="Top" Height="30" Width="30" Background="Transparent" Click="btn_home_Click" Style="{DynamicResource IconButton}">
+                <Image Source="Icons/Home1.png"/>
+            </Button>
         </Grid>
 
-        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
-        <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="674,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Height="25" FontWeight="DemiBold" Width="75" Click="btn_upload_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
+        
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
             <Image x:Name="img_customer" HorizontalAlignment="Left" Height="280" Margin="-1" VerticalAlignment="Top" Width="280"/>
         </Border>
-        <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="549,438,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
-        <Button x:Name="btn_back" Content="BACK" HorizontalAlignment="Left" Margin="744,25,0,0" VerticalAlignment="Top" Width="75" Click="btn_back_Click"/>
+        
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="334,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="34"/>
-
-    </Grid>
+     </Grid>
 </Window>
