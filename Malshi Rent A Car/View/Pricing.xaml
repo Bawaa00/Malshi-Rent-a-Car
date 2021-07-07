@@ -42,7 +42,10 @@
                     </ListViewItem>
 
                 </ListView>
-
+                <DockPanel>
+                    <Button x:Name="btn_save" Content="SAVE" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Left" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                    <Button x:Name="btn_cls" Content="CLEAR" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Right" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                </DockPanel>
             </StackPanel>
         </Grid>
         <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
@@ -58,12 +61,12 @@
                     <RadioButton x:Name="rbtn_update" Content="UPDATE" GroupName="grp_option" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,106,0" Checked="rbtn_update_Checked" FontWeight="DemiBold"/>
                     <GroupBox x:Name="grp_option" Header="" HorizontalAlignment="Left" Margin="0,-10,0,0" Width="174"/>
                 </Grid>
-                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
-                    <ListViewItem/>
-                    <TextBox x:Name="txt_modelID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top"  Width="170" Background="{x:Null}" IsEnabled="False"/>
-
+                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}">
+                        <TextBox x:Name="txt_modelID" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Margin="5 0 0 0"  Width="170" Background="{x:Null}" IsEnabled="False" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
@@ -73,7 +76,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}">
+                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
                             <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
                             <ComboBoxItem Content="BMW"/>
                             <ComboBoxItem Content="FORD"/>
@@ -95,10 +98,10 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}">
+                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
                             <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="2023"/>
                             <ComboBoxItem Content="2022"/>
@@ -139,17 +142,17 @@
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
+                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
+                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}"/>
+                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                         </StackPanel>
                     </ListViewItem>
 
@@ -170,7 +173,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBlock Text="MODEL PRICING" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
+            <TextBlock Text="MODELS" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
     </Grid>
 </Window>

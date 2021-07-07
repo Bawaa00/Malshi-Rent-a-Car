@@ -24,8 +24,10 @@
                     <ListViewItem/>
                 </ListView>
                 <DockPanel Height="55">
-                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" FontSize="10" Margin="10" Click="btn_del_Click"/>
-                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" FontSize="10"  Margin="10" Click="btn_update_Click"/>
+
+                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Height="25" FontSize="10" Margin="10" Click="btn_del_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Height="25" FontSize="10"  Margin="10" Click="btn_update_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+
                 </DockPanel>
 
             </StackPanel>
@@ -41,14 +43,15 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_uName" Margin="2" Width="180" IsEnabled="False" TextInput="txt_uName_TextInput"/>
+                        <TextBox x:Name="txt_uName" Margin="2" Width="180" IsEnabled="False" TextInput="txt_uName_TextInput" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="47.2">
-                        <PasswordBox x:Name="txt_pass" Margin="2 20 2 2" Width="180" KeyUp="txt_pass_KeyUp"/>
+                        <PasswordBox x:Name="txt_pass" Margin="2 20 2 2" Width="180" KeyUp="txt_pass_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <PasswordBox x:Name="txt_retype" Margin="2" Width="180" KeyUp="txt_retype_KeyUp"/>
+                        <TextBox x:Name="txt_retype" Margin="2" Width="180" IsEnabled="False" KeyUp="txt_retype_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
+                    
                     <ListViewItem Height="47.2"/>
                     <ListViewItem Height="30.4"/>
                 </ListView>

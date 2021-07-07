@@ -44,8 +44,10 @@
                     </ListViewItem>
                 </ListView>
                 <DockPanel Height="55">
-                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click" IsEnabled="False"/>
-                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click"/>
+
+                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Height="25" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click" IsEnabled="False" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Height="25" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+
                 </DockPanel>
             </StackPanel>
             <Button x:Name="btn_bill" Content="GET BILL" HorizontalAlignment="Left" Margin="68,399,0,0" VerticalAlignment="Top" Width="75" Click="btn_bill_Click" IsEnabled="False"/>
@@ -61,34 +63,34 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_vMake" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_vModel" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_advance_TextChanged"/>
+                        <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_advance_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}"/>
+                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}"/>
+                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
                         <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>

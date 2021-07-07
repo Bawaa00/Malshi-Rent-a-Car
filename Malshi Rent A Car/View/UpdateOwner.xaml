@@ -61,34 +61,34 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27">
-                        <ComboBox x:Name="cmb_onic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_onic_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_onic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_onic_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnFname_TextChanged"/>
+                        <TextBox x:Name="txt_OwnFname" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnFname_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnLame" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnLame_TextChanged"/>
+                        <TextBox x:Name="txt_OwnLame" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnLame_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnEmail_TextChanged"/>
+                        <TextBox x:Name="txt_OwnEmail" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnEmail_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnResAdrs_TextChanged"/>
+                        <TextBox x:Name="txt_OwnResAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnResAdrs_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelHome_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelHome" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelHome_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelMobile_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelMobile" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelMobile_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnProfession_TextChanged"/>
+                        <TextBox x:Name="txt_OwnProfession" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnProfession_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnWorkAdrs_TextChanged"/>
+                        <TextBox x:Name="txt_OwnWorkAdrs" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnWorkAdrs_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelWork_TextChanged"/>
+                        <TextBox x:Name="txt_OwnTelWork" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_OwnTelWork_TextChanged" BorderThickness="0,0,0,1"/>
 
                     </ListViewItem>
                     <ListViewItem Height="27.2"/>
@@ -108,11 +108,18 @@
             </Grid.Background>
             <TextBlock Text="UPDATE OWNER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
-        <Image x:Name="img_owner" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
-        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_upload_Click"/>
-        <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="751,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
-        <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="590,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
-        <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="670,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_del_Click"/>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="486,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="40" Background="#FFEAE31B"/>
+
+       
+
+        <Image  x:Name="img_owner" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Stretch="Fill"/>
+        <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="594,366,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="Black" Height="25" Width="75" Click="btn_upload_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
+        <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="751,469,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_cls_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+        <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="590,469,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_update_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+        <!--Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="486,81,0,0" VerticalAlignment="Top" Width="280" Background="#FFF7EEEE">
+            <TextBlock TextWrapping="Wrap" Text="[A photo of the owner]"/>
+        </Border-->
+        <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="670,469,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_del_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="486,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="40"/>
+
     </Grid>
 </Window>

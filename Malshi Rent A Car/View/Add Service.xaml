@@ -44,27 +44,27 @@
             </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListViewItem Height="30.4">
-                    <TextBox x:Name="txt_sid" Margin="2" Width="180" Background="Transparent" BorderBrush="#FFABADB3"/>
-                </ListViewItem>
-                <ListViewItem Height="30.4">
-                    <ComboBox x:Name="cmb_vid" Margin="2" Width="180" Background="Transparent" BorderBrush="Black" DropDownClosed="cmb_vid_DropDownClosed"/>
-                </ListViewItem>
-                <ListViewItem Height="30.4">
-                    <DatePicker x:Name="dte_service" Margin="2" Width="180" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                </ListViewItem>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="Black">
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_mileage" Margin="2" Width="180" Background="Transparent" BorderBrush="#FFABADB3" KeyUp="txt_mileage_KeyUp" TextChanged="txt_mileage_TextChanged"/>
+                        <TextBox x:Name="txt_sid"  Width="180" Background="Transparent" BorderBrush="#FFABADB3" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sLocation" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_sLocation_TextChanged"/>
+                        <ComboBox  x:Name="cmb_vid" Width="180" Background="Transparent" BorderBrush="Black" DropDownClosed="cmb_vid_DropDownClosed" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_sCost" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_sCost_TextChanged"/>
+                        <DatePicker x:Name="dte_service" Width="180" Background="{x:Null}" BorderBrush="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_nxtMileage" Margin="2" Width="180" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_mileage" Width="180" Background="Transparent" BorderBrush="#FFABADB3" KeyUp="txt_mileage_KeyUp" TextChanged="txt_mileage_TextChanged" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_sLocation" Width="180" Background="{x:Null}" TextChanged="txt_sLocation_TextChanged" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_sCost" Width="180" Background="{x:Null}" TextChanged="txt_sCost_TextChanged" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                    <ListViewItem Height="30.4">
+                        <TextBox x:Name="txt_nxtMileage" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
@@ -77,10 +77,13 @@
                 <ListViewItem Width="362" Height="169">
                     <TextBox x:Name="txt_details" Width="350" Height="162" TextChanged="txt_details_TextChanged"/>
                 </ListViewItem>
-                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="179" Height="46" Background="#FFC9EB0A"/>
+                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="179" Height="46" Background="Transparent"/>
             </ListView>
-            <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click"/>
-            <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="198,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
+            <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+
+
+            <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="198,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>

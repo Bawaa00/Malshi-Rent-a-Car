@@ -5,24 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="View Booking" Height="500" Width="800" WindowStartupLocation="CenterScreen" Loaded="form_viewBooking_Loaded">
+        Title="View Booking" Height="500" Width="900" WindowStartupLocation="CenterScreen" Loaded="form_viewBooking_Loaded">
     <Grid>
         <StackPanel Margin="0 40 0 0">
-            <Grid Height="60" VerticalAlignment="Top" Background="#FFE0E0E0">
+            <Grid Height="60" VerticalAlignment="Top" Background="#FF1763A2">
                 <StackPanel Orientation="Horizontal" Background="Transparent">
                     <Grid  HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" CalendarClosed="dte_bDate_CalendarClosed"/>
+
+                            <DatePicker x:Name="dte_bDate" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" CalendarClosed="dte_bDate_CalendarClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                            <Button x:Name="btn_searchbDate" Content="Search" FontSize="15" VerticalAlignment="Center" Margin="5" Height="25" Width="60" FontWeight="DemiBold" Style="{DynamicResource RoundedButtonStyle1}"/>
+
                         </StackPanel>
 
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Vehicle" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_vno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_vno_DropDownClosed"/>
+                        <TextBlock Foreground="White" Text="Vehicle" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_vno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_vno_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="#FFACACAC"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Customer" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
-                        <ComboBox x:Name="cmb_cno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_cno_DropDownClosed"/>
+                        <TextBlock Foreground="White" Text="Customer" VerticalAlignment="Center" Margin="40 0 5 0" FontSize="15"/>
+                        <ComboBox x:Name="cmb_cno" VerticalAlignment="Center" Width="150" FontSize="15" Margin="5 0 0 0" Foreground="Black" DropDownClosed="cmb_cno_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="#FFACACAC"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -30,9 +33,11 @@
                 <DataGrid x:Name="dg_booking" Margin="5,5,4.6,56">
 
                 </DataGrid>
-                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="642,330,0,0" VerticalAlignment="Top" Width="124" Click="btn_update_Click"/>
-                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="562,330,0,0" VerticalAlignment="Top" Width="74" Click="btn_add_Click"/>
-                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" Width="74" Click="btn_view_Click"/>
+
+                <Button x:Name="btn_update" Content="SEARCH &amp; UPDATE" HorizontalAlignment="Left" Margin="744,330,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_update_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}" />
+                <Button x:Name="btn_add" Content="ADD NEW" HorizontalAlignment="Left" Margin="659,330,0,0" VerticalAlignment="Top" Width="80" Height="25" Click="btn_add_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btn_view_Click" FontSize="15" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+
             </Grid>
 
         </StackPanel>

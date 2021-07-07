@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Update Service" Height="407.144" Width="820.519" Loaded="form_updateService_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="269">
+                <ListView FontSize="15" FontWeight="Medium" Foreground="White" Background="Transparent" BorderBrush="Transparent" Height="269">
 
                     <ListViewItem>
                         <TextBlock Text="Service ID" Margin="5 3 0 3"/>
@@ -37,29 +37,35 @@
             </StackPanel>
         </Grid>
         <Grid Width="220" HorizontalAlignment="Left" Margin="200 40 0 0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <StackPanel>
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="246">
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_sID" Margin="2" Width="180" DropDownClosed="cmb_sID_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_sID" Margin="2" Width="180" DropDownClosed="cmb_sID_DropDownClosed" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vehicleID" Height="25" Width="182" DropDownClosed="cmb_vehicleID_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_vehicleID" Margin="2" Width="180" DropDownClosed="cmb_vehicleID_DropDownClosed" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
 
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_SLocation" Margin="2" Width="180" TextChanged="txt_SLocation_TextChanged"/>
+                        <TextBox x:Name="txt_SLocation" Margin="2" Width="180" TextChanged="txt_SLocation_TextChanged" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <DatePicker x:Name="date_service" Height="25" Width="181"/>
+                        <DatePicker x:Name="date_service" Height="25" Width="180" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_milage" Margin="2" Width="180" KeyUp="txt_milage_KeyUp" TextChanged="txt_milage_TextChanged"/>
+                        <TextBox x:Name="txt_milage" Margin="2" Width="180" KeyUp="txt_milage_KeyUp" TextChanged="txt_milage_TextChanged" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_nxtMilage" Margin="2,0" Width="180" TextChanged="txt_nxtMilage_TextChanged"/>
+                        <TextBox x:Name="txt_nxtMilage" Margin="2,0" Width="180" TextChanged="txt_nxtMilage_TextChanged" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
-                    <TextBox x:Name="txt_sCost" Width="180" TextChanged="txt_sCost_TextChanged"/>
+                    <TextBox x:Name="txt_sCost" Margin="2" Width="180" TextChanged="txt_sCost_TextChanged" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                 </ListView>
             </StackPanel>
         </Grid>
@@ -71,13 +77,19 @@
                 <ListViewItem Width="362" Height="169">
                     <TextBox x:Name="txt_sDetails" Width="352" Height="162" TextChanged="txt_sDetails_TextChanged" />
                 </ListViewItem>
-                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Height="65" Width="152" Background="#FFDDB90A"/>
+                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Height="65" Width="152"/>
             </ListView>
-            <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="255,253,0,0" VerticalAlignment="Top" Width="75" Click="btn_del_Click"/>
-            <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="175,253,0,0" VerticalAlignment="Top" Width="75" Click="btn_update_Click"/>
+            <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" Margin="255,253,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_del_Click" Style="{DynamicResource RoundedButtonStyle}"/>
+            <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="175,253,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="75" Click="btn_update_Click" Style="{DynamicResource RoundedButtonStyle}"/>
         </Grid>
         <Grid VerticalAlignment="Top">
-            <TextBlock Text="UPDATE SERVICE" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="UPDATE SERVICE" FontSize="30" Foreground="White" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
         </Grid>
     </Grid>
 </Window>

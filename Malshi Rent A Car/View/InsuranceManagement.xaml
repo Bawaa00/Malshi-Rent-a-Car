@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car.View"
         mc:Ignorable="d"
-              Title="Manage Insurance" Height="497" Width="758.613" WindowStartupLocation="CenterScreen" Loaded="form_insurance_Loaded">
+              Title="Manage Insurance" Height="497" Width="450" WindowStartupLocation="CenterScreen" Loaded="form_insurance_Loaded">
     <Grid>
-        <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
+        <Grid Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2" Height="120">
             <StackPanel>
                 <Grid Height="40"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
@@ -22,7 +22,7 @@
 
             </StackPanel>
         </Grid>
-        <Grid Width="250" HorizontalAlignment="Left" Margin="150 40 0 0">
+        <Grid Width="250" Height="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="150 40 0 0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FFE7EBEE" Offset="0"/>
@@ -35,12 +35,12 @@
                     <RadioButton x:Name="rbtn_update" Content="UPDATE" GroupName="grp_option" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,106,0" FontWeight="DemiBold" Checked="rbtn_update_Checked"/>
                     <GroupBox x:Name="grp_option" Header="" HorizontalAlignment="Left" Margin="0,-10,0,0" Width="174"/>
                 </Grid>
-                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
-                    <ListViewItem/>
-                    <TextBox x:Name="txt_insID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top"  Width="170" Background="{x:Null}" IsEnabled="False"/>
-
+                <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
+                    <ListViewItem>
+                        <TextBox x:Name="txt_insID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top"  Width="170" Margin="5 0 0 0" Background="{x:Null}" IsEnabled="False" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_company" Width="170" Margin="5,0,0,0" Background="{x:Null}"/>
+                        <TextBox x:Name="txt_company" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
 
                 </ListView>
@@ -50,8 +50,8 @@
 
             </StackPanel>
         </Grid>
-        <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="351">
-            <DataGrid x:Name="dg_insurance" Margin="5,5,10,123" SelectionMode="Single" IsEnabled="False" SelectionChanged="dg_insurance_SelectionChanged"/>
+        <Grid HorizontalAlignment="Center" Margin="0,160,0,0.2" Width="400">
+            <DataGrid x:Name="dg_insurance" Margin="5" SelectionMode="Single" IsEnabled="False" SelectionChanged="dg_insurance_SelectionChanged"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>
