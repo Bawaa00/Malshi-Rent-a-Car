@@ -137,5 +137,29 @@ namespace Malshi_Rent_A_Car.View
 
             }
         }
+
+        private void txt_insID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_insID.Text))
+            {
+                error_msg.Text = "Enter Insurance ID";
+
+
+            }
+            else { error_msg.Text = " "; 
+            }
+        }
+
+        private void txt_company_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_company.Text))
+            {
+                error_msg.Text = "Enter Company";
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
     }
 }

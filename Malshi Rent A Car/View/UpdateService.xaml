@@ -41,7 +41,7 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="246">
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_sID" Margin="2" Width="180" DropDownClosed="cmb_sID_DropDownClosed"/>
+                        <ComboBox x:Name="cmb_sID" Margin="2" Width="180" DropDownClosed="cmb_sID_DropDownClosed" SelectionChanged="cmb_sID_SelectionChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <ComboBox x:Name="cmb_vehicleID" Height="25" Width="182" DropDownClosed="cmb_vehicleID_DropDownClosed"/>

@@ -213,5 +213,25 @@ namespace Malshi_Rent_A_Car
             else
                 error_msg.Text = "";
         }
+
+        private void cmb_Rtype_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_Rtype.SelectedItem == null)
+            {
+                error_msg.Text = "Select type";
+            }
+            else
+                error_msg.Text = " ";
+        }
+
+        private void cmb_id_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void cmb_id_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -129,7 +129,13 @@ namespace Malshi_Rent_A_Car
         private void txt_CusFname_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusFname.Text.Length == 0)
-                error_msg.Text = "Please Enter Customer First Name  ";
+            { error_msg.Text = "Please Enter Customer First Name  "; }
+
+            else if (txt_CusFname.Text.Any(char.IsDigit))
+    {
+                error_msg.Text = "First Name cannot have Numbers";
+            }
+
             else
                 error_msg.Text = "";
         }
@@ -139,6 +145,11 @@ namespace Malshi_Rent_A_Car
 
             if (txt_CusLname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
+
+            else if (txt_CusLname.Text.Any(char.IsDigit))
+            
+                error_msg.Text = "Last Name cannot have Numbers";
+            
             else
                 error_msg.Text = "";
         }

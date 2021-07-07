@@ -53,7 +53,7 @@
                 </Grid>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="35.4">
-                        <ComboBox Name="cmb_Rtype" Margin="2" Width="180" DropDownClosed="cmb_Rtype_DropDownClosed" Background="{x:Null}">
+                        <ComboBox Name="cmb_Rtype" Margin="2" Width="180" DropDownClosed="cmb_Rtype_DropDownClosed" Background="{x:Null}" SelectionChanged="cmb_Rtype_SelectionChanged">
                             <ComboBoxItem>
                                 <TextBlock Text="Maintenance"/>
                             </ComboBoxItem>
@@ -69,7 +69,7 @@
                         <DatePicker x:Name="date_repair" Margin="2" Width="180" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
-                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180" DropDownClosed="cmb_vehicle_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_vehicle" Margin="2" Width="180" DropDownClosed="cmb_vehicle_DropDownClosed" Background="{x:Null}" SelectionChanged="cmb_vehicle_SelectionChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="35.4">
                         <TextBox x:Name="txt_location" Margin="2" Width="180" TextChanged="txt_location_TextChanged" Background="{x:Null}"/>
@@ -92,7 +92,7 @@
                     <TextBlock Text="Details"/>
                 </ListViewItem>
                 <ListViewItem Width="362" Height="196">
-                    <TextBox x:Name="txt_details" Width="350" Height="184"/>
+                    <TextBox x:Name="txt_details" Width="350" Height="184" TextChanged="txt_details_TextChanged"/>
                 </ListViewItem>
             </ListView>
             <Button Content="CLEAR" HorizontalAlignment="Left" Margin="281,252,0,0" VerticalAlignment="Top" Width="75"/>

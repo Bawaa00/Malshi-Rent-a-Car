@@ -63,13 +63,13 @@
                         <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" SelectionChanged="cmb_cNIC_SelectionChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}"/>
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" SelectionChanged="cmb_vLplate_SelectionChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}"/>
@@ -84,16 +84,17 @@
                         <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_advance_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}"/>
+                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}" CalendarClosed="dte_lend_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}"/>
+                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}" CalendarClosed="dte_return_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
                         <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
+            <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Foreground="#FFFF3621"/>
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>

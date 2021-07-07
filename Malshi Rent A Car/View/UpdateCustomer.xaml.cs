@@ -185,6 +185,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_firstname.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer First Name  ";
+            else if (txt_firstname.Text.Any(char.IsDigit))
+                error_msg.Text = "First name cannot have numbers";
             else
                 error_msg.Text = "";
         }
@@ -194,6 +196,8 @@ namespace Malshi_Rent_A_Car
 
             if (txt_lname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
+            else if (txt_lname.Text.Any(char.IsDigit))
+                error_msg.Text ="Last name cannot have numbers";
             else
                 error_msg.Text = "";
         }

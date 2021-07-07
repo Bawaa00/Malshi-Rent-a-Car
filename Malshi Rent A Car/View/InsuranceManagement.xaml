@@ -37,11 +37,10 @@
                 </Grid>
                 <ListView FontSize="13" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Height="309">
                     <ListViewItem/>
-                    <TextBox x:Name="txt_insID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top"  Width="170" Background="{x:Null}" IsEnabled="False"/>
+                    <TextBox x:Name="txt_insID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top"  Width="170" Background="{x:Null}" IsEnabled="False" TextChanged="txt_insID_TextChanged"/>
+                    <TextBox x:Name="txt_company" Width="170" Background="{x:Null}" Height="22" TextChanged="txt_company_TextChanged"/>
 
-                    <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_company" Width="170" Margin="5,0,0,0" Background="{x:Null}"/>
-                    </ListViewItem>
+                    <ListViewItem Height="30.4"/>
 
                 </ListView>
                 <Button x:Name="btn_add" Content="ADD" Visibility="Hidden" Click="btn_add_Click"/>
@@ -49,6 +48,9 @@
                 <Button x:Name="btn_del" Content="DELETE" Visibility="Hidden" Click="btn_del_Click"/>
 
             </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Height="52" Margin="10,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"><InlineUIContainer>
+                    <TextBlock x:Name="error_msg" Height="35" TextWrapping="Wrap" Width="214" Foreground="#FFF02D2D"/>
+                </InlineUIContainer></TextBlock>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="351">
             <DataGrid x:Name="dg_insurance" Margin="5,5,10,123" SelectionMode="Single" IsEnabled="False" SelectionChanged="dg_insurance_SelectionChanged"/>

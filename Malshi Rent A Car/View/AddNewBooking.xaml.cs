@@ -153,7 +153,68 @@ namespace Malshi_Rent_A_Car
 
         private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if(txt_advance.Text.Length ==  0)
+            {
+                error_msg.Text = "Please Enter Advance Amount";
+            }
+            else
+            {
+                error_msg.Text = "";
+            }
+        }
 
+        private void txt_cName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void cmb_cNIC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cmb_cNIC.SelectedItem==null)
+            {
+                error_msg.Text = "Please select Customer NIC";
+
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
+
+        private void cmb_vLplate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (cmb_vLplate.SelectedItem == null)
+            {
+                error_msg.Text = "Please select vehicle license plate number ";
+
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
+
+        private void dte_lend_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dte_return_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+            DateTime returndate = Convert.ToDateTime(dte_return.Text);
+            if(lenddate<= returndate)
+            {
+                TimeSpan ts = returndate.Subtract(lenddate);
+                int days = Convert.ToInt16(ts.Days);
+                error_msg.Text = "";
+
+            }
+            else
+            {
+                error_msg.Text = "Retuen date cannot be lessthan lend date";
+            }
         }
     }
 }

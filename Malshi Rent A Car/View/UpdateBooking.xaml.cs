@@ -128,6 +128,60 @@ namespace Malshi_Rent_A_Car
                 MessageBox.Show("Could not delete data,Please try agian");
         }
 
-       
+        private void cmb_bid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_bid.SelectedItem == null)
+            {
+                error_msg.Text = "Select Booking number";
+            }
+            else
+                error_msg.Text = " "; 
+        }
+
+        private void cmb_cNIC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_cNIC.SelectedItem == null)
+            {
+                error_msg.Text = "Select Customer NIC number";
+            }
+            else
+                error_msg.Text = " ";
+
+        }
+
+        private void cmb_vLplate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_vLplate.SelectedItem == null)
+            {
+                error_msg.Text = "Select Vehicle license plate number";
+            }
+            else
+                error_msg.Text = " ";
+        }
+
+        private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_advance.Text))
+            {
+                error_msg.Text = "Please Enter advance amount";
+            }
+        }
+
+        private void dte_return_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+            DateTime returndate = Convert.ToDateTime(dte_return.Text);
+            if (lenddate <= returndate)
+            {
+                TimeSpan ts = returndate.Subtract(lenddate);
+                int days = Convert.ToInt16(ts.Days);
+                error_msg.Text = "";
+
+            }
+            else
+            {
+                error_msg.Text = "Retuen date cannot be lessthan lend date";
+            }
+        }
     }
 }

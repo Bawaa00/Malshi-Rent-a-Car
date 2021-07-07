@@ -129,5 +129,42 @@ namespace Malshi_Rent_A_Car
             }
             else { error_msg.Text = ""; }
         }
+
+        private void cmb_Rtype_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cmb_Rtype.SelectedItem == null)
+            {
+                error_msg.Text = "Please enter Type";
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
+
+        private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_details.Text))
+            {
+                error_msg.Text = "Please Enter details";
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
+
+        private void cmb_vehicle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cmb_vehicle.SelectedItem==null)
+            {
+                error_msg.Text = "Please select Vehicle";
+
+            }
+            else
+            {
+                error_msg.Text = " ";
+            }
+        }
     }
 }

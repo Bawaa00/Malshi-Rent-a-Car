@@ -175,5 +175,10 @@ namespace Malshi_Rent_A_Car
             else
                 error_msg.Text = "";
         }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
