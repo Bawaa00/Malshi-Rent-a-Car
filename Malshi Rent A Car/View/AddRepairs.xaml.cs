@@ -27,11 +27,26 @@ namespace Malshi_Rent_A_Car
         }
         Vehicle vehicle = new Vehicle();
         DataTable dt = new DataTable();
+        Database db = new Database();
 
         private void cmb_Rtype_DropDownClosed(object sender, EventArgs e)
         {
             if (cmb_Rtype.SelectedIndex == 0)
             {
+                dt = db.getData("Select max(main_RID) from Maintenance_Repair");
+                string id = dt.Rows[0][0].ToString();
+                if (id == "")
+                {
+                    txt_id.Text = "M001";
+                }
+                else
+                {
+                    var prefix = Regex.Match(id, "^\\D+").Value;
+                    var number = Regex.Replace(id, "^\\D+", "");
+                    var i = int.Parse(number) + 1;
+                    var newString = prefix + i.ToString(new string('0', number.Length));
+                    txt_id.Text = newString;
+                }
                 lbl_option1.Visibility = Visibility.Visible;
                 lbl_option1.Text = "Next Check";
                 txt_option1.Visibility = Visibility.Visible;
@@ -41,10 +56,24 @@ namespace Malshi_Rent_A_Car
             }
             else if (cmb_Rtype.SelectedIndex == 1)
             {
+                dt = db.getData("Select max(acc_RID) from Accident_Repair");
+                string id = dt.Rows[0][0].ToString();
+                if (id == "")
+                {
+                    txt_id.Text = "A001";
+                }
+                else
+                {
+                    var prefix = Regex.Match(id, "^\\D+").Value;
+                    var number = Regex.Replace(id, "^\\D+", "");
+                    var i = int.Parse(number) + 1;
+                    var newString = prefix + i.ToString(new string('0', number.Length));
+                    txt_id.Text = newString;
+                }
                 lbl_option1.Visibility = Visibility.Visible;
                 lbl_option1.Text = "Claim (Rs)";
                 lbl_option2.Visibility = Visibility.Visible;
-                lbl_option2.Text = "Duration";
+                lbl_option2.Text = "Duration (Days)";
                 txt_option1.Visibility = Visibility.Visible;
                 txt_option2.Visibility = Visibility.Visible;
             }
@@ -56,6 +85,7 @@ namespace Malshi_Rent_A_Car
             cmb_vehicle.ItemsSource = dt.DefaultView;
             cmb_vehicle.DisplayMemberPath = "Plate No";
             cmb_vehicle.SelectedValuePath = "Plate No";
+
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -68,10 +98,18 @@ namespace Malshi_Rent_A_Car
                     int i = mr.addRepair(cmb_vehicle.Text);
                     if (i == 1)
                     {
-                        MessageBox.Show("Data saved successfully");
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data Saved Successfully!");
+                        msg.Show();
+                        btn_cls_Click(this, null);
                     }
                     else
-                        MessageBox.Show("Error.Failed to insert data");
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Error.Failed to insert data");
+                        msg.Show();
+                    }
+                        
                 }
                 else if (cmb_Rtype.SelectedIndex == 1)
                 {
@@ -79,10 +117,18 @@ namespace Malshi_Rent_A_Car
                     int i = ar.addRepair(cmb_vehicle.Text);
                     if (i == 1)
                     {
-                        MessageBox.Show("Data saved successfully");
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data Saved Successfully!");
+                        msg.Show();
+                        btn_cls_Click(this, null);
                     }
                     else
-                        MessageBox.Show("Error.Failed to insert data");
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Error.Failed to insert data");
+                        msg.Show();
+                    }
+                        
                 }
             }
             catch (System.Data.SqlClient.SqlException)
@@ -128,6 +174,20 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Please Select Vehicle";
             }
             else { error_msg.Text = ""; }
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            cmb_Rtype.SelectedIndex = -1;
+            txt_id.Clear();
+            date_repair.SelectedDate = null;
+            cmb_vehicle.SelectedIndex = -1;
+            txt_location.Clear();
+            txt_cost.Clear();
+            txt_option1.Clear();
+            txt_option2.Clear();
+            txt_details.Clear();
+            frm_addRepair_Loaded(this, null);
         }
     }
 }
