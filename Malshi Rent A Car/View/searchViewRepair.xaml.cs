@@ -32,6 +32,7 @@ namespace Malshi_Rent_A_Car
 
         private void cmb_RepCatagory_DropDownClosed(object sender, EventArgs e)
         {
+            date_repair.SelectedDate = null;
             cmb_vehicle.SelectedIndex = -1;
             if (cmb_RepCatagory.SelectedIndex == 0)
             {
@@ -92,6 +93,11 @@ namespace Malshi_Rent_A_Car
         {
             UpdateRepair obj = new UpdateRepair();
             obj.Show();
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            cmb_RepCatagory_DropDownClosed(this,null);
         }
     }
 }

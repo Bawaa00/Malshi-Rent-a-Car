@@ -47,5 +47,6 @@
             </Grid.Background>
             <TextBlock Text="Repairs" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
+        <Button x:Name="btn_view" Content="VIEW ALL" HorizontalAlignment="Left" Margin="25,427,0,0" VerticalAlignment="Top" Width="75" Click="btn_view_Click"/>
     </Grid>
 </Window>
