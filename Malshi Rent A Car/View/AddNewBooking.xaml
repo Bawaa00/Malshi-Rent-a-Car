@@ -44,10 +44,11 @@
                     </ListViewItem>
                 </ListView>
                 <DockPanel Height="55">
-                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click"/>
+                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click" IsEnabled="False"/>
                     <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click"/>
                 </DockPanel>
             </StackPanel>
+            <Button x:Name="btn_bill" Content="GET BILL" HorizontalAlignment="Left" Margin="68,399,0,0" VerticalAlignment="Top" Width="75" Click="btn_bill_Click" IsEnabled="False"/>
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
             <Grid.Background>
