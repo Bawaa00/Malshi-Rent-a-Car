@@ -70,6 +70,7 @@ namespace Malshi_Rent_A_Car
         {
             dg_price.IsEnabled = true;
             form_pricing_Loaded(this, null);
+            txt_modelID.Clear();
             btn_add.Visibility = Visibility.Hidden;
             btn_update.Visibility = Visibility.Visible;
             btn_del.Visibility = Visibility.Visible;

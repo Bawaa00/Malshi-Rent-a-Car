@@ -50,37 +50,51 @@ namespace Malshi_Rent_A_Car
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
-
+            SolidColorBrush brush1 = new SolidColorBrush();
+            brush1.Color = Color.FromRgb(34, 19, 119);
+            SolidColorBrush brush2 = new SolidColorBrush();
+            brush2.Color = Color.FromRgb(136, 170, 255);
+            SolidColorBrush brush3 = new SolidColorBrush();
+            brush3.Color = Color.FromRgb(0, 51, 238);
+            SolidColorBrush brush4 = new SolidColorBrush();
+            brush4.Color = Color.FromRgb(68, 34, 238);
+            SolidColorBrush brush5 = new SolidColorBrush();
+            brush5.Color = Color.FromRgb(34, 119, 170);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
             {
                 Title = "SEDANS",
                 Values = new ChartValues<double> {vehicle.getSedans()},
-                PushOut = 15,
+               // PushOut = 15,            
                 DataLabels = true,
-                LabelPoint = PointLabel
+                LabelPoint = PointLabel,
+                Fill = brush4
             },
             new PieSeries
             {
                 Title = "HATCHBACKS",
                 Values = new ChartValues<double> {vehicle.getHatchback()},
                 DataLabels = true,
-                LabelPoint = PointLabel
+                LabelPoint = PointLabel,
+                Fill = brush2
+
             },
             new PieSeries
             {
                 Title = "SUVS",
                 Values = new ChartValues<double> {vehicle.getSUV()},
                 DataLabels = true,
-                LabelPoint = PointLabel
+                LabelPoint = PointLabel,
+                Fill = brush3
             },
             new PieSeries
             {
                 Title = "VAN",
                 Values = new ChartValues<double> {vehicle.getVan()},
                 DataLabels = true,
-                LabelPoint = PointLabel
+                LabelPoint = PointLabel,
+                Fill = brush1
             }
             ,
             new PieSeries
@@ -88,7 +102,8 @@ namespace Malshi_Rent_A_Car
                 Title = "MINI-VAN",
                 Values = new ChartValues<double> {vehicle.getMinivan()},
                 DataLabels = true,
-                LabelPoint = PointLabel
+                LabelPoint = PointLabel,
+                Fill = brush5
             }
         };
         }
@@ -150,7 +165,17 @@ namespace Malshi_Rent_A_Car
 
         private void list_report_Selected(object sender, RoutedEventArgs e)
         {
-            View.ReportView obj = new View.ReportView();
+            /*View.ReportView obj = new View.ReportView();
+            obj.Show();*/
+            /*View.ReportCustomerBooking rp = new View.ReportCustomerBooking();
+            rp.Show();*/
+            View.ReportMenu rm = new View.ReportMenu();
+            rm.Show();
+        }
+
+        private void list_booking_Selected(object sender, RoutedEventArgs e)
+        {
+            searchViewBooking obj = new searchViewBooking();
             obj.Show();
         }
     }

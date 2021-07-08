@@ -103,11 +103,21 @@ namespace Malshi_Rent_A_Car
 
         private void txt_mileage_KeyUp(object sender, KeyEventArgs e)
         {
-            if(txt_mileage.Text != "")
+            try
             {
-                int next = Int32.Parse(txt_mileage.Text);
-                txt_nxtMileage.Text = (next + 2500).ToString();
+                if (txt_mileage.Text != "")
+                {
+                    int next = Int32.Parse(txt_mileage.Text);
+                    txt_nxtMileage.Text = (next + 2500).ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form properly "+ex.Message);
+                msg.Show();
+            }
+            
             
         }
 

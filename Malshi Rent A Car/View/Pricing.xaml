@@ -7,7 +7,7 @@
         mc:Ignorable="d"
 
 
-        Title="Pricing" Height="497" Width="988" WindowStartupLocation="CenterScreen" Loaded="form_pricing_Loaded">
+        Title="Pricing" Height="507" Width="988" WindowStartupLocation="CenterScreen" Loaded="form_pricing_Loaded">
     <Grid>
         <Grid Width="150" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
@@ -43,8 +43,16 @@
 
                 </ListView>
                 <DockPanel>
-                    <Button x:Name="btn_save" Content="SAVE" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Left" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
-                    <Button x:Name="btn_cls" Content="CLEAR" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Right" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                    <!--Button x:Name="btn_save" Content="SAVE" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Left" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                    <Button x:Name="btn_cls" Content="CLEAR" Height="25" Width="60" Margin="5 20 5 5" HorizontalAlignment="Right" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/-->
+                    <Button x:Name="btn_add" Content="ADD"  Height="25" Width="100" Margin="5 20 5 5" Click="btn_add_Click" Visibility="Hidden"  Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                </DockPanel>
+                <DockPanel>
+                    <Button x:Name="btn_update" Content="UPDATE" Height="25" Width="100" Margin="5 2 5 5"  Click="btn_update_Click" Visibility="Hidden"  Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
+                  
+                </DockPanel>
+                <DockPanel>
+                    <Button x:Name="btn_del" Content="DELETE" Height="25" Width="100" Margin="5 2 5 5"  Click="btn_del_Click" Visibility="Hidden"  Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
                 </DockPanel>
             </StackPanel>
         </Grid>
@@ -157,9 +165,9 @@
                     </ListViewItem>
 
                 </ListView>
-                <Button x:Name="btn_add" Content="ADD" Click="btn_add_Click" Visibility="Hidden"/>
+                <!--Button x:Name="btn_add" Content="ADD" Click="btn_add_Click" Visibility="Hidden"/>
                 <Button x:Name="btn_update" Content="UPDATE" Click="btn_update_Click" Visibility="Hidden"/>
-                <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click" Visibility="Hidden"/>
+                <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click" Visibility="Hidden"/-->
 
             </StackPanel>
         </Grid>

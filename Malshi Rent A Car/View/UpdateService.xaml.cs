@@ -77,6 +77,7 @@ namespace Malshi_Rent_A_Car
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data updated successfully!");
                     msg.Show();
                 }
                 else

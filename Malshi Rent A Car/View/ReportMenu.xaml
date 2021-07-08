@@ -1,16 +1,26 @@
-﻿<Window x:Class="Malshi_Rent_A_Car.View.ReportMenu"
+﻿<Window x:Name="form_rMenu" x:Class="Malshi_Rent_A_Car.View.ReportMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car.View"
         mc:Ignorable="d"
-        Title="ReportMenu" Height="345.961" Width="336.212">
+        Title="ReportMenu" Height="317.961" Width="325.212" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="BOOKING HISTORY" HorizontalAlignment="Left" Margin="85,59,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button Content="VEHICLE STATUS" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button Content="SERVICE HISTORY" HorizontalAlignment="Left" Margin="85,155,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button Content="MAINTENANCE HISTORY" HorizontalAlignment="Left" Margin="85,212,0,0" VerticalAlignment="Top" Width="141"/>
+        <Grid VerticalAlignment="Top">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF08243C" Offset="0.319"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="REPORT MENU" FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
+        </Grid>
+        <Button x:Name="btn_book" Content="BOOKING HISTORY" HorizontalAlignment="Left" Margin="89,52,0,0" VerticalAlignment="Top" Width="140" Height="25"  Click="btn_book_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_status" Content="VEHICLE STATUS" HorizontalAlignment="Left" Margin="89,98,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_status_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_service" Content="SERVICE HISTORY" HorizontalAlignment="Left" Margin="89,148,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_service_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_maintenance" Content="MAINTENANCE HISTORY" HorizontalAlignment="Left" Margin="89,197,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_maintenance_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_accident" Content="ACCIDENT HISTORY" HorizontalAlignment="Left" Margin="89,243,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_accident_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
 
     </Grid>
 </Window>

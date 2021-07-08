@@ -159,11 +159,17 @@ namespace Malshi_Rent_A_Car
                 int i = vehicle.addVehicle(modelID, insID, cmb_ownerNIC.Text);
                 if (i == 1)
                 {
-                    MessageBox.Show("Data Saved Successfully");
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data Saved Successfully");
+                    msg.Show();
                     btn_cls_Click(this, null);
                 }
                 else
-                    MessageBox.Show("Could not save data,Please try agian");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try again");
+                    msg.Show();
+                }
             }
             catch (ArgumentNullException)
             {

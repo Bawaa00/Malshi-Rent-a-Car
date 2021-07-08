@@ -70,14 +70,17 @@ namespace Malshi_Rent_A_Car
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data Saved Successfully");
                     msg.Show();
-                    /*btn_clr_Click(this, null);
-                    form_addBooking_Loaded(this, null);*/
                     btn_bill.IsEnabled = true;
                     btn_clr.IsEnabled = true;
                 }
                 else
-                    MessageBox.Show("Could not save data,Please try agian");
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Could not save data,Please try again");
+                    msg.Show();
+                }
             }
             catch (System.Data.SqlClient.SqlException)
             {

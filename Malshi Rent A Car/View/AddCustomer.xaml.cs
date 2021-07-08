@@ -43,6 +43,7 @@ namespace Malshi_Rent_A_Car
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data Saved Successfully");
                     msg.Show();
                     btn_clear_Click(this, null);
                 }

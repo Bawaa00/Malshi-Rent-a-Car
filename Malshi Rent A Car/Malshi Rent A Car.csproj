@@ -119,6 +119,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Customer.cs" />
+    <Compile Include="DataSets\dsCustomerBooking.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
     <Compile Include="MessageBox.xaml.cs">
@@ -162,6 +167,12 @@
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ReportCustomerBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReportCustomerBooking.Designer.cs">
+      <DependentUpon>ReportCustomerBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ReportMenu.xaml.cs">
       <DependentUpon>ReportMenu.xaml</DependentUpon>
     </Compile>
@@ -173,6 +184,30 @@
     </Compile>
     <Compile Include="View\ResetPassword.xaml.cs">
       <DependentUpon>ResetPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RViewBookingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RViewBookingHistory.Designer.cs">
+      <DependentUpon>RViewBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RViewMaintenanceH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RViewMaintenanceH.Designer.cs">
+      <DependentUpon>RViewMaintenanceH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RViewServiceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RViewServiceHistory.Designer.cs">
+      <DependentUpon>RViewServiceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RViewVehicleStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RViewVehicleStatus.Designer.cs">
+      <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="View\searchViewBooking.xaml.cs">
       <DependentUpon>searchViewBooking.xaml</DependentUpon>
@@ -375,9 +410,35 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ReportCustomerBooking.resx">
+      <DependentUpon>ReportCustomerBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ReportView.resx">
       <DependentUpon>ReportView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\RViewBookingHistory.resx">
+      <DependentUpon>RViewBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RViewMaintenanceH.resx">
+      <DependentUpon>RViewMaintenanceH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RViewServiceHistory.resx">
+      <DependentUpon>RViewServiceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RViewVehicleStatus.resx">
+      <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSets\dsCustomerBooking.xsc">
+      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsCustomerBooking.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCustomerBooking.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsCustomerBooking.xss">
+      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -428,6 +489,21 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Total.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Total.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

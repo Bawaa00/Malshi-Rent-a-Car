@@ -23,5 +23,34 @@ namespace Malshi_Rent_A_Car.View
         {
             InitializeComponent();
         }
+
+        private void btn_status_Click(object sender, RoutedEventArgs e)
+        {
+            RViewVehicleStatus obj = new RViewVehicleStatus();
+            obj.Show();
+        }
+
+        private void btn_book_Click(object sender, RoutedEventArgs e)
+        {
+            RViewBookingHistory obj = new RViewBookingHistory();
+            obj.Show();
+        }
+
+        private void btn_service_Click(object sender, RoutedEventArgs e)
+        {
+            RViewServiceHistory obj = new RViewServiceHistory();
+            obj.Show();
+        }
+
+        private void btn_maintenance_Click(object sender, RoutedEventArgs e)
+        {
+            RViewMaintenanceH obj = new RViewMaintenanceH();
+            obj.Show();
+        }
+
+        private void btn_accident_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
