@@ -147,5 +147,11 @@ namespace Malshi_Rent_A_Car
             View.manageAccount ma = new View.manageAccount();
             ma.Show();
         }
+
+        private void list_report_Selected(object sender, RoutedEventArgs e)
+        {
+            View.ReportView obj = new View.ReportView();
+            obj.Show();
+        }
     }
 }
