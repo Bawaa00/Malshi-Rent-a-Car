@@ -33,9 +33,9 @@ namespace Malshi_Rent_A_Car
             int i = user.authorizeAccount();
             if (i == 1)
             {
-                //string type = user.getUserType();
-                //Dashboard dash = new Dashboard(type,txt_uname.Text);
-                Dashboard dash = new Dashboard();
+                string type = user.getUserType();
+                Dashboard dash = new Dashboard(type,txt_uname.Text);
+               // Dashboard dash = new Dashboard();
                 this.Close();
                 dash.Show();
             }

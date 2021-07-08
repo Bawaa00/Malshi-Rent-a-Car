@@ -88,6 +88,18 @@
                                 <TextBlock Margin="15 0 0 0" Text="SERVICES" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
+                        <ListViewItem x:Name="list_report" Height="35" Visibility="Hidden">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Icons/Services.png" Height="25" VerticalAlignment="Center"/>
+                                <TextBlock Margin="15 0 0 0" Text="REPORTS" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem x:Name="list_accounts" Height="35"  Visibility="Hidden" Selected="list_accounts_Selected">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Icons/Services.png" Height="25" VerticalAlignment="Center"/>
+                                <TextBlock Margin="15 0 0 0" Text="ACCOUNTS" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
                     </ListView>
                 </Grid>
             </StackPanel>
@@ -104,10 +116,10 @@
             </lvc:PieChart>
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="126" Margin="300,70,0,0" VerticalAlignment="Top" Width="238">
+        <Grid HorizontalAlignment="Left" Height="126" Margin="300,70,0,0" VerticalAlignment="Top" Width="238" Background="#FF93DFF0">
             <TextBlock HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="TOTAL NO OF VEHICLES" VerticalAlignment="Top" FontSize="20" Width="238" TextAlignment="Center"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="126" Margin="623,70,0,0" VerticalAlignment="Top" Width="238">
+        <Grid HorizontalAlignment="Left" Height="126" Margin="623,70,0,0" VerticalAlignment="Top" Width="238" Background="#FFA3ECF0">
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="AVAILABLE NO OF VEHICLES" VerticalAlignment="Top" FontSize="20" Width="238" Height="56" TextAlignment="Center" Margin="0,10,0,0"/>
         </Grid>
         <TextBlock x:Name="txt_totV" HorizontalAlignment="Left" Margin="399,145,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>

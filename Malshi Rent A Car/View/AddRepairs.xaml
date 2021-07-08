@@ -64,8 +64,6 @@
                     </ListViewItem>
                     <ListViewItem Height="35.4">
 
-                        <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}" IsEnabled="False"/>
-
                         <TextBox x:Name="txt_id" Margin="2" Width="180" Background="{x:Null}" IsEnabled="False" BorderThickness="0,0,0,1"/>
 
                     </ListViewItem>

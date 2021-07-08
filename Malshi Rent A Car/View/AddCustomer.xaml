@@ -119,11 +119,11 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <Button x:Name="btn_back" HorizontalAlignment="Right" Margin="5 10 5 5" VerticalAlignment="Top" Height="30" Width="30" Background="Transparent" Click="btn_back_Click" Style="{DynamicResource IconButton}">
-                <Image Source="Icons/Back.png"/>
+                <Image Source="/Icons/Back.png"/>
             </Button>
             <TextBlock Text="ADD CUSTOMER" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
-            <Button x:Name="btn_home" HorizontalAlignment="Right" Margin="5 10 50 5" VerticalAlignment="Top" Height="30" Width="30" Background="Transparent" Click="btn_home_Click" Style="{DynamicResource IconButton}">
-                <Image Source="Icons/Home1.png"/>
+            <Button x:Name="btn_home" HorizontalAlignment="Right" Margin="5 10 50 5" VerticalAlignment="Top" Height="30" Width="30" Background="Transparent" Style="{DynamicResource IconButton}">
+                <Image Source="/Icons/Home1.png"/>
             </Button>
         </Grid>
 

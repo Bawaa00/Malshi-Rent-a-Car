@@ -49,7 +49,7 @@
                         <PasswordBox x:Name="txt_pass" Margin="2 20 2 2" Width="180" KeyUp="txt_pass_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_retype" Margin="2" Width="180" IsEnabled="False" KeyUp="txt_retype_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
+                        <PasswordBox x:Name="txt_retype" Margin="2" Width="180" IsEnabled="False" KeyUp="txt_retype_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
                     </ListViewItem>
                     
                     <ListViewItem Height="47.2"/>
