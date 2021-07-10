@@ -35,11 +35,11 @@ namespace Malshi_Rent_A_Car
         {
             try
             {
-            string name = System.IO.Path.GetFileName(path);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(path, destinationPath, true);
-            Customer customer = new Customer(txt_CusFname.Text,txt_CusLname.Text,txt_CusNIC.Text,txt_CusEmail.Text,txt_CusResAdrs.Text,Int32.Parse(txt_CusTelHome.Text),Int32.Parse(txt_CusTelMobile.Text),txt_CusProfession.Text,txt_CusWorkAdrs.Text,Int32.Parse(txt_CusTelWork.Text),txt_CusKinName.Text,txt_CusKinkAdrs.Text,Int32.Parse(txt_CusKinConatct.Text),destinationPath);
-            int i = customer.addCustomer();
+                string name = System.IO.Path.GetFileName(path);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(path, destinationPath, true);
+                Customer customer = new Customer(txt_CusFname.Text, txt_CusLname.Text, txt_CusNIC.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath);
+                int i = customer.addCustomer();
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
@@ -58,6 +58,12 @@ namespace Malshi_Rent_A_Car
             {
                 MessageBox msg = new MessageBox();
                 msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (FormatException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form properly");
                 msg.Show();
             }
             catch (System.Data.SqlClient.SqlException)
@@ -131,6 +137,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_CusFname.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer First Name  ";
+            else if (txt_CusFname.Text.Any(char.IsDigit))
+                error_msg.Text = "First Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -140,6 +148,8 @@ namespace Malshi_Rent_A_Car
 
             if (txt_CusLname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
+            else if (txt_CusLname.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -147,7 +157,9 @@ namespace Malshi_Rent_A_Car
         private void txt_CusNIC_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_CusNIC.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer NIC  ";
+                error_msg.Text = "Please Enter Customer NIC  ";
+            else if(txt_CusNIC.Text.Length < 10 || txt_CusNIC.Text.Length > 12)
+                error_msg.Text = "Invalid NIC  ";
             else
                 error_msg.Text = "";
         }
@@ -156,6 +168,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_CusEmail.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Email  ";
+            else if (!IsValid(txt_CusEmail.Text))
+                error_msg.Text = "Please enter a valid email address ";
             else
                 error_msg.Text = "";
         }
@@ -247,6 +261,19 @@ namespace Malshi_Rent_A_Car
             else
                 error_msg.Text = "";
 
+        }
+
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }

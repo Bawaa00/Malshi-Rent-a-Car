@@ -223,7 +223,7 @@
         <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="566,451,0,0" VerticalAlignment="Top" Height="25" Width="74" Click="btn_upload_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
         <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="744,715,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btn_cls_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
         <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="650,715,0,0" VerticalAlignment="Top" Width="76" Height="25" Click="btn_save_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE">
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE" CornerRadius="5">
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419" Stretch="Fill"/>
         </Border>

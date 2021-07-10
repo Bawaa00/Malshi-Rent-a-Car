@@ -77,7 +77,7 @@
                 <ListViewItem Width="362" Height="169">
                     <TextBox x:Name="txt_details" Width="350" Height="162" TextChanged="txt_details_TextChanged"/>
                 </ListViewItem>
-                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="179" Height="46" Background="Transparent"/>
+                <TextBlock x:Name="error_msg" TextWrapping="Wrap" Width="179" Height="46" Background="Transparent" Foreground="Red"/>
             </ListView>
             <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="278,207,0,0" VerticalAlignment="Top" Width="75" Click="btn_cls_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
 

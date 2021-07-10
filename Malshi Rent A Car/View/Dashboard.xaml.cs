@@ -159,8 +159,8 @@ namespace Malshi_Rent_A_Car
 
         private void list_accounts_Selected(object sender, RoutedEventArgs e)
         {
-            View.manageAccount ma = new View.manageAccount();
-            ma.Show();
+            AddAccount aa = new AddAccount();
+            aa.Show();
         }
 
         private void list_report_Selected(object sender, RoutedEventArgs e)

@@ -94,7 +94,7 @@
                                 <TextBlock Margin="15 0 0 0" Text="SERVICES" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem x:Name="list_report" Height="35" Selected="list_report_Selected" >
+                        <ListViewItem x:Name="list_report" Height="35" Selected="list_report_Selected" Visibility="Hidden">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Icons/Reports.png" Height="25" VerticalAlignment="Center"/>
                                 <TextBlock Margin="15 0 0 0" Text="REPORTS" VerticalAlignment="Center"/>

@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="MessageBox" Height="191.866" Width="334.139" WindowStartupLocation="CenterScreen">
+        Title="MessageBox" Height="148.866" Width="334.139" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Width="350" Height="170" HorizontalAlignment="Center">
-        <StackPanel Orientation="Horizontal" Margin="15">
-
-            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="249" Margin="15,10,15,48" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="82" TextAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Margin="20,0,10,30">
+            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="289" Margin="15,37,15,47" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="56" TextAlignment="Center" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,27,49">
             <Button x:Name="btn_cancel"  Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden"/>
-            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Width="71"/>
+            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White" Width="71"/>
         </StackPanel>
     </Grid>
 </Window>

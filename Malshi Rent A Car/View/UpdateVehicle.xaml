@@ -235,7 +235,7 @@
         <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="598,406,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="Black" Height="25" Width="75" Click="btn_upload_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
         <Button x:Name="btn_delete" Content="DELETE" HorizontalAlignment="Left" Margin="746,736,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="74" Click="btn_delete_Click" Style="{DynamicResource RoundedButtonStyle}"/>
         <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Left" Margin="666,736,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Foreground="White" Height="25" Width="74" Click="btn_update_Click" Style="{DynamicResource RoundedButtonStyle}"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="320" Margin="486,81,0,0" VerticalAlignment="Top" Width="320" Background="#FFF7EEEE">
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="320" Margin="486,81,0,0" VerticalAlignment="Top" Width="320" Background="#FFF7EEEE" CornerRadius="5">
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="320" Margin="-1" VerticalAlignment="Top" Width="320" Stretch="Fill"/>
 
         </Border>

@@ -43,7 +43,7 @@ namespace Malshi_Rent_A_Car
             cmb_cNIC.DisplayMemberPath = "NIC";
             cmb_cNIC.SelectedValuePath = "NIC";
 
-            book_date.Text = DateTime.Now.ToString();
+            book_date.Text = DateTime.Now.ToShortDateString();
 
             dt = db.getData("Select max(bookingID) from Booking ");
             string id = dt.Rows[0][0].ToString();
@@ -63,50 +63,66 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(txt_error.Text != "")
             {
-                Booking book = new Booking(txt_bid.Text, book_date.Text, dte_lend.Text, dte_return.Text, Int32.Parse(txt_advance.Text));
-                int i = book.addBooking(cmb_cNIC.Text, cmb_vLplate.Text);
-                if (i == 1)
+                try
+                {
+                    Booking book = new Booking(txt_bid.Text, book_date.Text, dte_lend.Text, dte_return.Text, Int32.Parse(txt_advance.Text));
+                    int i = book.addBooking(cmb_cNIC.Text, cmb_vLplate.Text);
+                    if (i == 1)
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data Saved Successfully");
+                        msg.Show();
+                        btn_bill.IsEnabled = true;
+                        btn_clr.IsEnabled = true;
+                    }
+                    else
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Could not save data,Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
                 {
                     MessageBox msg = new MessageBox();
-                    msg.errorMsg("Data Saved Successfully");
+                    msg.errorMsg("Please fill the form correctly");
                     msg.Show();
-                    btn_bill.IsEnabled = true;
-                    btn_clr.IsEnabled = true;
                 }
-                else
+                catch (FormatException)
                 {
                     MessageBox msg = new MessageBox();
-                    msg.errorMsg("Could not save data,Please try again");
+                    msg.errorMsg("Please fill the form properly");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
                     msg.Show();
                 }
             }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Please fill the form correctly");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
+          
         }
 
         private void cmb_cNIC_DropDownClosed(object sender, EventArgs e)
         {
             try
             {
-                dt = customer.viewCustomer(cmb_cNIC.Text);
-                txt_cName.Text = dt.Rows[0][1].ToString();
+                if (cmb_cNIC.SelectedIndex != -1)
+                {
+                    txt_error.Text = "";
+                   dt = customer.viewCustomer(cmb_cNIC.Text);
+                    txt_cName.Text = dt.Rows[0][1].ToString();
+                }
+                else
+                    txt_error.Text = "Please select a customer NIC";
             }
             catch (IndexOutOfRangeException)
             {
                 MessageBox msg = new MessageBox();
-                msg.errorMsg("Database Error");
+                msg.errorMsg("Please select a customer NIC");
                 msg.Show();
             }
             catch (Exception ex)
@@ -121,18 +137,24 @@ namespace Malshi_Rent_A_Car
         {
             try
             {
-                dt = vehicle.viewVehicle(cmb_vLplate.Text);
-                string model = dt.Rows[0][1].ToString();
-                ModelPricing mp = new ModelPricing();
-                dt = mp.viewPricing(model);
-                txt_vYear.Text = dt.Rows[0][2].ToString();
-                txt_vMake.Text = dt.Rows[0][3].ToString();
-                txt_vModel.Text = dt.Rows[0][4].ToString();
+                if(cmb_vLplate.SelectedIndex != -1)
+                {
+                    txt_error.Text = "";
+                    dt = vehicle.viewVehicle(cmb_vLplate.Text);
+                    string model = dt.Rows[0][1].ToString();
+                    ModelPricing mp = new ModelPricing();
+                    dt = mp.viewPricing(model);
+                    txt_vYear.Text = dt.Rows[0][2].ToString();
+                    txt_vMake.Text = dt.Rows[0][3].ToString();
+                    txt_vModel.Text = dt.Rows[0][4].ToString();
+                }
+               else
+                    txt_error.Text = "Please select a Vehicle";
             }
             catch (IndexOutOfRangeException)
             {
                 MessageBox msg = new MessageBox();
-                msg.errorMsg("Database Error");
+                msg.errorMsg("Please select a vehicle");
                 msg.Show();
             }
             catch (Exception ex)
@@ -141,7 +163,6 @@ namespace Malshi_Rent_A_Car
                 msg.errorMsg("Oops soomething went worng. " + ex.Message);
                 msg.Show();
             }
-
         }
 
         private void btn_clr_Click(object sender, RoutedEventArgs e)
@@ -160,14 +181,55 @@ namespace Malshi_Rent_A_Car
 
         private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+             if (!Regex.IsMatch(txt_advance.Text, @"^[1-9]\d*$"))
+                txt_error.Text = "Invalid Amount";
+             else
+                txt_error.Text = "";
         }
 
         private void btn_bill_Click(object sender, RoutedEventArgs e)
         {
             View.BillPrint obj = new View.BillPrint(txt_bid.Text);
             obj.Show();
+        }
 
+        private void dte_return_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if(dte_lend.Text != "")
+            {
+                DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+                DateTime returndate = Convert.ToDateTime(dte_return.Text);
+                if (lenddate <= returndate)
+                {
+                    TimeSpan ts = returndate.Subtract(lenddate);
+                    int days = Convert.ToInt16(ts.Days);
+                    txt_error.Text = "";
+                }
+                else
+                {
+                    txt_error.Text = "Invalid return date.Please check again";
+                }
+            }
+            
+        }
+
+        private void dte_lend_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (dte_return.Text != "")
+            {
+                DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+                DateTime returndate = Convert.ToDateTime(dte_return.Text);
+                if (lenddate <= returndate)
+                {
+                    TimeSpan ts = returndate.Subtract(lenddate);
+                    int days = Convert.ToInt16(ts.Days);
+                    txt_error.Text = "";
+                }
+                else
+                {
+                    txt_error.Text = "Invalid return date.Please check again";
+                }
+            }
         }
     }
 }
