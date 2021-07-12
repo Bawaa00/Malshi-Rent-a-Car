@@ -185,16 +185,16 @@
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.2 0 0">
-                        <DatePicker x:Name="date_LicStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_LicStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_LicStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_LicEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_LicEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_LicEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_oNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_oNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>

@@ -172,16 +172,16 @@
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsuranceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsuranceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsuranceStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsuranceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsuranceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsuranceEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.2 0 0">
-                        <DatePicker x:Name="date_licenceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_licenceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_licenceStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_LicenceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_LicenceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_LicenceEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_ownerNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ownerNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>

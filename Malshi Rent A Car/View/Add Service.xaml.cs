@@ -53,8 +53,7 @@ namespace Malshi_Rent_A_Car
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
-        {
-                          
+        {                        
             if (error_msg.Text == "")
             {                
                 try

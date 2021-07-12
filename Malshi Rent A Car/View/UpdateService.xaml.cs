@@ -70,35 +70,38 @@ namespace Malshi_Rent_A_Car
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (error_msg.Text == "")
             {
-                Service upService = new Service(cmb_sID.Text, txt_sDetails.Text, txt_SLocation.Text, date_service.Text, Int32.Parse(txt_milage.Text), Int32.Parse(txt_nxtMilage.Text), Int32.Parse(txt_sCost.Text));
-                int i = upService.updateService(cmb_vehicleID.Text);
-                if (i == 1)
+                try
                 {
-                    MessageBox msg = new MessageBox();
-                    msg.errorMsg("Data updated successfully!");
-                    msg.Show();
+                    Service upService = new Service(cmb_sID.Text, txt_sDetails.Text, txt_SLocation.Text, date_service.Text, Int32.Parse(txt_milage.Text), Int32.Parse(txt_nxtMilage.Text), Int32.Parse(txt_sCost.Text));
+                    int i = upService.updateService(cmb_vehicleID.Text);
+                    if (i == 1)
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data updated successfully!");
+                        msg.Show();
+                    }
+                    else
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                        msg.Show();
+                    }
                 }
-                else
-                {
-                    MessageBox msg = new MessageBox();
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                    msg.Show();
-                }
-            }
 
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Please fill the form correctly.");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please fill the form correctly.");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
             }
         }
 
@@ -122,10 +125,19 @@ namespace Malshi_Rent_A_Car
 
         private void txt_milage_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txt_milage.Text != "")
+            try
             {
-                int next = Int32.Parse(txt_milage.Text);
-                txt_nxtMilage.Text = (next + 2500).ToString();
+                if (txt_milage.Text != "")
+                {
+                    int next = Int32.Parse(txt_milage.Text);
+                    txt_nxtMilage.Text = (next + 2500).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form properly " + ex.Message);
+                msg.Show();
             }
         }
 

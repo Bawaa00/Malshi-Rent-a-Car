@@ -15,7 +15,7 @@
                         <TextBlock Text="Type" Margin="5 5.5 0 5.5"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Repiar ID" Margin="5 5.5 0 5.5"/>
+                        <TextBlock Text="Repair ID" Margin="5 5.5 0 5.5"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Repair Date" Margin="5 5.5 0 5.5"/>
