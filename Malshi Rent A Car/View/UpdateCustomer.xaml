@@ -66,7 +66,7 @@
                 <Grid Height="40" VerticalAlignment="Top"/>
                 <ListView FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" FontSize="13">
                     <ListViewItem Height="27.2">
-                        <ComboBox x:Name="cmb_nic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_nic_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <ComboBox x:Name="cmb_nic" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_nic_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <TextBox x:Name="txt_firstname" Width="150" Margin="5 0 0 0" Background="{x:Null}" TextChanged="txt_firstname_TextChanged" BorderThickness="0,0,0,1"/>

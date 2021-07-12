@@ -188,7 +188,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusTelHome.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer  Home Telephone ";
             else if (!Regex.IsMatch(txt_CusTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -199,7 +198,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusTelMobile.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer Mobile Number ";
             else if (!Regex.IsMatch(txt_CusTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -228,7 +226,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusTelWork.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer Work Telephone Number ";
             else if (!Regex.IsMatch(txt_CusTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -239,6 +236,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_CusKinName.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Kin Name ";
+            else if (txt_CusKinName.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -256,7 +255,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusKinConatct.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer Kin Contact Number ";
             else if (!Regex.IsMatch(txt_CusKinConatct.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
