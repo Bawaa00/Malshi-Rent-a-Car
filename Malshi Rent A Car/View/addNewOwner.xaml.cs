@@ -167,7 +167,6 @@ namespace Malshi_Rent_A_Car
             if (txt_OwnTelMobile.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Mobile Number ";
             else if (!Regex.IsMatch(txt_OwnTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -195,7 +194,6 @@ namespace Malshi_Rent_A_Car
             if (txt_OwnTelWork.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Work Number ";
             else if (!Regex.IsMatch(txt_OwnTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
