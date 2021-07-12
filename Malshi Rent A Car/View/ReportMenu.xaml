@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car.View"
         mc:Ignorable="d"
-        Title="ReportMenu" Height="317.961" Width="325.212" WindowStartupLocation="CenterScreen">
+        Title="ReportMenu" Height="499.961" Width="533.212" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>
@@ -16,11 +16,29 @@
             </Grid.Background>
             <TextBlock Text="REPORT MENU" FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
         </Grid>
-        <Button x:Name="btn_book" Content="BOOKING HISTORY" HorizontalAlignment="Left" Margin="89,52,0,0" VerticalAlignment="Top" Width="140" Height="25"  Click="btn_book_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
-        <Button x:Name="btn_status" Content="VEHICLE STATUS" HorizontalAlignment="Left" Margin="89,98,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_status_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
-        <Button x:Name="btn_service" Content="SERVICE HISTORY" HorizontalAlignment="Left" Margin="89,148,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_service_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
-        <Button x:Name="btn_maintenance" Content="MAINTENANCE HISTORY" HorizontalAlignment="Left" Margin="89,197,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_maintenance_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
-        <Button x:Name="btn_accident" Content="ACCIDENT HISTORY" HorizontalAlignment="Left" Margin="89,243,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_accident_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_book" Content="BOOKING HISTORY" HorizontalAlignment="Left" Margin="22,349,0,0" VerticalAlignment="Top" Width="140" Height="25"  Click="btn_book_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_status" Content="VEHICLE STATUS" HorizontalAlignment="Left" Margin="195,349,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_status_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_service" Content="SERVICE HISTORY" HorizontalAlignment="Left" Margin="360,349,0,0" VerticalAlignment="Top" Width="140" Height="25" Click="btn_service_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_maintenance" Content="MAINTENANCE HISTORY" HorizontalAlignment="Left" Margin="102,404,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_maintenance_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <Button x:Name="btn_accident" Content="ACCIDENT HISTORY" HorizontalAlignment="Left" Margin="290,404,0,0" VerticalAlignment="Top" Width="141" Height="25" Click="btn_accident_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+        <ComboBox x:Name="cmb_category" HorizontalAlignment="Left" Margin="151,67,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Booking" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Vehicle Status" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Service" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Accident" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Maintenance" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <ComboBox x:Name="cmb_type" HorizontalAlignment="Left" Margin="151,125,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmb_type_DropDownClosed">
+            <ComboBoxItem Content="Full Report" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Monthly" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Customer" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Vehicle" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="63,73,0,0" TextWrapping="Wrap" Text="Category" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="48,131,0,0" TextWrapping="Wrap" Text="Report Type" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lbl_option1" HorizontalAlignment="Left" Margin="48,197,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"  Visibility="Hidden"/>
+        <ComboBox x:Name="cmb_option1" HorizontalAlignment="Left" Margin="151,191,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Button x:Name="btn_gen" Content="GENERATE" HorizontalAlignment="Left" Margin="103,265,0,0" VerticalAlignment="Top" Width="140" Height="25" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
 
     </Grid>
 </Window>

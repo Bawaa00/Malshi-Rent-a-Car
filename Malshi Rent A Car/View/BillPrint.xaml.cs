@@ -35,25 +35,46 @@ namespace Malshi_Rent_A_Car.View
         Booking booking = new Booking();
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
+        
         int shortRent, longRent, extra;
 
         private void txt_used_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txt_used.Text != "" && txt_allocated.Text != "")
-            {
-                if((Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)) >0)
+            try {
+                if (txt_used.Text != "" && txt_allocated.Text != "")
                 {
-                    txt_extraM.Text = (Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)).ToString();
-                    txt_extraC.Text = (Int32.Parse(txt_extraM.Text) * extra).ToString();
-                }     
-                else
-                {
-                    txt_extraM.Text = "0";
-                    txt_extraC.Text = "0";
+                    if (!Regex.IsMatch(txt_months.Text, "^[0-9]*$"))
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Please enter a valid usage");
+                        msg.Show();
+                        txt_months.Clear();
+                    }
+                    else if ((Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)) > 0)
+                    {
+                        txt_extraM.Text = (Int32.Parse(txt_used.Text) - Int32.Parse(txt_allocated.Text)).ToString();
+                        txt_extraC.Text = (Int32.Parse(txt_extraM.Text) * extra).ToString();
+                    }
+                    else
+                    {
+                        txt_extraM.Text = "0";
+                        txt_extraC.Text = "0";
+                    }
                 }
-
-                   
             }
+            catch (FormatException)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form properly");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
         }
 
         private void btn_print_Click(object sender, RoutedEventArgs e)
@@ -68,9 +89,17 @@ namespace Malshi_Rent_A_Car.View
 
         private void txt_months_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
             if(txt_months.Text != "")
             {
-                if (Int32.Parse(txt_months.Text) <= 3)
+                if (!Regex.IsMatch(txt_months.Text, "^[0-9]*$"))
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please enter a valid no of months");
+                    msg.Show();
+                    txt_months.Clear();
+                }                    
+                else if (Int32.Parse(txt_months.Text) <= 3)
                 {
                     txt_rent.Text = shortRent.ToString();
                     txt_tot_rent.Text = (shortRent * Int32.Parse(txt_months.Text)).ToString();
@@ -84,6 +113,27 @@ namespace Malshi_Rent_A_Car.View
            
         }
 
+        private void txt_allocated_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!Regex.IsMatch(txt_allocated.Text, "^[0-9]*$"))
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please enter a valid allocated milage");
+                msg.Show();
+                txt_allocated.Clear();
+            }
+        }
+
+        private void txt_rent_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!Regex.IsMatch(txt_rent.Text, "^[0-9]*$"))
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please enter a valid rent cost");
+                msg.Show();
+                txt_rent.Clear();
+            }
+        }
 
         private void btn_cal_Click(object sender, RoutedEventArgs e)
         {

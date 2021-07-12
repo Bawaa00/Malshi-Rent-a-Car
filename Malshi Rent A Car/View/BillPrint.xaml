@@ -43,7 +43,7 @@
             </Grid>
             <Button x:Name="btn_print" FontWeight="DemiBold" Content="PRINT" HorizontalAlignment="Left" Margin="741,21,0,0" VerticalAlignment="Top" Width="75" Click="btn_print_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="501" Margin="0,491,0,0" VerticalAlignment="Top" Width="826">
+        <Grid HorizontalAlignment="Left" Height="501" Margin="-8,491,0,0" VerticalAlignment="Top" Width="826">
             <Separator HorizontalAlignment="Left" Height="100" Margin="87,391,0,0" VerticalAlignment="Top" Width="106"/>
             <Separator HorizontalAlignment="Left" Height="100" Margin="626,392,0,0" VerticalAlignment="Top" Width="100"/>
             <Separator HorizontalAlignment="Left" Height="100" Margin="40,-52,0,0" VerticalAlignment="Top" Width="765"/>
@@ -57,14 +57,14 @@
             <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="80,337,0,0" VerticalAlignment="Top"/>
             <Label Content="COMPANY OFFICER" HorizontalAlignment="Left" Margin="80,448,0,0" VerticalAlignment="Top"/>
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="640,448,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txt_allocated" HorizontalAlignment="Left" Height="23" Margin="626,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.3,0.783" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_allocated" HorizontalAlignment="Left" Height="23" Margin="626,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.3,0.783" BorderThickness="0,0,0,1" TextChanged="txt_allocated_TextChanged"/>
             <TextBox x:Name="txt_used" HorizontalAlignment="Left" Height="23" Margin="626,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_used_TextChanged" BorderThickness="0,0,0,1"/>
             <TextBox x:Name="txt_extraM" HorizontalAlignment="Left" Height="23" Margin="626,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
             <TextBox x:Name="txt_extraC" HorizontalAlignment="Left" Height="23" Margin="263,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
             <TextBox x:Name="txt_totCost" HorizontalAlignment="Left" Height="23" Margin="263,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" BorderThickness="0,0,0,1"/>
-            <TextBox x:Name="txt_adv" HorizontalAlignment="Left" Height="23" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
-            <TextBox x:Name="txt_due" HorizontalAlignment="Left" Height="23" Margin="263,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
-            <ComboBox x:Name="cmb_method" HorizontalAlignment="Left" Margin="263,337,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White" BorderThickness="0,0,0,1">
+            <TextBox x:Name="txt_adv" HorizontalAlignment="Left" Height="23" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1" IsEnabled="False"/>
+            <TextBox x:Name="txt_due" HorizontalAlignment="Left" Height="23" Margin="263,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1" IsEnabled="False"/>
+            <ComboBox x:Name="cmb_method" HorizontalAlignment="Left" Margin="263,337,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White" BorderThickness="0,0,0,1" IsEditable="True">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -78,8 +78,8 @@
             <Label Content="RENT PER MONTH (RS)" HorizontalAlignment="Left" Margin="80,70,0,0" VerticalAlignment="Top"/>
             <Label Content="TOTAL RENT (RS)" HorizontalAlignment="Left" Margin="80,114,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txt_months" HorizontalAlignment="Left" Height="23" Margin="263,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txt_months_TextChanged" BorderThickness="0,0,0,1"/>
-            <TextBox x:Name="txt_rent" HorizontalAlignment="Left" Height="23" Margin="263,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
-            <TextBox x:Name="txt_tot_rent" HorizontalAlignment="Left" Height="23" Margin="263,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txt_rent" HorizontalAlignment="Left" Height="23" Margin="263,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1" TextChanged="txt_rent_TextChanged"/>
+            <TextBox x:Name="txt_tot_rent" HorizontalAlignment="Left" Height="23" Margin="263,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1" IsEnabled="False"/>
             <Button x:Name="btn_cal" Content="CALCULATE" HorizontalAlignment="Left" Height="30" Margin="454,169,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Style="{DynamicResource RoundedButtonStyle}" Background="#4caf50" Click="btn_cal_Click"/>
         </Grid>
 

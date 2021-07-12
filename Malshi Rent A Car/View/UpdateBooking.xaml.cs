@@ -192,5 +192,51 @@ namespace Malshi_Rent_A_Car
             View.BillPrint obj = new View.BillPrint(cmb_bid.Text);
             obj.Show();
         }
+
+        private void txt_advance_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!Regex.IsMatch(txt_advance.Text, @"^[1-9]\d*$"))
+                error_msg.Text = "Invalid Amount";
+            else
+                error_msg.Text = "";
+        }
+
+        private void dte_lend_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (dte_return.Text != "")
+            {
+                DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+                DateTime returndate = Convert.ToDateTime(dte_return.Text);
+                if (lenddate <= returndate)
+                {
+                    TimeSpan ts = returndate.Subtract(lenddate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid return date.Please check again";
+                }
+            }
+        }
+
+        private void dte_return_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (dte_lend.Text != "")
+            {
+                DateTime lenddate = Convert.ToDateTime(dte_lend.Text);
+                DateTime returndate = Convert.ToDateTime(dte_return.Text);
+                if (lenddate <= returndate)
+                {
+                    TimeSpan ts = returndate.Subtract(lenddate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid return date.Please check again";
+                }
+            }
+        }
     }
 }

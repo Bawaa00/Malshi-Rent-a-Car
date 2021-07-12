@@ -137,8 +137,6 @@ namespace Malshi_Rent_A_Car
                 msg.errorMsg("Please fill the form correctly. Database Error");
                 msg.Show();
             }
-
-
             catch (Exception ex)
             {
                 MessageBox msg = new MessageBox();

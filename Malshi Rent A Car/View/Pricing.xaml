@@ -49,7 +49,7 @@
                 </DockPanel>
                 <DockPanel>
                     <Button x:Name="btn_update" Content="UPDATE" Height="25" Width="100" Margin="5 2 5 5"  Click="btn_update_Click" Visibility="Hidden"  Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
-                  
+
                 </DockPanel>
                 <DockPanel>
                     <Button x:Name="btn_del" Content="DELETE" Height="25" Width="100" Margin="5 2 5 5"  Click="btn_del_Click" Visibility="Hidden"  Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
@@ -74,7 +74,7 @@
                         <TextBox x:Name="txt_modelID" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Margin="5 0 0 0"  Width="170" Background="{x:Null}" IsEnabled="False" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
+                        <ComboBox x:Name="cmb_cat" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True" DropDownClosed="cmb_cat_DropDownClosed" KeyUp="cmb_cat_KeyUp">
                             <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="SUV" HorizontalAlignment="Left" Width="160"/>
@@ -84,7 +84,7 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
+                        <ComboBox x:Name="cmb_make" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True" DropDownClosed="cmb_make_DropDownClosed">
                             <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="161"/>
                             <ComboBoxItem Content="BMW"/>
                             <ComboBoxItem Content="FORD"/>
@@ -106,10 +106,10 @@
                         </ComboBox>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <TextBox x:Name="txt_model" TextWrapping="Wrap" Margin="5,0,0,0" Width="170" Background="{x:Null}" BorderThickness="0,0,0,1" TextChanged="txt_model_TextChanged"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1">
+                        <ComboBox x:Name="cmb_year" Width="170" Margin="5,0,0,0" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True" DropDownClosed="cmb_year_DropDownClosed">
                             <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
                             <ComboBoxItem Content="2023"/>
                             <ComboBoxItem Content="2022"/>
@@ -150,17 +150,17 @@
                     </ListViewItem>
                     <ListViewItem Margin="0 30.4 0 0" Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                            <TextBox x:Name="txt_short" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1" TextChanged="txt_short_TextChanged"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                            <TextBox x:Name="txt_long" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1" TextChanged="txt_long_TextChanged"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                            <TextBox x:Name="txt_extra" Width="130" Margin="5 2 0 2" Background="{x:Null}" BorderThickness="0,0,0,1" TextChanged="txt_extra_TextChanged"/>
                         </StackPanel>
                     </ListViewItem>
 
@@ -170,9 +170,10 @@
                 <Button x:Name="btn_del" Content="DELETE" Click="btn_del_Click" Visibility="Hidden"/-->
 
             </StackPanel>
+            <TextBlock x:Name="txt_error" HorizontalAlignment="Left" Margin="10,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="50"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="400 40 0 0" Width="506">
-            <DataGrid x:Name="dg_price" Margin="5,5,-43,5" SelectionChanged="dg_price_SelectionChanged" SelectionMode="Single" IsEnabled="False"/>
+            <DataGrid x:Name="dg_price" Margin="5,5,-43,5" SelectionChanged="dg_price_SelectionChanged" SelectionMode="Single" IsEnabled="False" />
         </Grid>
         <Grid VerticalAlignment="Top">
             <Grid.Background>

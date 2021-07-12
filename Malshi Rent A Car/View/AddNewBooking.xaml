@@ -68,13 +68,13 @@
                         <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>

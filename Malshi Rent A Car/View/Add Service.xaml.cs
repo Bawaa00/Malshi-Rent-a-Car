@@ -137,7 +137,7 @@ namespace Malshi_Rent_A_Car
         {
             if (cmb_vid.SelectedItem == null)
             {
-                error_msg.Text = "Please Select Number of Passengers";
+                error_msg.Text = "Please Select a Vehicle";
             }
             else { error_msg.Text = ""; }
         }
