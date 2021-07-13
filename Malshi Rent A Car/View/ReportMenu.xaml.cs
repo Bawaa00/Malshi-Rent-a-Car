@@ -53,33 +53,10 @@ namespace Malshi_Rent_A_Car.View
 
         }
 
-        private void cmb_type_DropDownClosed(object sender, EventArgs e)
+        private void btn_cus_book_Click(object sender, RoutedEventArgs e)
         {
-            if (cmb_type.SelectedIndex == 0)
-            {
-                lbl_option1.Visibility = Visibility.Hidden;
-                cmb_option1.Visibility = Visibility.Hidden;
-            }
-            if (cmb_type.SelectedIndex == 1)
-            {
-                lbl_option1.Visibility = Visibility.Hidden;
-                cmb_option1.Visibility = Visibility.Hidden;
-            }
-            if (cmb_type.SelectedIndex == 2)
-            {
-                lbl_option1.Visibility = Visibility.Visible;
-                lbl_option1.Text = "Customer NIC";
-                cmb_option1.Visibility = Visibility.Visible;
-                cmb_option1.ItemsSource = null;
-
-            }
-            if (cmb_type.SelectedIndex == 3)
-            {
-                lbl_option1.Visibility = Visibility.Visible;
-                lbl_option1.Text = "Vehicle No";
-                cmb_option1.Visibility = Visibility.Visible;
-                cmb_option1.ItemsSource = null;
-            }
+            ReportCustomerBooking obj = new ReportCustomerBooking();
+            obj.Show();
         }
     }
 }

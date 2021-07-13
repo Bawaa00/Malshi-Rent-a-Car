@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.crvCustomerBook = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.cmb_cus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // crvCustomerBook
@@ -43,11 +44,21 @@
             this.crvCustomerBook.TabIndex = 0;
             this.crvCustomerBook.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // cmb_cus
+            // 
+            this.cmb_cus.FormattingEnabled = true;
+            this.cmb_cus.Location = new System.Drawing.Point(500, 12);
+            this.cmb_cus.Name = "cmb_cus";
+            this.cmb_cus.Size = new System.Drawing.Size(121, 21);
+            this.cmb_cus.TabIndex = 1;
+            this.cmb_cus.DropDownClosed += new System.EventHandler(this.cmb_cus_DropDownClosed);
+            // 
             // ReportCustomerBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmb_cus);
             this.Controls.Add(this.crvCustomerBook);
             this.Name = "ReportCustomerBooking";
             this.Text = "ReportCustomerBooking";
@@ -59,5 +70,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crvCustomerBook;
+        private System.Windows.Forms.ComboBox cmb_cus;
     }
 }

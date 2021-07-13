@@ -165,10 +165,6 @@ namespace Malshi_Rent_A_Car
 
         private void list_report_Selected(object sender, RoutedEventArgs e)
         {
-            /*View.ReportView obj = new View.ReportView();
-            obj.Show();*/
-            /*View.ReportCustomerBooking rp = new View.ReportCustomerBooking();
-            rp.Show();*/
             View.ReportMenu rm = new View.ReportMenu();
             rm.Show();
         }

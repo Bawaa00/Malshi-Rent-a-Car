@@ -98,7 +98,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crvCustomerBookings.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReports\crvMaintenance.cs">
       <AutoGen>True</AutoGen>
@@ -119,11 +118,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Customer.cs" />
-    <Compile Include="DataSets\dsCustomerBooking.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Insurance.cs" />
     <Compile Include="MaintenanceRepair.cs" />
     <Compile Include="MessageBox.xaml.cs">
@@ -167,46 +161,40 @@
     <Compile Include="View\Pricing.xaml.cs">
       <DependentUpon>Pricing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ReportCustomerBooking.cs">
+    <Compile Include="View\ReportView\ReportCustomerBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ReportCustomerBooking.Designer.cs">
+    <Compile Include="View\ReportView\ReportCustomerBooking.Designer.cs">
       <DependentUpon>ReportCustomerBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ReportMenu.xaml.cs">
       <DependentUpon>ReportMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ReportView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ReportView.Designer.cs">
-      <DependentUpon>ReportView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ResetPassword.xaml.cs">
       <DependentUpon>ResetPassword.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RViewBookingHistory.cs">
+    <Compile Include="View\ReportView\RViewBookingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RViewBookingHistory.Designer.cs">
+    <Compile Include="View\ReportView\RViewBookingHistory.Designer.cs">
       <DependentUpon>RViewBookingHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RViewMaintenanceH.cs">
+    <Compile Include="View\ReportView\RViewMaintenanceH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RViewMaintenanceH.Designer.cs">
+    <Compile Include="View\ReportView\RViewMaintenanceH.Designer.cs">
       <DependentUpon>RViewMaintenanceH.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RViewServiceHistory.cs">
+    <Compile Include="View\ReportView\RViewServiceHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RViewServiceHistory.Designer.cs">
+    <Compile Include="View\ReportView\RViewServiceHistory.Designer.cs">
       <DependentUpon>RViewServiceHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RViewVehicleStatus.cs">
+    <Compile Include="View\ReportView\RViewVehicleStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RViewVehicleStatus.Designer.cs">
+    <Compile Include="View\ReportView\RViewVehicleStatus.Designer.cs">
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="View\searchViewBooking.xaml.cs">
@@ -410,35 +398,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ReportCustomerBooking.resx">
+    <EmbeddedResource Include="View\ReportView\ReportCustomerBooking.resx">
       <DependentUpon>ReportCustomerBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ReportView.resx">
-      <DependentUpon>ReportView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RViewBookingHistory.resx">
+    <EmbeddedResource Include="View\ReportView\RViewBookingHistory.resx">
       <DependentUpon>RViewBookingHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RViewMaintenanceH.resx">
+    <EmbeddedResource Include="View\ReportView\RViewMaintenanceH.resx">
       <DependentUpon>RViewMaintenanceH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RViewServiceHistory.resx">
+    <EmbeddedResource Include="View\ReportView\RViewServiceHistory.resx">
       <DependentUpon>RViewServiceHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RViewVehicleStatus.resx">
+    <EmbeddedResource Include="View\ReportView\RViewVehicleStatus.resx">
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSets\dsCustomerBooking.xsc">
-      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dsCustomerBooking.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCustomerBooking.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\dsCustomerBooking.xss">
-      <DependentUpon>dsCustomerBooking.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
