@@ -50,12 +50,18 @@ namespace Malshi_Rent_A_Car.View
 
         private void btn_accident_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btn_cus_book_Click(object sender, RoutedEventArgs e)
         {
-            ReportCustomerBooking obj = new ReportCustomerBooking();
+            View.RViewCustomerBooking obj = new View.RViewCustomerBooking(); ;
+            obj.Show();
+        }
+
+        private void btn_vehicle_book_Click(object sender, RoutedEventArgs e)
+        {
+            View.RViewVehicleBooking obj = new RViewVehicleBooking();
             obj.Show();
         }
     }
