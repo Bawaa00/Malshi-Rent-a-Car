@@ -289,18 +289,14 @@ namespace Malshi_Rent_A_Car
         private void cmb_Ftype_DropDownClosed(object sender, EventArgs e)
         {
             if (cmb_Ftype.SelectedItem == null)
-            {
                 error_msg.Text = "Please Select Fuel Type";
-            }
             else { error_msg.Text = ""; }
         }
 
         private void cmb_passengers_DropDownClosed(object sender, EventArgs e)
         {
             if (cmb_passengers.SelectedItem == null)
-            {
                 error_msg.Text = "Please Select Number of Passengers";
-            }
             else { error_msg.Text = ""; }
         }
 

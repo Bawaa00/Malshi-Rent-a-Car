@@ -212,7 +212,6 @@ namespace Malshi_Rent_A_Car
 
         private void txt_catagory_TextChanged(object sender, TextChangedEventArgs e)
         {
-
             if (txt_catagory.Text.Length == 0)
                 error_msg.Text = "Cannot Keep This Empty";
             else

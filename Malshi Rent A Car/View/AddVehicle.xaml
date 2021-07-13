@@ -79,7 +79,7 @@
                         <TextBlock Text="Monthly Pay (Rs.)" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Witeness Name" Margin="5 3 0 0"/>
+                        <TextBlock Text="Witness Name" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Witness Address" Margin="5 3 0 0"/>
