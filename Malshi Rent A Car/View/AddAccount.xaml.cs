@@ -36,21 +36,52 @@ namespace Malshi_Rent_A_Car
 
         private void btn_create_Click(object sender, RoutedEventArgs e)
         {
-           MessageBox msg = new MessageBox();
-           HashCode hc = new HashCode();
-            User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), txt_email.Text);
-            int i = user.addAccount();
-            if (i == 1)
+            if(txt_uname.Text !="" && txt_retype.Password != "")
             {
-                msg.informationMsg("Account Successfully Registered!");
-                msg.Show();
-                fom_addAccount_Loaded(this, null);
+                try
+                {
+                    MessageBox msg = new MessageBox();
+                    HashCode hc = new HashCode();
+                    User user = new User(cmb_utype.Text, txt_uname.Text, hc.PassHash(txt_pass.Password), txt_email.Text);
+                    int i = user.addAccount();
+                    if (i == 1)
+                    {
+                        msg.informationMsg("Account Successfully Registered!");
+                        msg.Show();
+                        fom_addAccount_Loaded(this, null);
+                    }
+                    else
+                    {
+                        msg.errorMsg("Sorry, couldn't create Account.Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please fill the form correctly. ");
+                    msg.Show();
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please fill the form correctly. ");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
             }
             else
             {
-                msg.errorMsg("Sorry, couldn't create Account.Please try again");
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the Form Properly");
                 msg.Show();
             }
+           
         }
 
         private void txt_uname_TextChanged(object sender, TextChangedEventArgs e)

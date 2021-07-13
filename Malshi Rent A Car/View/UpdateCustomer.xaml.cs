@@ -198,6 +198,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_firstname.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer First Name  ";
+            else if (txt_firstname.Text.Any(char.IsDigit))
+                error_msg.Text = "First Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -207,6 +209,8 @@ namespace Malshi_Rent_A_Car
 
             if (txt_lname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
+            else if (txt_lname.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -215,6 +219,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_CusEmail.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Email  ";
+            else if (!IsValid(txt_CusEmail.Text))
+                error_msg.Text = "Please enter a valid email address ";
             else
                 error_msg.Text = "";
         }
@@ -232,7 +238,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusTelHome.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer  Home Telephone ";
             else if (!Regex.IsMatch(txt_CusTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -271,7 +276,6 @@ namespace Malshi_Rent_A_Car
             if (txt_CusTelWork.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer Work Telephone Number ";
             else if (!Regex.IsMatch(txt_CusTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -281,6 +285,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_CusKinName.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Kin Name ";
+            else if (txt_CusKinName.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -302,6 +308,19 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
+        }
+
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }

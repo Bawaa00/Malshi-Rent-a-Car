@@ -79,7 +79,7 @@
                         <TextBlock Text="Monthly Pay (Rs.)" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock Text="Witeness Name" Margin="5 3 0 0"/>
+                        <TextBlock Text="Witness Name" Margin="5 3 0 0"/>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock Text="Witness Address" Margin="5 3 0 0"/>
@@ -172,16 +172,16 @@
                     </ListViewItem>
 
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsuranceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsuranceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsuranceStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_InsuranceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_InsuranceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_InsuranceEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2" Margin="0 27.2 0 0">
-                        <DatePicker x:Name="date_licenceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_licenceStart" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_licenceStart_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
-                        <DatePicker x:Name="date_LicenceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="date_LicenceEnd" Width="150" Margin="5 0 0 0" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="date_LicenceEnd_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="27.2">
                         <ComboBox x:Name="cmb_ownerNIC" Width="150" Margin="5 0 0 0" DropDownClosed="cmb_ownerNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
@@ -223,7 +223,7 @@
         <Button x:Name="btn_upload" Content="UPLOAD" HorizontalAlignment="Left" Margin="566,451,0,0" VerticalAlignment="Top" Height="25" Width="74" Click="btn_upload_Click" Style="{DynamicResource RoundedButtonStyle1}"/>
         <Button x:Name="btn_cls" Content="CLEAR" HorizontalAlignment="Left" Margin="744,715,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btn_cls_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
         <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Left" Margin="650,715,0,0" VerticalAlignment="Top" Width="76" Height="25" Click="btn_save_Click" Foreground="White" Style="{DynamicResource RoundedButtonStyle}"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE">
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="341" Margin="400,81,0,0" VerticalAlignment="Top" Width="419" Background="#FFF7EEEE" CornerRadius="5">
             <!--TextBlock TextWrapping="Wrap" Text="[A photo of the vehicle]"/-->
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="341" Margin="-1" VerticalAlignment="Top" Width="419" Stretch="Fill"/>
         </Border>

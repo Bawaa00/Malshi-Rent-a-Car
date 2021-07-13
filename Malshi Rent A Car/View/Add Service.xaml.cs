@@ -53,41 +53,52 @@ namespace Malshi_Rent_A_Car
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Service Service = new Service(txt_sid.Text, txt_details.Text, txt_sLocation.Text, dte_service.Text, Convert.ToDouble(txt_mileage.Text), Convert.ToDouble(txt_nxtMileage.Text), Convert.ToDouble(txt_sCost.Text));
-                int i = Service.addService(cmb_vid.Text);
-                Console.WriteLine(i);
-                if (i == 1)
+        {                        
+            if (error_msg.Text == "")
+            {                
+                try
+                {
+                    Service Service = new Service(txt_sid.Text, txt_details.Text, txt_sLocation.Text, dte_service.Text, Convert.ToDouble(txt_mileage.Text), Convert.ToDouble(txt_nxtMileage.Text), Convert.ToDouble(txt_sCost.Text));
+                    int i = Service.addService(cmb_vid.Text);
+                    Console.WriteLine(i);
+                    if (i == 1)
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data Saved Successfully!");
+                        msg.Show();
+                        btn_cls_Click(this, null);
+                        form_addService_Loaded(this, null);
+                        //MessageBox.Show("Data Saved Successfully!");
+                    }
+                    else
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                        msg.Show();
+                        //MessageBox.Show("Couldnt Save data.Please Try Again");
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
                 {
                     MessageBox msg = new MessageBox();
-                    msg.errorMsg("Data Saved Successfully!");
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
-                    btn_cls_Click(this, null);
-                    form_addService_Loaded(this, null);
-                    //MessageBox.Show("Data Saved Successfully!");
                 }
-                else
+                catch (System.FormatException)
                 {
                     MessageBox msg = new MessageBox();
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
-                    //MessageBox.Show("Couldnt Save data.Please Try Again");
                 }
-            }          
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Please fill the form correctly. ");
-                msg.Show();
+                catch (Exception ex)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
+
             }
-            catch (Exception ex)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
+            
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
@@ -103,11 +114,21 @@ namespace Malshi_Rent_A_Car
 
         private void txt_mileage_KeyUp(object sender, KeyEventArgs e)
         {
-            if(txt_mileage.Text != "")
+            try
             {
-                int next = Int32.Parse(txt_mileage.Text);
-                txt_nxtMileage.Text = (next + 2500).ToString();
+                if (txt_mileage.Text != "")
+                {
+                    int next = Int32.Parse(txt_mileage.Text);
+                    txt_nxtMileage.Text = (next + 2500).ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox msg = new MessageBox();
+                msg.errorMsg("Please fill the form properly "+ex.Message);
+                msg.Show();
+            }
+            
             
         }
 
@@ -115,7 +136,7 @@ namespace Malshi_Rent_A_Car
         {
             if (cmb_vid.SelectedItem == null)
             {
-                error_msg.Text = "Please Select Number of Passengers";
+                error_msg.Text = "Please Select a Vehicle";
             }
             else { error_msg.Text = ""; }
         }

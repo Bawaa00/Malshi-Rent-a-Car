@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Account" Height="500" Width="513.164" WindowStartupLocation="CenterScreen">
+        Title="Add Account" Height="473" Width="513.164" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
@@ -32,16 +32,13 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10 10 10 10" TextWrapping="Wrap" Text="Retype Password" VerticalAlignment="Top"/>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock HorizontalAlignment="Left" Margin="10 30 10 10" TextWrapping="Wrap" Text="Question" VerticalAlignment="Top"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock HorizontalAlignment="Left" Margin="10 10 10 10" TextWrapping="Wrap" Text="Answer" VerticalAlignment="Top"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10 10 10 10" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
                     </ListViewItem>
 
                 </ListView>
-                <ListView HorizontalAlignment="Right" Foreground="Black" FontSize="15" Margin="10 10 40 10" FontWeight="Light" BorderBrush="{x:Null}">
+                <ListView HorizontalAlignment="Right" Foreground="Black" FontSize="15" Margin="10 10 40 10" Width="300" FontWeight="Light" BorderBrush="{x:Null}">
                     <ListViewItem Height="54.4" Width="285">
-                        <ComboBox x:Name="cmb_utype" HorizontalAlignment="Left" Margin="10 20 10 10" VerticalAlignment="Top" Width="120" DropDownClosed="cmb_utype_DropDownClosed" BorderThickness="0,0,0,1">
+                        <ComboBox x:Name="cmb_utype" HorizontalAlignment="Left" Margin="10 20 10 10" VerticalAlignment="Top" Width="120" Height="22" DropDownClosed="cmb_utype_DropDownClosed" BorderThickness="0,0,0,1" BorderBrush="#FFABADB3" IsEditable="True" Background="White">
                             <ComboBoxItem Content="Manager" HorizontalAlignment="Left" Width="118"/>
                             <ComboBoxItem Content="Employee" HorizontalAlignment="Left" Width="118"/>
                         </ComboBox>
@@ -50,27 +47,24 @@
                         <TextBox x:Name="txt_uname" HorizontalAlignment="Left"  Margin="10 10 10 10" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="txt_uname_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="43.2" Width="285">
-                        <PasswordBox x:Name="txt_pass" HorizontalAlignment="Left" Margin="10 10 10 10" VerticalAlignment="Top" Width="151" KeyUp="txt_pass_KeyUp" BorderThickness="0,0,0,1"/>
+                        <PasswordBox x:Name="txt_pass" HorizontalAlignment="Left" Margin="10 10 10 10" VerticalAlignment="Top" Width="182" KeyUp="txt_pass_KeyUp" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="43.2" Width="285">
-                        <PasswordBox x:Name="txt_retype" HorizontalAlignment="Left" Margin="10 10 10 10" VerticalAlignment="Top" Width="151" BorderThickness="0,0,0,1"/>
-                    </ListViewItem>
-                    <ListViewItem Height="64" Width="285">
-                      <TextBlock HorizontalAlignment="Left" Margin="56,286,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.24,0.656"/>
+                        <PasswordBox x:Name="txt_retype" HorizontalAlignment="Left" Margin="10 10 10 10" VerticalAlignment="Top" Width="181" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="43.2" Width="285">
-                        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="23" Margin="184,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="txt_email_TextChanged"/>
+                        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="10 10 10 10" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" TextChanged="txt_email_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                 </ListView>
-                                 
-           
+
+
             </DockPanel>
-            <Separator Background="Black" Margin="30 5 30 5"/>
-            <Button x:Name="btn_create" Content="Create Account" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="96" Click="btn_create_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White" Height="25"/>
+            <Separator Background="Black" Margin="30 35 30 5"/>
+            <Button x:Name="btn_create" Content="Create Account" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="96" Click="btn_create_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White" Height="25" Margin="204,15,205,0"/>
         </StackPanel>
-        
-    
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="89,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="42"/>
+
+
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="120,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" Height="34" TextAlignment="Center"/>
 
     </Grid>
 </Window>

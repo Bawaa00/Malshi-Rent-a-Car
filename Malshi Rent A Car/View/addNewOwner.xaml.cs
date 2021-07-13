@@ -56,6 +56,7 @@ namespace Malshi_Rent_A_Car
                 if (i == 1)
                 {
                     MessageBox msg = new MessageBox();
+                    msg.errorMsg("Data Saved Successfully");
                     msg.Show();
                     btn_cls_Click(this, null);
                 }
@@ -105,6 +106,8 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_OwnFname.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner First Name  ";
+            else if (txt_OwnFname.Text.Any(char.IsDigit))
+                error_msg.Text = "First Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -113,15 +116,17 @@ namespace Malshi_Rent_A_Car
         {
             if (txt_OwnLname.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Last Name  ";
-            else
-                error_msg.Text = "";
+            else if (txt_OwnLname.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot contain Numbers";
+            error_msg.Text = "";
         }
 
         private void txt_OwnNIC_TextChanged(object sender, TextChangedEventArgs e)
         {
-
             if (txt_OwnNIC.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner NIC ";
+            else if (txt_OwnNIC.Text.Length < 10 || txt_OwnNIC.Text.Length > 12)
+                error_msg.Text = "Invalid NIC  ";
             else
                 error_msg.Text = "";
         }
@@ -130,7 +135,9 @@ namespace Malshi_Rent_A_Car
         {
 
             if (txt_OwnEmail.Text.Length == 0)
-                error_msg.Text = "Please Enter Owner Emal";
+                error_msg.Text = "Please Enter Owner Email";
+            else if (!IsValid(txt_OwnEmail.Text))
+                error_msg.Text = "Please enter a valid email address ";
             else
                 error_msg.Text = "";
         }
@@ -149,7 +156,6 @@ namespace Malshi_Rent_A_Car
             if (txt_OwnTelHome.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Home Number ";
             else if (!Regex.IsMatch(txt_OwnTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -161,7 +167,6 @@ namespace Malshi_Rent_A_Car
             if (txt_OwnTelMobile.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Mobile Number ";
             else if (!Regex.IsMatch(txt_OwnTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -189,7 +194,6 @@ namespace Malshi_Rent_A_Car
             if (txt_OwnTelWork.Text.Length == 0)
                 error_msg.Text = "Please Enter Owner Work Number ";
             else if (!Regex.IsMatch(txt_OwnTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -216,6 +220,20 @@ namespace Malshi_Rent_A_Car
                 MessageBox msg = new MessageBox();
                 msg.errorMsg("Oops soomething went worng. " + ex.Message);
                 msg.Show();
+            }
+        }
+
+
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
     }

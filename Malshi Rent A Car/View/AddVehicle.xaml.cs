@@ -149,40 +149,50 @@ namespace Malshi_Rent_A_Car
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(error_msg.Text != "")
             {
-
-                string name = System.IO.Path.GetFileName(filepath);
-                string destinationPath = GetDestinationPath(name);
-                File.Copy(filepath, destinationPath, true);
-                Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text, txt_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_noPassengers.Text), date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text, date_InsuranceStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_oPay.Text), txt_wName.Text, txt_wAdd.Text, Int32.Parse(txt_wContact.Text));
-                int i = vehicle.addVehicle(modelID, insID, cmb_ownerNIC.Text);
-                if (i == 1)
+                try
                 {
-                    MessageBox.Show("Data Saved Successfully");
-                    btn_cls_Click(this, null);
+
+                    string name = System.IO.Path.GetFileName(filepath);
+                    string destinationPath = GetDestinationPath(name);
+                    File.Copy(filepath, destinationPath, true);
+                    Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text, txt_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_noPassengers.Text), date_licenceStart.Text, date_LicenceEnd.Text, date_InsuranceEnd.Text, date_InsuranceStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_oPay.Text), txt_wName.Text, txt_wAdd.Text, Int32.Parse(txt_wContact.Text));
+                    int i = vehicle.addVehicle(modelID, insID, cmb_ownerNIC.Text);
+                    if (i == 1)
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Data Saved Successfully");
+                        msg.Show();
+                        btn_cls_Click(this, null);
+                    }
+                    else
+                    {
+                        MessageBox msg = new MessageBox();
+                        msg.errorMsg("Could not save data,Please try again");
+                        msg.Show();
+                    }
                 }
-                else
-                    MessageBox.Show("Could not save data,Please try agian");
+                catch (ArgumentNullException)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please upload a photo");
+                    msg.Show();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Please fill the form correctly. ");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox msg = new MessageBox();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
             }
-            catch (ArgumentNullException)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Please upload a photo");
-                msg.Show();
-            }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Please fill the form correctly. ");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox msg = new MessageBox();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
+            
         }
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
@@ -202,7 +212,6 @@ namespace Malshi_Rent_A_Car
 
         private void txt_catagory_TextChanged(object sender, TextChangedEventArgs e)
         {
-
             if (txt_catagory.Text.Length == 0)
                 error_msg.Text = "Cannot Keep This Empty";
             else
@@ -211,9 +220,10 @@ namespace Malshi_Rent_A_Car
 
         private void txt_wName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
             if (txt_wName.Text.Length == 0)
                 error_msg.Text = "Please Enter Witness Name";
+            else if (txt_wName.Text.Any(char.IsDigit))
+                error_msg.Text = "Witness Name cannot have Numbers";
             else
                 error_msg.Text = "";
         }
@@ -290,6 +300,82 @@ namespace Malshi_Rent_A_Car
                 error_msg.Text = "Please enter numbers only";
             else
                 error_msg.Text = "";
+        }
+
+        private void date_InsuranceStart_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (date_InsuranceEnd.Text != "")
+            {
+                DateTime startdate = Convert.ToDateTime(date_InsuranceStart.Text);
+                DateTime exdate = Convert.ToDateTime(date_InsuranceEnd.Text);
+                if (startdate <= exdate)
+                {
+                    TimeSpan ts = exdate.Subtract(startdate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid Insurance date.Please check again";
+                }
+            }
+        }
+
+        private void date_InsuranceEnd_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (date_InsuranceStart.Text != "")
+            {
+                DateTime startdate = Convert.ToDateTime(date_InsuranceStart.Text);
+                DateTime exdate = Convert.ToDateTime(date_InsuranceEnd.Text);
+                if (startdate <= exdate)
+                {
+                    TimeSpan ts = exdate.Subtract(startdate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid Insurance date.Please check again";
+                }
+            }
+        }
+
+        private void date_licenceStart_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (date_LicenceEnd.Text != "")
+            {
+                DateTime startdate = Convert.ToDateTime(date_licenceStart.Text);
+                DateTime exdate = Convert.ToDateTime(date_LicenceEnd.Text);
+                if (startdate <= exdate)
+                {
+                    TimeSpan ts = exdate.Subtract(startdate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid License date.Please check again";
+                }
+            }
+        }
+
+        private void date_LicenceEnd_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if (date_licenceStart.Text != "")
+            {
+                DateTime startdate = Convert.ToDateTime(date_licenceStart.Text);
+                DateTime exdate = Convert.ToDateTime(date_LicenceEnd.Text);
+                if (startdate <= exdate)
+                {
+                    TimeSpan ts = exdate.Subtract(startdate);
+                    int days = Convert.ToInt16(ts.Days);
+                    error_msg.Text = "";
+                }
+                else
+                {
+                    error_msg.Text = "Invalid License date.Please check again";
+                }
+            }
         }
     }
 }

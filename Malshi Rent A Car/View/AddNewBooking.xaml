@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Malshi_Rent_A_Car"
         mc:Ignorable="d"
-        Title="Add Booking" Height="500" Width="420" WindowStartupLocation="CenterScreen" Loaded="form_addBooking_Loaded">
+        Title="Add Booking" Height="541" Width="420" WindowStartupLocation="CenterScreen" Loaded="form_addBooking_Loaded">
     <Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF1763A2">
             <StackPanel>
@@ -45,12 +45,12 @@
                 </ListView>
                 <DockPanel Height="55">
 
-                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Height="25" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click" IsEnabled="False" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
-                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Height="25" Margin="10" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+                    <Button x:Name="btn_clr" Content="CLEAR" HorizontalAlignment="Left" Height="25" Margin="10,0,10,-30" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_clr_Click" IsEnabled="False" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
+                    <Button x:Name="btn_save" Content="SAVE" HorizontalAlignment="Right" Height="25" Margin="10,0,10,-30" VerticalAlignment="Bottom" Width="75" FontSize="10" Click="btn_save_Click" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
 
                 </DockPanel>
             </StackPanel>
-            <Button x:Name="btn_bill" Content="GET BILL" HorizontalAlignment="Left" Margin="68,399,0,0" VerticalAlignment="Top" Width="75" Click="btn_bill_Click" IsEnabled="False"/>
+            <Button x:Name="btn_bill" Content="GET BILL" HorizontalAlignment="Left" Margin="68,439,0,0" VerticalAlignment="Top" Width="75" Click="btn_bill_Click" IsEnabled="False" Style="{DynamicResource RoundedButtonStyle}" Foreground="White"/>
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
             <Grid.Background>
@@ -60,19 +60,21 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <StackPanel>
-                <Grid Height="40" VerticalAlignment="Top"/>
+                <Grid Height="40" VerticalAlignment="Top">
+                    <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="45,18,5,6" TextAlignment="Center"/>
+                </Grid>
                 <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_bid" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <ComboBox x:Name="cmb_cNIC" Margin="2" Width="180" DropDownClosed="cmb_cNIC_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_cName" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
-                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <ComboBox x:Name="cmb_vLplate" Margin="2" Width="180" DropDownClosed="cmb_vLplate_DropDownClosed" Background="{x:Null}" BorderThickness="0,0,0,1" IsEditable="True"/>
                     </ListViewItem>
                     <ListViewItem Height="30.4">
                         <TextBox x:Name="txt_vYear" Margin="2" Width="180" IsEnabled="False" Background="{x:Null}" BorderThickness="0,0,0,1"/>
@@ -87,13 +89,13 @@
                         <TextBox x:Name="txt_advance" Margin="2" Width="180" Background="{x:Null}" TextChanged="txt_advance_TextChanged" BorderThickness="0,0,0,1"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="dte_lend" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="dte_lend_CalendarClosed"/>
                     </ListViewItem>
                     <ListViewItem Height="33.4">
-                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1"/>
+                        <DatePicker x:Name="dte_return" Margin="2" Width="180" Background="{x:Null}" BorderThickness="0,0,0,1" CalendarClosed="dte_return_CalendarClosed"/>
                     </ListViewItem>
-                    <ListViewItem Height="30" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
-                        <TextBlock x:Name="book_date" Text="[Booking Date]" Margin="20 3 0 3" Width="150" TextAlignment="Center"/>
+                    <ListViewItem Height="50" FontSize="12" FontWeight="Light" Margin="0 20 0 0">
+                        <TextBlock x:Name="txt_error" TextWrapping="Wrap" Width="184" Height="47"/>
                     </ListViewItem>
                 </ListView>
             </StackPanel>

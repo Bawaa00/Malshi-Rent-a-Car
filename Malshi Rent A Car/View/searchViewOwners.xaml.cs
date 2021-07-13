@@ -66,7 +66,7 @@ namespace Malshi_Rent_A_Car
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            UpdateBooking obj = new UpdateBooking();
+            UpdateOwner obj = new UpdateOwner();
             obj.Show();
         }
     }
